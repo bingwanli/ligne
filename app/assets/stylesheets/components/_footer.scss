@@ -1,19 +1,22 @@
 .footer {
-  background: #FFD700;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   padding: 0px 50px;
   color: black;
   width: 100%;
   bottom: 0;
+  text-align: right;
   // position: relative;
 }
 .footer-links {
   display: flex;
   align-items: center;
+
 }
+
 .footer-links a {
   color: black;
   opacity: 0.15;

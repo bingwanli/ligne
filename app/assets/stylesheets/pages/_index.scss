@@ -16,10 +16,10 @@
 }
 
 .second-banner {
-  background-size: cover;
+  // background-size: cover;
   background-color: black;
-  background-position: center;
-  height: 100vh;
+  // background-position: center;
+  height: auto;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -27,82 +27,11 @@
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
-.card-discover {
-  color: white;
-  width: 300px;
-  height: 300px;
-  // background: #C4C4C4;
-  // border: 2px solid white;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-  flex-direction: column;
-  // background-image: url(https://image.flaticon.com/icons/svg/814/814513.svg);
-  background-size: cover;
-  background-position: center;
+.second-banner>* {
+  flex: 0 1 160px;
+  margin: 20px;
 }
-
-.card-discover img {
-  width: 300px;
-  height: 300px;
-}
-
-.card-choose {
-  color: white;
-  width: 300px;
-  height: 300px;
-  // background: #C4C4C4;
-  // border: 2px solid white;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
-  padding: 55px;
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-  flex-direction: column;
-  // background-image: url(https://www.mensurbanclothing.com/wp-content/uploads/2017/02/phoenix-london-fashion-week-street-style-style-728789994.jpg);
-  background-size: cover;
-  background-position: top;
-}
-
-.card-choose img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-}
-
-.card-buy {
-  color: white;
-  width: 300px;
-  height: 300px;
-  // background: #C4C4C4;
-  // border: 2px solid white;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
-  padding: 55px;
-  margin-bottom: 20px;
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-  flex-direction: column;
-  // background-image: url(https://cdn.dribbble.com/users/2738/screenshots/5554154/the-gift_reach_records.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.card-buy img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-}
-
