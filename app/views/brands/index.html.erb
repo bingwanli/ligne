@@ -20,7 +20,13 @@
 
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#)">
-    Free People
+    <% @brands.each do |i| %>
+      <div class="card-text">
+        <h1><%= i.name %></h1>
+        <h3><%= i.country %></h3>
+        <p><%= i.description %></p>
+      </div>
+    <% end %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#)">
