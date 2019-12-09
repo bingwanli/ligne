@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "https://github.com/ligne.git" }
 
 ruby '2.6.3'
 
@@ -22,7 +22,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'disco'
@@ -30,7 +29,7 @@ gem 'ahoy_matey'
 gem 'cloudinary', '~> 1.9.1'
 gem 'nokogiri'
 gem 'acts-as-taggable-on', '~> 6.0'
-
+gem 'font-awesome-sass', '~> 5.6.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
