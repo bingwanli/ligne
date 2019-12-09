@@ -29,6 +29,7 @@ gem 'disco'
 gem 'ahoy_matey'
 gem 'cloudinary', '~> 1.9.1'
 gem 'nokogiri'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 
 group :development, :test do

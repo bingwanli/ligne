@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :brands do
+    collection do
+      get 'country'
+    end
     resources :products
   end
 end
