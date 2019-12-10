@@ -13,9 +13,12 @@ class BrandsController < ApplicationController
   end
 
   def new
+    @brand = Brand.new
   end
 
   def create
+    @brand = Brand.create(brands_params)
+    @brand_images = @brand.brand_images.build
   end
 
   def destroy
@@ -30,6 +33,6 @@ class BrandsController < ApplicationController
   private
 
   def brands_params
-    params.require(:brand).permit(:name, :description, :country)
+    params.require(:brand).permit(:name, :description, :country, brand_images_attributes: [:id, :url, :brand_id])
   end
 end
