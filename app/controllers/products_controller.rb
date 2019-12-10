@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
+
   def show
+    @product = Product.find(params[:id])
+    # creates a new like for every click
+    @product_rec = ProductRec.new
   end
 
   def new
@@ -34,5 +38,4 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :price, :description, :url,
       :brand_id, :is_available, :image_url)
   end
-
 end
