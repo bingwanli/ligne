@@ -23,9 +23,8 @@
 
       <div class="right"> <h1>➡️</h1> </div>
     </div>
-
-    </div>
 <div class="country-name"> </div>
+    </div>
   </div>
   <!-- ABOUT US -->
   <div class="second-banner">
@@ -79,10 +78,6 @@
     // use the onCountryPicked() to set callback when clicked country changed
     controller.onCountryPicked( callback );
 
-    function callback ( selectedCountry, relatedCountries ) {
-
-      function doSomething() {
-
 let CountryName = document.querySelector(".country-name");
 
 function callback ( selectedCountry, relatedCountries ) {
@@ -98,16 +93,25 @@ console.log(CountryName);
   // window.location.href = "hey.html"
 }
 
-  // const myCanvas = document.querySelector("canvas")
+      let left = document.querySelector(".left");
+      let right = document.querySelector(".right");
+      let places = ["US", "CN", "BR", "FR", "CA", "AU"];
+
+
+      function goLeft() {
+        let num = places[Math.floor(Math.random()*places.length)];
+        controller.switchCountry(num);
+        CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
+      };
+
+      right.addEventListener('click', goLeft);
+      left.addEventListener('click', goLeft);
+
+        // const myCanvas = document.querySelector("canvas")
   // const myContext = myCanvas.getContext("2d")
-
-
-      }
-      setTimeout(doSomething, 3000);
-      console.log(selectedCountry);
       // highlight the mouseenter target
       // window.location.href = "hey.html"
-    }
+
 
       // const myCanvas = document.querySelector("canvas")
       // const myContext = myCanvas.getContext("2d")
@@ -119,25 +123,6 @@ console.log(CountryName);
     //   // myContext.rotate(45 * Math.PI / 180);
     // }
 
-
-  function goLeft() {
-    let num = places[Math.floor(Math.random()*places.length)];
-    controller.switchCountry(num);
-    CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
-  };
-
-      let left = document.querySelector(".left");
-      let right = document.querySelector(".right");
-      let places = ["US", "CN", "BR", "FR", "CA", "AU"];
-
-
-      function goLeft() {
-        let num = places[Math.floor(Math.random()*places.length)];
-        controller.switchCountry(num);
-      };
-
-      right.addEventListener('click', goLeft);
-      left.addEventListener('click', goLeft);
   </script>
 
 </body>
