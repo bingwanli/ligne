@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     collection do
       get 'country'
     end
-    resources :products do
+    resources :products, shallow: true do
       resources :product_recs, only: [:create, :update]
     end
-    resources :brand_images
+    resources :brand_images, only: [:create, :destroy]
   end
 end
