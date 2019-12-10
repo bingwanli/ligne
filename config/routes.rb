@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'product_rec/create'
-  get 'brand_images/index'
-  get 'brand_images/show'
   root to: 'pages#index'
 
   devise_for :users
@@ -10,7 +7,9 @@ Rails.application.routes.draw do
     collection do
       get 'country'
     end
-    resources :products
+    resources :products do
+      resources :product_recs, only: [:create, :update]
+    end
     resources :brand_images
   end
 end

@@ -2,7 +2,10 @@
 <div class="product-show-card">
   <h3>price: $<%= @product.price %></h3>
   <p><%= link_to "Brand's Website", @product.url %></p>
-  <p><%= link_to "love" %></p>
+  <p><%= link_to "5", brand_product_product_recs_path(@product.brand, @product),
+    id: 5,
+    method: :post,
+    data: { user_id: current_user.id, product_id: @product.id, brand_id: @product.brand.id, rating: 5 } %></p>
 
 
 </div>

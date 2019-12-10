@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_065115) do
+ActiveRecord::Schema.define(version: 2019_12_10_085227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_065115) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_product_recs_on_brand_id"
     t.index ["product_id"], name: "index_product_recs_on_product_id"
     t.index ["user_id"], name: "index_product_recs_on_user_id"
   end
@@ -143,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_065115) do
   end
 
   add_foreign_key "brand_images", "brands"
+  add_foreign_key "product_recs", "brands"
   add_foreign_key "product_recs", "products"
   add_foreign_key "product_recs", "users"
   add_foreign_key "products", "brands"
