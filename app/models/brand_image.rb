@@ -1,4 +1,4 @@
 class BrandImage < ApplicationRecord
   belongs_to :brand
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :url, BrandImageUploader
 end
