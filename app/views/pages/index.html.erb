@@ -9,57 +9,28 @@
   <!-- load data in this data script -->
   <script src="app/assets/javascripts/data.js"></script>
 </head>
+
+
 <body>
   <div class="main-banner">
+
     <div>
       <h1>LIGNE</h1>
       <p>Discover International Brands <br>Find Your Unique Style</p>
     </div>
 
-      <div class="globe-w-arrows">
+    <div class="globe-w-arrows">
         <div class="left"><h1>⬅️</h1> </div>
 
       <div id="globalArea"></div>
-
       <div class="right"> <h1>➡️</h1> </div>
     </div>
-<div class="country-name"> </div>
-    </div>
-  </div>
-  <!-- ABOUT US -->
-  <div class="second-banner">
-    <div class="flip">
-      <div class="card-discover front" style="background-image: url(https://i.pinimg.com/564x/11/bd/20/11bd20f533facc49503bceecf71f545e.jpg);">
-        <h4>Discover</h4>
-      </div>
-      <div class="back">
-        <p style="color:white;font-size:20px;">Find for brands <strong>across the world</strong></p>
-      </div>
-    </div>
 
-    <div class="flip">
-      <div class="card-choose front" style="background-image: url(https://i.pinimg.com/564x/6b/2a/c2/6b2ac28118d6c15fe63526cb63f5d6c9.jpg);">
-        <h4>Choose</h4>
-      </div>
-      <div class="back">
-        <p style="color:white;font-size:20px;">State your international <strong>style</strong></p>
-      </div>
-    </div>
-
-    <div class="flip">
-      <div class="card-buy front" style="background-image: url(https://i.pinimg.com/564x/f7/11/da/f711da2184b1d5a9b6bbc2105739a3ce.jpg);">
-       <h4>Acquire</h4>
-      </div>
-      <div class="back">
-       <p style="color:white;font-size:20px;">Be trustfully <strong>unique</strong></p>
-      </div>
-    </div>
-      <div class="break"></div>
-    <div>
-      <a href="#" class="buy-btn" style="flex: 1 1 80px;">DISCOVER</a>
+      <div class="country-name"> </div>
     </div>
   </div>
 
+<!-- GLOBE -->
   <script type="text/javascript">
     // Get the container to hold the IO globe
     var container = document.getElementById( "globalArea" );
@@ -123,5 +94,41 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
     // }
 
   </script>
+
+
+<!-- ABOUT US -->
+  <div class="second-banner">
+    <div class="flip">
+      <div class="card-discover front" style="background-image: url(https://i.pinimg.com/564x/11/bd/20/11bd20f533facc49503bceecf71f545e.jpg);">
+        <h4>Discover</h4>
+      </div>
+      <div class="back">
+        <p style="color:white;font-size:20px;">Find for brands <strong>across the world</strong></p>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="card-choose front" style="background-image: url(https://i.pinimg.com/564x/6b/2a/c2/6b2ac28118d6c15fe63526cb63f5d6c9.jpg);">
+        <h4>Choose</h4>
+      </div>
+      <div class="back">
+        <p style="color:white;font-size:20px;">State your international <strong>style</strong></p>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="card-buy front" style="background-image: url(https://i.pinimg.com/564x/f7/11/da/f711da2184b1d5a9b6bbc2105739a3ce.jpg);">
+       <h4>Acquire</h4>
+      </div>
+      <div class="back">
+       <p style="color:white;font-size:20px;">Be trustfully <strong>unique</strong></p>
+      </div>
+    </div>
+      <div class="break"></div>
+    <div>
+      <a href="#" class="buy-btn" style="flex: 1 1 80px;">DISCOVER</a>
+    </div>
+  </div>
+
 
 </body>
