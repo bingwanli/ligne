@@ -1,0 +1,64 @@
+.card-discover {
+  color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px lightgray;
+  display: flex;
+  margin: 10px;
+  margin-top: 25px;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 1px 1px 10px lightgray;
+}
+
+.card-discover img {
+  width: 300px;
+  height: 300px;
+}
+
+.card-choose {
+  color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px lightgray;
+  padding: 55px;
+  display: flex;
+  margin: 10px;
+  background-size: cover;
+  background-position: top;
+  margin-top: 25px;
+  text-shadow: 1px 1px 15px lightgray;
+}
+
+.card-choose img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.card-buy {
+  color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px lightgray;
+  padding: 55px;
+  margin-bottom: 20px;
+  display: flex;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 25px;
+  text-shadow: 1px 1px 15px lightgray;
+}
+
+.card-buy img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+  // background-image: url(https://cdn.dribbble.com/users/2738/screenshots/5554154/the-gift_reach_records.jpg);
+

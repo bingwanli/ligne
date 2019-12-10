@@ -1,5 +1,15 @@
+// External libraries
 @import "bootstrap/scss/bootstrap";
 
+// Graphical variables
+@import "config/fonts";
+
+// Your CSS partials
+@import "pages/index";
+@import "brands/index";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "components/index";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -16,8 +26,3 @@
  *= require_tree .
  *= require_self
  */
-
-@import "pages/index";
-@import "brands/index";
-@import "font-awesome-sprockets";
-@import "font-awesome";
