@@ -1,11 +1,4 @@
 class BrandImagesController < ApplicationController
-  def index
-    @brand_images = BrandImage.all
-  end
-
-  def show
-    @brand_image = BrandImage.find(params[:id])
-  end
 
   def create
     @brand_image = BrandImage.new(brand_images_params)

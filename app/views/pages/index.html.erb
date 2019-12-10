@@ -55,7 +55,7 @@ function callback ( selectedCountry, relatedCountries ) {
 
 CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
   function doSomething() {
-    window.location.href = "http://localhost:3000/brands/country?query=" + selectedCountry.ISOcode
+    window.location.href = "http://localhost:3000/brands/country?query=" + selectedCountry.ISOCode
   }
   setTimeout(doSomething, 6000);
   console.log(selectedCountry);

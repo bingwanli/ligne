@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     @product.brand = Brand.find(params[:brand_id])
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product.brand, notice: 'product info successfully uploaded.'}
+        format.html { redirect_to product_path(@product), notice: 'product info successfully uploaded.'}
       else
         format.html { render action: 'new' }
       end
