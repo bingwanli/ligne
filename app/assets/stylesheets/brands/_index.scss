@@ -13,14 +13,32 @@
 }
 
 .content {
-  background-color: lightgray;
+  background-color: #F3F3F3;
   border-radius: 20px;
   display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding-top: -20px;
+  text-align: center;
+  margin-top: -40px;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  border: none;
+  box-shadow: 1px 1px 1px lightgray;
+}
+
+.content h3 {
+  color: black;
+  // text-shadow: 1px 1px 1px lightgray;
+  padding-top: 50px;
+}
+
+.content h5 {
+  color: black;
+  font-size: 15px;
+  text-align: right;
+  padding-top:8px;
+  padding-bottom:8px;
+
 }
 
 // PINTEREST STYLE
@@ -32,6 +50,7 @@
   justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
+  text-align: center;
 }
 
 .wf-container:before,
@@ -47,17 +66,24 @@
   width: 300px;
   height: auto;
   border-radius: 20px;
-  padding: 20px;
+  padding: 15px;
+}
+
+.wf-box:hover {
+  opacity: 0.8;
 }
 
 .wf-box img {
   display: block;
   width: 100%;
-  border-radius: 20px;
+  // border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 1px 1px 1px lightgray;
 }
 
 .wf-box .content {
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-top-width: 0;
   padding: 5px 8px;
 }
