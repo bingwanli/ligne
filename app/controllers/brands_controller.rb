@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :country]
 
   def index
     @brands = Brand.all

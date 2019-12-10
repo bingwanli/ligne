@@ -1,0 +1,2 @@
+module ProductRecHelper
+end
