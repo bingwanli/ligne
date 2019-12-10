@@ -36,8 +36,12 @@
 }
 
 .second-banner>* {
-  flex: 0 1 160px;
+  flex: 0 1 100px;
   margin: 20px;
+}
+
+.break {
+  flex-basis: 100%
 }
 
 .globe-w-arrows {
