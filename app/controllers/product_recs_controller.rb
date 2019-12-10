@@ -5,6 +5,11 @@ class ProductRecsController < ApplicationController
     @product_rec.user = current_user
     @product_rec.product = @product
     @product_rec.rating = 5
+    if @product.save
+      flash[:notice] = "Loved!"
+    else
+      render :edit
+    end
   end
 
   def update

@@ -1,4 +1,8 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.all
+    @recommended_products = current_user.recommended_products
+  end
 
   def show
     @product = Product.find(params[:id])
@@ -13,7 +17,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(products_params)
-    @product.brand = Brand.find(params[:brand_id])
     respond_to do |format|
       if @product.save
         format.html { redirect_to product_path(@product), notice: 'product info successfully uploaded.'}
