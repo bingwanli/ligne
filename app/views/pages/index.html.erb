@@ -83,9 +83,8 @@ let CountryName = document.querySelector(".country-name");
 function callback ( selectedCountry, relatedCountries ) {
 
 CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
-console.log(CountryName);
   function doSomething() {
-    window.location.href = "http://localhost:3000/brands/country?query" + selectedCountry.ISOcode;
+    window.location.href = "http://localhost:3000/brands/country?query=" + selectedCountry.ISOcode
   }
   setTimeout(doSomething, 6000);
   console.log(selectedCountry);
