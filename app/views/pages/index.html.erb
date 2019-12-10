@@ -16,6 +16,7 @@
     </div>
      <div id="globalArea">
   </div>
+  <div class="country-name"></div>
     <div id="arrows">
       <div class="left"><h1>⬅️</h1> </div>
       <div class="right"> <h1>➡️</h1> </div>
@@ -100,13 +101,15 @@ controller.adjustOceanBrightness(1.0);
 // use the onCountryPicked() to set callback when clicked country changed
 controller.onCountryPicked( callback );
 
-
+const CountryName = document.querySelector(".country-name");
 function callback ( selectedCountry, relatedCountries ) {
 
-  function doSomething() {
+CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
 
+  function doSomething() {
+    window.location.href = "http://localhost:3000/brands/country?query" + selectedCountry.ISOcode
   }
-  setTimeout(doSomething, 3000);
+  setTimeout(doSomething, 6000);
   console.log(selectedCountry);
   // highlight the mouseenter target
   // window.location.href = "hey.html"
@@ -128,6 +131,7 @@ function callback ( selectedCountry, relatedCountries ) {
   function goLeft() {
     let num = places[Math.floor(Math.random()*places.length)];
     controller.switchCountry(num);
+    CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
   };
 
   right.addEventListener('click', goLeft);
