@@ -9,8 +9,12 @@
   width: 100%;
   bottom: 0;
   text-align: right;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  // border-top-left-radius: 10px;
+  // border-top-right-radius: 10px;
   // position: relative;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
