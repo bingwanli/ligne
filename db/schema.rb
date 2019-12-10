@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_113527) do
+ActiveRecord::Schema.define(version: 2019_12_10_122903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,19 @@ ActiveRecord::Schema.define(version: 2019_12_10_113527) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "url"
+  end
+
+  create_table "disco_recommendations", force: :cascade do |t|
+    t.string "subject_type"
+    t.bigint "subject_id"
+    t.string "item_type"
+    t.bigint "item_id"
+    t.string "context"
+    t.float "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_type", "item_id"], name: "index_disco_recommendations_on_item_type_and_item_id"
+    t.index ["subject_type", "subject_id"], name: "index_disco_recommendations_on_subject_type_and_subject_id"
   end
 
   create_table "product_recs", force: :cascade do |t|
