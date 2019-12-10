@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="http://localhost:3000/">
     <img src="https://i.ibb.co/BTW1RN5/ossicle-y.png" />
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,11 @@
         <a class="nav-link" href="#">Brands</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+        <% end %>
       </li>
       <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://image.flaticon.com/icons/svg/149/149071.svg" />

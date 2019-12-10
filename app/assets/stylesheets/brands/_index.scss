@@ -11,6 +11,7 @@
 
 .card-category:hover {
  opacity: 0.8;
+ box-shadow: 1px 1px 3px lightgray;
 }
 
 .content {
@@ -68,6 +69,9 @@
   height: auto;
   border-radius: 20px;
   padding: 15px;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .wf-box:hover {
@@ -78,8 +82,6 @@
   display: block;
   width: 100%;
   // border-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   box-shadow: 1px 1px 1px lightgray;
 }
 
@@ -89,7 +91,10 @@
   padding: 5px 8px;
 }
 
-.wf-column { float: left; }
+.wf-column {
+  float: left;
+  justify-content: center;
+}
 
 // RESPONSIVE
 @media screen and (min-width: 768px) {
