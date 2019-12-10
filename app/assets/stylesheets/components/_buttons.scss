@@ -20,9 +20,15 @@
   color: white;
   background-color: #0F4C81;
   width: 112px;
-  height: 48px;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px
+}
+
+.style-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
 }
 
 .cancel-btn {
@@ -35,15 +41,26 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.cancel:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: black;
+}
 
 .filter-btn {
   color: black;
   background-color: white;
   width: 112px;
-  height: 48px;
   border: 3px solid #0F4C81;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px
+}
+
+.filter-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: black;
 }
 
 .gray-btn {
@@ -54,4 +71,21 @@
   border: 3px solid #0F4C81;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gray-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+}
+
+.country-btn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: center;
+  padding-top: 20px;
+
 }

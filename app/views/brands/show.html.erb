@@ -1,44 +1,67 @@
 <!-- BRAND EDITORIAL -->
-<div class="container">
 
-  <div class="brandEditorial">
+<div class="brandEditorial">
+<body>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-    <div class="cards">
-      <div class="card1">
-        <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP168-956x709.jpg" alt="first">
+<div class="main-carousel">
+    <div class="card">
+      <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP168-956x709.jpg" alt="first">
 
-      </div>
-      <div class="card2">
-        <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2015/11/21.jpg" alt="second">
-      </div>
-
-      <div class="card3">
-        <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP166.jpg" alt="third">
-      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2015/11/21.jpg" alt="second">
     </div>
 
-  </div>
+    <div class="card">
+      <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP166.jpg" alt="third">
+    </div>
+</div>
 
-<!-- BRAND INTRO -->
+</div>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-  <div class="brandIntro">
+<div class="brandIntro">
     <div class="logo">
       <img src="https://i.ibb.co/zrxzPp6/mara-hoffman-logo.png" alt="logo" style="height: 150px; width: 300px;">
     </div>
     <div class="description">
     <p>
       Mara Hoffman founded her label in 2000 after graduating from Parsons School of Design in New York City. Fifteen years later, the brand committed itself to implementing more sustainable and responsible practices.
-
       In an effort to foster mindful consumption habits, the brand maintains an open conversation about its approach and encourages consumers to reevaluate the relationship society has with clothing. The company continues to focus on sustainable materials, processes, and production in order to improve and extend each garment’s life.
     </p>
     </div>
   </div>
-
   <a class="btn btn-ghost" href="https://www.marahoffman.com/">Check the Brand</a>
-
 </div>
-
 <!-- PRODUCTS -->
+
+  <script type="text/javascript">
+// external js: flickity.pkgd.js
+  var carousel = document.querySelector('.main-carousel');
+  var flkty = new Flickity( carousel, {
+    imagesLoaded: true,
+    percentPosition: false,
+  });
+
+  var imgs = carousel.querySelectorAll('.card img');
+  // get transform property
+  var docStyle = document.documentElement.style;
+  var transformProp = typeof docStyle.transform == 'string' ?
+    'transform' : 'WebkitTransform';
+
+  flkty.on( 'scroll', function() {
+    flkty.slides.forEach( function( slide, i ) {
+      var img = imgs[i];
+      var x = ( slide.target + flkty.x ) * -1/3;
+      img.style[ transformProp ] = 'translateX(' + x  + 'px)';
+    });
+  });
+  </script>
+</body>
+
+<!-- BRAND INTRO -->
+
 <div class="product-cards">
 
   <div class="cards">
@@ -56,6 +79,7 @@
 </div>
 
 </div>
+<!-- PRODUCTS -->
 
 
 

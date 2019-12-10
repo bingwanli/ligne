@@ -3,6 +3,35 @@
   padding-right: 350px;
 }
 
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.main-carousel {
+  background: #EEE;
+}
+
+.card {
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.card img {
+  display: block;
+  height: 200px;
+}
+
+.card.is-selected {
+
+}
+
+@media screen and ( min-width: 768px ) {
+  .card img {
+    height: 400px;
+  }
+}
+
 .card-category img {
   background-position: center
 }
@@ -75,3 +104,4 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
