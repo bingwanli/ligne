@@ -1,2 +1,27 @@
-<h1>Brands#new</h1>
-<p>Find me in app/views/brands/new.html.erb</p>
+<h1>Admin Only</h1>
+
+<!-- form -->
+<div class="user-form-wrapper">
+  <h1>Add Editorial Images to Brand</h1>
+  <div class="user-form-container">
+    <%= simple_form_for @brand, html: { multipart: true } do |f| %>
+      <%= f.input :name, { maxlength: 100 }%>
+      <%= f.input :description, { maxlength: 500 } %>
+      <%= f.input :country, collection: ["USA", "China", "Brazil", "UK"] %>
+      <%= f.input :url %>
+      <%= f.fields_for :brand_images do |m| %>
+      <h5>Editorial Images</h5>
+        <div class="file-upload">
+          <%= m.label :url %>
+          <div class="file-btn">
+            <%= m.file_field :url, :multiple => true, name: "brand_images[url][]" %>
+          </div>
+        </div>
+      <% end %>
+      <p>
+        <%= f.submit "Add", class: "btn" %>
+      </p>
+    <% end %>
+  </div>
+</div>
+

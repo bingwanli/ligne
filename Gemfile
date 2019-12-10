@@ -17,14 +17,14 @@ gem 'devise'
 gem 'disco'
 gem 'ahoy_matey'
 gem 'cloudinary', '~> 1.9.1'
-gem 'nokogiri'
+gem 'carrierwave', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'font-awesome-sass', '~> 5.6.1'
 
 group :development, :test do
   gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
-
+  gem 'nokogiri'
 end
 
 group :development do
