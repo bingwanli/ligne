@@ -16,22 +16,16 @@
       <p>Discover International Brands <br>Find Your Unique Style</p>
     </div>
 
-     <div id="globalArea">
-  </div>
-  <div class="country-name"></div>
-    <div id="arrows">
-      <div class="left"><h1>⬅️</h1> </div>
-
       <div class="globe-w-arrows">
-      <div class="left"><h1>⬅️</h1></div>
+        <div class="left"><h1>⬅️</h1> </div>
+
       <div id="globalArea"></div>
 
       <div class="right"> <h1>➡️</h1> </div>
     </div>
-  </div>
 
     </div>
-
+<div class="country-name"> </div>
   </div>
   <!-- ABOUT US -->
   <div class="second-banner">
@@ -89,14 +83,14 @@
 
       function doSomething() {
 
+let CountryName = document.querySelector(".country-name");
 
-const CountryName = document.querySelector(".country-name");
 function callback ( selectedCountry, relatedCountries ) {
 
 CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
-
+console.log(CountryName);
   function doSomething() {
-    window.location.href = "http://localhost:3000/brands/country?query" + selectedCountry.ISOcode
+    window.location.href = "http://localhost:3000/brands/country?query" + selectedCountry.ISOcode;
   }
   setTimeout(doSomething, 6000);
   console.log(selectedCountry);
