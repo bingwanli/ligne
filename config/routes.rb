@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'product_rec/create'
   get 'brand_images/index'
   get 'brand_images/show'
   root to: 'pages#index'
