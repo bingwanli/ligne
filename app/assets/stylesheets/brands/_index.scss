@@ -1,3 +1,9 @@
+.page-title {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 
 .card-category {
   display: flex;
@@ -77,6 +83,7 @@
 .wf-box:hover {
   opacity: 0.8;
 }
+
 
 .wf-box img {
   display: block;
