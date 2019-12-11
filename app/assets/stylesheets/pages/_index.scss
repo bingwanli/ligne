@@ -10,7 +10,7 @@
   flex-direction: column;
   color: white;
   text-shadow: 1px 1px 10px black;
-  padding: 50px;
+  padding: 20px;
   font-family: "Montserrat"
 }
 
@@ -27,6 +27,18 @@
 }
 
 .right {
+  width: 25px;
+  height:25px;
+  background-repeat: no-repeat;
+}
+
+.m-left {
+  width: 25px;
+  height:25px;
+  background-repeat: no-repeat;
+}
+
+.m-right {
   width: 25px;
   height:25px;
   background-repeat: no-repeat;
@@ -60,19 +72,23 @@
 .globe-w-arrows {
   display: flex;
   height: 90vh;
-  width: 80%;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .mobile-arrows {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
 
 #globalArea {
   height: 90%;
-  width: 70%;
+  width: 90%;
   margin: 0;
   padding: 0;
 }
@@ -86,14 +102,54 @@
   text-align: center;
 }
 
+canvas {
+  width: 100%;
+}
 
+@media screen and (min-width: 801px) {
+  canvas {
+    min-width: 420px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .main-banner {
+    background-color: white;
+    background-image: url();
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .globe-w-arrows {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .m-right {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .m-left {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 800px) {
-  .mobile-arrows {
-    background-color: olive;
-    color: white;
+  .right {
     display: none;
-    padding-top:300px
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .left {
+    display: none;
   }
 }
 
