@@ -112,6 +112,12 @@ canvas {
   }
 }
 
+@media screen and (min-width: 801px) {
+  .main-banner {
+    background-color: white;
+    background-image: url();
+  }
+}
 
 @media screen and (min-width: 801px) {
   .globe-w-arrows {
@@ -119,7 +125,7 @@ canvas {
     padding-left: 0;
     margin-right: 0;
     margin-left: 0;
-    width: 80%
+    width: 80%;
   }
 }
 
@@ -146,5 +152,4 @@ canvas {
     display: none;
   }
 }
-
 
