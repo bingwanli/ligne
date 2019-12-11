@@ -42,6 +42,12 @@
   var flkty = new Flickity( carousel, {
     imagesLoaded: true,
     percentPosition: false,
+    freeScroll: true,
+    contain: true,
+    // disable previous & next buttons and dots
+    prevNextButtons: false,
+    pageDots: false,
+    autoPlay: true
   });
 
   var imgs = carousel.querySelectorAll('.card img');
