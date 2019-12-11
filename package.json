@@ -2,6 +2,7 @@
   "name": "ligne",
   "private": true,
   "dependencies": {
+    "@material/icon-button": "^4.0.0",
     "@rails/webpacker": "^4.2.0",
     "aos": "^2.3.4",
     "bootstrap": "4.3.1",
