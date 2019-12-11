@@ -1,6 +1,5 @@
 <!-- TITLE -->
 <body>
-  <script src="app/assets/javascripts/responsive_waterfall.js"></script>
 
   <div class="wf-container">
     <div class="page-title" style="text-align:center">
@@ -12,12 +11,33 @@
 
 <!-- PRODUCT CARDS -->
 <% @products.each do |product| %>
+  <div><%= link_to brand_path(brand.id), method: :patch do%>
+      <div class="wrapper">
+        <a href="javascript:void(0);" class="like-button">
+          <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+          <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+          <span class="like-overlay"></span>
+        </a>
+      </div>
+      <% end %>
+  </div>
   <%= link_to product.url do %>
     <%= cl_image_tag product.image_url, class: "wf-box", style: "border-top-left-radius:20px;border-top-right-radius:20px" %>
   <% end %>
 <% end %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script type="text/javascript">
+  $(document).ready(function(){
 
+    $('.like-button').click(function(){
+        $(this).toggleClass('is-active');
+    })
+
+})
+</script>
+
+<script src="app/assets/javascripts/responsive_waterfall.js"></script>
   <script type="text/javascript">
     // use querySelector/querySelectorAll internally
     var waterfall = new Waterfall({
@@ -27,7 +47,6 @@
     });
   </script>
 
-<script src="app/assets/javascripts/responsive_waterfall.js"></script>
 </div>
 
 </body>
