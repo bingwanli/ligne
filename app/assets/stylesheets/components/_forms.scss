@@ -6,11 +6,18 @@ body {
   position: relative;
 }
 
+.container {
+  padding-top: 100px;
+}
+
 .title {
   margin: 20px;
   text-transform: uppercase;
   color: black;
   text-align: center;
+  justify-content: center;
+  display: flex;
+
 }
 
 #login-background {

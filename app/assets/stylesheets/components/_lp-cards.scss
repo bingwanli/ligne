@@ -3,13 +3,13 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
+  // box-shadow: 1px 1px 1px lightgray;
   display: flex;
   margin: 10px;
   margin-top: 25px;
   background-size: cover;
   background-position: center;
-  text-shadow: 1px 1px 10px lightgray;
+  text-shadow: 1px 1px 30px black;
 }
 
 .card-discover img {
@@ -22,14 +22,14 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
+  // box-shadow: 1px 1px 1px lightgray;
   padding: 55px;
   display: flex;
   margin: 10px;
   background-size: cover;
   background-position: top;
   margin-top: 25px;
-  text-shadow: 1px 1px 15px lightgray;
+  text-shadow: 1px 1px 30px black;
 }
 
 .card-choose img {
@@ -43,7 +43,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px lightgray;
+  // box-shadow: 1px 1px 1px lightgray;
   padding: 55px;
   margin-bottom: 20px;
   display: flex;
@@ -51,7 +51,7 @@
   background-size: cover;
   background-position: center;
   margin-top: 25px;
-  text-shadow: 1px 1px 15px lightgray;
+  text-shadow: 1px 1px 30px black;
 }
 
 .card-buy img {

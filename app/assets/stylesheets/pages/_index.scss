@@ -2,22 +2,30 @@
   background-size: cover;
   // background-image: url(https://cdn.dribbble.com/users/1404186/screenshots/3603919/corridor.gif);
   background-position: center;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: white;
-  text-shadow: 1px 1px 10px black;
+  // text-shadow: 1px 1px 10px black;
   padding: 20px;
   font-family: "Montserrat"
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner h1,p {
   color: white;
   padding: 25px;
-  text-shadow: 1px 1px 10px black;
+  // text-shadow: 1px 1px 10px black;
 }
 
 .left {
@@ -72,7 +80,7 @@
 .globe-w-arrows {
   display: flex;
   height: 90vh;
-  width: 100%;
+  width: 80%;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -100,6 +108,9 @@
 
 .country-name {
   text-align: center;
+  background:black;
+  color:white;
+  font-size: 20px;
 }
 
 canvas {
@@ -109,6 +120,7 @@ canvas {
 @media screen and (min-width: 801px) {
   canvas {
     min-width: 420px;
+    height: 400px;
   }
 }
 
@@ -119,13 +131,14 @@ canvas {
   }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 801px) {
   .globe-w-arrows {
     padding-right: 0;
     padding-left: 0;
     margin-right: 0;
     margin-left: 0;
-    width: 80%;
+    width: 100%;
+    height: 400px;
   }
 }
 
@@ -152,4 +165,5 @@ canvas {
     display: none;
   }
 }
+
 

@@ -1,35 +1,32 @@
 <!-- BANNER -->
 <!-- <div class="container"> -->
 <head>
+
+
     <meta charset="UTF-8">
     <title>Hello World (Simplest Usage) / Gio.js</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
     <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
   <!-- load data in this data script -->
-  <script src="app/assets/javascripts/data.js"></script>
+    <script src="app/assets/javascripts/data.js"></script>
+
+
 </head>
 
-
+<%= render "devise/shared/navbar" %>
 <body>
 
-  <div class="main-banner" style="background-position:top;background-image:url(https://cdn.dribbble.com/users/164119/screenshots/7939959/media/ae2169d2f9070d845753ed141760c84a.jpg)">
-<!--
-    <div>
-      <h1>LIGNE</h1>
-      <p>Discover International Brands <br>Find Your Unique Style</p>
-    </div> -->
-
+  <div class="main-banner parallax" style=";background-image:url(https://cdn.dribbble.com/users/89889/screenshots/6919200/contour-dribble_4x.jpg)">
     <div class="globe-w-arrows">
-      <div class="left" style="position:relative;float:right;padding-left:100px;background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
+      <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
       <div id="globalArea"></div>
-      <div class="right" style="padding-right:100px;background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
+      <div class="right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
     </div>
-
       <div class="country-name"></div>
       <div class="mobile-arrows">
-        <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
-        <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
+        <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
+        <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
     </div>
     </div>
   </div>
@@ -112,7 +109,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
   <div class="second-banner">
     <div class="flip">
       <div class="card-discover front" style="background-image: url(https://i.pinimg.com/564x/11/bd/20/11bd20f533facc49503bceecf71f545e.jpg);">
-        <h4>Discover</h4>
+        <h4><strong>Discover</strong></h4>
       </div>
       <div class="back">
         <p style="color:white;font-size:20px;">Find for brands <strong>across the world</strong></p>
@@ -121,7 +118,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
     <div class="flip">
       <div class="card-choose front" style="background-image: url(https://i.pinimg.com/564x/6b/2a/c2/6b2ac28118d6c15fe63526cb63f5d6c9.jpg);">
-        <h4>Choose</h4>
+        <h4><strong>Choose</strong></h4>
       </div>
       <div class="back">
         <p style="color:white;font-size:20px;">State your international <strong>style</strong></p>
@@ -130,7 +127,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
     <div class="flip">
       <div class="card-buy front" style="background-image: url(https://i.pinimg.com/564x/f7/11/da/f711da2184b1d5a9b6bbc2105739a3ce.jpg);">
-       <h4>Acquire</h4>
+       <h4><strong>Acquire</strong></h4>
       </div>
       <div class="back">
        <p style="color:white;font-size:20px;">Be trustfully <strong>unique</strong></p>
