@@ -2,18 +2,6 @@
 <body>
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
 
-  <div class="cards">
-    <% @brands.each do |i| %>
-    <div class="card-picture">
-      <%= cl_image_tag("https://res.cloudinary.com/dmrilanf8/image/fetch/w_300,h_300,c_fill,r_max,f_auto/#{i.logo_url}") %>
-    </div>
-      <div class="card-text">
-        <h1><%= i.name %></h1>
-        <h3><%= i.country %></h3>
-        <p><%= i.description %></p>
-      </div>
-    <% end %>
-  </div>
 
 
   <div class="wf-container">
@@ -23,46 +11,21 @@
         <h5>Discover brands across the world</h5>
       </div>
     </div>
+
     <div class="country-btn">
-      <a class="filter-btn" href="http://localhost:3000/brands/country">BACK</a>
-      <a class="style-btn" href="#">GO TO...</a>
+      <%= link_to "BACK", :back, class: "filter-btn" %>
+      <%= link_to "GO TO...", brands_path, class: "filter-btn" %>
     </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="http://www.marahoffman.com/world-of/wp-content/uploads/2015/11/5.jpg">
-      <div class="content">
-        <h3>Mara Hoffman</h3>
-        <h5>This brand is latin for sportwear</h5>
+
+    <% @brands.each do |brand| %>
+      <div class="wf-box">
+        <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+        <div class="content">
+          <h3><%= brand.name %></h3>
+          <h5><%= brand.country %></h5>
+        </div>
       </div>
-    </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="https://i.ibb.co/y8K50Wp/free-people.jpg">
-      <div class="content">
-        <h3>Free People</h3>
-        <h5>This brand is asian for sportwear</h5>
-      </div>
-    </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="https://sidewalkhustle.com/wp-content/uploads/2017/08/princessnokia-championUO.jpg">
-      <div class="content">
-        <h3>Urban Outfitters</h3>
-        <h5>This brand is european for sportwear</h5>
-      </div>
-    </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="http://malendyer.com/wp-content/uploads/2018/11/loveshackfancy-resort19-01.jpg">
-      <div class="content">
-        <h3>Love Shack Fancy</h3>
-        <h5>This brand is american for sportwear</h5>
-      </div>
-    </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="http://stylenoir.com/wp-content/uploads/2013/12/sara-cummings-dolls-kill-xmas-lookbook-sn6.jpg">
-      <div class="content">
-        <h3>DollsKill</h3>
-        <h5>This brand is african for sportwear</h5>
-      </div>
-    </div>
-    <div class="wf-box"> <img style="border-top-left-radius:20px;border-top-right-radius:20px;" src="https://fashionista.com/.image/t_share/MTYwMzkzMzAyODM3ODMxNjQw/christy-dawn-sweater.jpg">
-      <div class="content">
-        <h3>Christy Dawn</h3>
-        <h5>This brand is latin for sportwear</h5>
-      </div>
-    </div>
+    <% end %>
   </div>
   <script type="text/javascript">
     // use querySelector/querySelectorAll internally

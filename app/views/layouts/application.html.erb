@@ -13,8 +13,16 @@
   <body style="font-family:montserrat">
 
     <%= yield %>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
 
   </body>
 </html>
