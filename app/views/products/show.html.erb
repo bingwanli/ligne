@@ -2,7 +2,7 @@
 <div class="product-show-card">
   <h3>price: $<%= @product.price %></h3>
   <p><%= link_to "Brand's Website", @product.url %></p>
-  <p><%= link_to "❤️", product_product_recs_path(@product),
-    method: :post %></p>
+  <p><%= link_to "❤️", product_path(@product),
+    method: :patch %></p>
 </div>
 <p>Find me in app/views/products/show.html.erb</p>

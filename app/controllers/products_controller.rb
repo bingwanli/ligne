@@ -1,13 +1,12 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    @recommended_products = current_user.recommended_products
+    @my_liked_products = current_user.likes
+    @recommended_products = current_user.likes_in_common_with(friend)
   end
 
   def show
     @product = Product.find(params[:id])
-    # creates a new like for every click
-    @product_rec = ProductRec.new
   end
 
   def new
@@ -33,6 +32,14 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+    if current_user.likes?(@product)
+      current_user.dislike(@product)
+      flash[:notice] = "Unloved!"
+    else
+      current_user.like(@product)
+      flash[:notice] = "Loved!"
+    end
   end
 
   private
