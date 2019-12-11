@@ -44,7 +44,7 @@
     controller.clearData();
     // enable auto-rotation, 1 is the default speed.
     controller.setAutoRotation( true, 1 );
-    controller.setSelectedColor("#0CEAD3");
+    controller.setSelectedColor("#fcfcfc");
     controller.adjustOceanBrightness(1.0);
     // use the onCountryPicked() to set callback when clicked country changed
     controller.onCountryPicked( callback );
@@ -57,7 +57,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
   function doSomething() {
     window.location.href = "http://localhost:3000/brands/country?query=" + selectedCountry.ISOCode
   }
-  setTimeout(doSomething, 6000);
+  setTimeout(doSomething, 1500);
   console.log(selectedCountry);
   // highlight the mouseenter target
   // window.location.href = "hey.html"
