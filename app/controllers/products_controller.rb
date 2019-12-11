@@ -35,10 +35,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if current_user.likes?(@product)
       current_user.unlike(@product)
-      flash[:notice] = "Unloved!"
     else
       current_user.like(@product)
-      flash[:notice] = "Loved!"
     end
   end
 
