@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   def index
   end
 
-
+  def recs
+  end
 end

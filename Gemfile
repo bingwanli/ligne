@@ -14,14 +14,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
-gem 'disco'
-gem 'ahoy_matey'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'recommendable'
+
 
 group :development, :test do
   gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]

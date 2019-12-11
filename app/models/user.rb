@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :product_recs
-  has_recommended :products
+  recommends :products, :brands
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
