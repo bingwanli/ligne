@@ -12,7 +12,8 @@
 
 
 <body>
-  <div class="main-banner">
+
+  <div class="main-banner" style="background-image:url(https://www.youtube.com/embed/tTVk322j8tY);">
 <!--
     <div>
       <h1>LIGNE</h1>
@@ -20,17 +21,16 @@
     </div> -->
 
     <div class="globe-w-arrows">
-      <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
+      <div class="left" style="position:relative;float:right;padding-left:100px;background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
       <div id="globalArea"></div>
-      <div class="right" style="background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
-      <div class="mobile-arrows"></div>
-      <div class="right" style="background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
-      <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
-
-
+      <div class="right" style="padding-right:100px;background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
     </div>
 
       <div class="country-name"></div>
+      <div class="mobile-arrows">
+        <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/126/126492.svg);"></div>
+        <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/126/126490.svg);"></div>
+    </div>
     </div>
   </div>
 
@@ -67,9 +67,16 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
   // window.location.href = "hey.html"
 }
 
+
+      // DESKTOP
       let left = document.querySelector(".left");
       let right = document.querySelector(".right");
       let places = ["US", "CN", "BR", "FR", "CA", "AU"];
+
+
+      // MOBILE
+      let mleft = document.querySelector(".m-left");
+      let mright = document.querySelector(".m-right");
 
 
       function goLeft() {
@@ -80,7 +87,8 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
       right.addEventListener('click', goLeft);
       left.addEventListener('click', goLeft);
-
+      mright.addEventListener('click', goLeft);
+      mleft.addEventListener('click', goLeft);
         // const myCanvas = document.querySelector("canvas")
   // const myContext = myCanvas.getContext("2d")
       // highlight the mouseenter target
