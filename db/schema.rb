@@ -10,52 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_122903) do
+ActiveRecord::Schema.define(version: 2019_12_11_072501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "ahoy_events", force: :cascade do |t|
-    t.bigint "visit_id"
-    t.bigint "user_id"
-    t.string "name"
-    t.jsonb "properties"
-    t.datetime "time"
-    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
-    t.index ["properties"], name: "index_ahoy_events_on_properties", opclass: :jsonb_path_ops, using: :gin
-    t.index ["user_id"], name: "index_ahoy_events_on_user_id"
-    t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
-  end
-
-  create_table "ahoy_visits", force: :cascade do |t|
-    t.string "visit_token"
-    t.string "visitor_token"
-    t.bigint "user_id"
-    t.string "ip"
-    t.text "user_agent"
-    t.text "referrer"
-    t.string "referring_domain"
-    t.text "landing_page"
-    t.string "browser"
-    t.string "os"
-    t.string "device_type"
-    t.string "country"
-    t.string "region"
-    t.string "city"
-    t.float "latitude"
-    t.float "longitude"
-    t.string "utm_source"
-    t.string "utm_medium"
-    t.string "utm_term"
-    t.string "utm_content"
-    t.string "utm_campaign"
-    t.string "app_version"
-    t.string "os_version"
-    t.string "platform"
-    t.datetime "started_at"
-    t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
-    t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
-  end
 
   create_table "brand_images", force: :cascade do |t|
     t.string "url"
@@ -74,29 +32,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_122903) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "url"
-  end
-
-  create_table "disco_recommendations", force: :cascade do |t|
-    t.string "subject_type"
-    t.bigint "subject_id"
-    t.string "item_type"
-    t.bigint "item_id"
-    t.string "context"
-    t.float "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_type", "item_id"], name: "index_disco_recommendations_on_item_type_and_item_id"
-    t.index ["subject_type", "subject_id"], name: "index_disco_recommendations_on_subject_type_and_subject_id"
-  end
-
-  create_table "product_recs", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "product_id"
-    t.integer "rating", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_recs_on_product_id"
-    t.index ["user_id"], name: "index_product_recs_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -157,8 +92,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_122903) do
   end
 
   add_foreign_key "brand_images", "brands"
-  add_foreign_key "product_recs", "products"
-  add_foreign_key "product_recs", "users"
   add_foreign_key "products", "brands"
   add_foreign_key "taggings", "tags"
 end

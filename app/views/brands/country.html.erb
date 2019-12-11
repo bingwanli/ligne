@@ -3,39 +3,29 @@
 <!-- EDITORIAL CARDS -->
 <!-- BRAND CARDS -->
 <body>
-  <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-
-  <div class="cards">
-    <% @brands.each do |i| %>
-    <div class="card-picture">
-      <%= cl_image_tag("https://res.cloudinary.com/dmrilanf8/image/fetch/w_300,h_300,c_fill,r_max,f_auto/#{i.logo_url}") %>
-    </div>
-      <div class="card-text">
-        <h1><%= i.name %></h1>
-        <h3><%= i.country %></h3>
-        <p><%= i.description %></p>
-      </div>
-    <% end %>
-  </div>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <div class="wf-container">
     <div class="page-title" style="text-align:center">
       <div>
-        <h2>COUNTRY BRANDS</h2>
-        <h5>Find out what's new in (country) </h5>
+        <h2><%= params[:query] %> BRANDS</h2>
+        <h5>Find out what's new</h5>
       </div>
     </div>
     <div class="country-btn">
-      <a class="filter-btn" href="http://localhost:3000/">BACK</a>
-      <a class="style-btn" href="http://localhost:3000/brands">GO TO...</a>
+      <%= link_to "BACK", :back, class: "filter-btn" %>
+      <%= link_to "GO TO...", brands_path, class: "filter-btn" %>
     </div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/564x/34/8a/49/348a494bbb81901abe795dc3795e92a2.jpg"></div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/564x/f3/8b/b8/f38bb8c01e679a6be9e26078133e7aca.jpg"></div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/originals/a6/70/d6/a670d68fabbdf5b32949cf948762ce86.jpg"></div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/564x/86/77/e3/8677e30acb9e42330d8c0497bc6c34de.jpg"></div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/236x/fc/69/b6/fc69b62c673e6fe6497285eb012abab3.jpg"></div>
-    <div class="wf-box"> <img style="border-radius:20px;" src="https://i.pinimg.com/564x/ca/1d/88/ca1d88333e8868c3fdc86ff41bac02a2.jpg"></div>
+    <% @brands.each do |brand| %>
+      <% brand.brand_images.each do |image| %>
+        <div class="wf-box" data-aos="fade-right">
+          <%= cl_image_tag image.url, style: "border-radius:20px;" %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
+
+  <script src="app/assets/javascripts/responsive_waterfall.js"></script>
 
 
   <script type="text/javascript">

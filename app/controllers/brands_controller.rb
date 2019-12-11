@@ -8,7 +8,6 @@ class BrandsController < ApplicationController
   def country
     @brands = Brand.where(country: params[:query])
     # below is for testing purposes only, delete
-    @brand = Brand.second
   end
 
   def show
@@ -42,6 +41,14 @@ class BrandsController < ApplicationController
   end
 
   def update
+     @brand = brand.find(params[:id])
+    if current_user.likes?(@brand)
+      current_user.unlike(@brand)
+      flash[:notice] = "Unloved!"
+    else
+      current_user.like(@brand)
+      flash[:notice] = "Loved!"
+    end
   end
 
   private
