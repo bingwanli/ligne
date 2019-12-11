@@ -19,15 +19,18 @@
     <% @brands.each do |brand| %>
       <% brand.brand_images.each do |image| %>
         <div class="wf-box" data-aos="fade-right">
+        <div><%= link_to brand_path(brand.id), method: :patch do%>
+            <i class="far fa-heart"></i>
+            <% end %>
+        </div>
           <%= cl_image_tag image.url, style: "border-radius:20px;" %>
         </div>
       <% end %>
     <% end %>
   </div>
 
+
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-
-
   <script type="text/javascript">
     // use querySelector/querySelectorAll internally
     var waterfall = new Waterfall({

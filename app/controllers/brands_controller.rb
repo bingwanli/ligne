@@ -41,7 +41,7 @@ class BrandsController < ApplicationController
   end
 
   def update
-     @brand = brand.find(params[:id])
+     @brand = Brand.find(params[:id])
     if current_user.likes?(@brand)
       current_user.unlike(@brand)
       flash[:notice] = "Unloved!"
