@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def recs
+    @products = current_user.recommended_products
   end
 end
