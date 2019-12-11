@@ -1,8 +1,21 @@
 .brandEditorial {
-  padding-left: 350px;
-  padding-right: 350px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
 
 * { box-sizing: border-box; }
 
@@ -15,6 +28,8 @@ body { font-family: sans-serif; }
 .card {
   margin-right: 20px;
   overflow: hidden;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
 .card img {
@@ -46,19 +61,33 @@ body { font-family: sans-serif; }
 
 .card-category {
   margin: 10px;
-  width: 300px;
-  height: auto;
+  width: 210px;
+  height: 300px;
   border-radius: 20px;
   padding: 15px;
+  background: none;
+}
+
+.card-category img {
+  display: block;
+  width: 100%;
+}
+
+.brandIntro p {
+  color: white;
+  box-shadow: none;
 }
 
 
-
+// RESPONSIVE
+// .product-cards {
+//   padding-left: 200px;
+//   padding-right: 200px;
+// }
 .cards {
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
@@ -91,17 +120,7 @@ body { font-family: sans-serif; }
   }
 }
 
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-.btn-ghost:hover {
-  opacity: 1;
-}
+
+
 
