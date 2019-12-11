@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
-
   devise_for :users
+
+  resources :pages, only: [:index] do
+    collection do
+      get 'recs'
+    end
+  end
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
