@@ -20,6 +20,18 @@
   text-shadow: 1px 1px 10px black;
 }
 
+.left {
+  width: 25px;
+  height:25px;
+  background-repeat: no-repeat;
+}
+
+.right {
+  width: 25px;
+  height:25px;
+  background-repeat: no-repeat;
+}
+
 .second-banner {
   // background-size: cover;
   background-color: black;
@@ -53,6 +65,11 @@
   align-items: center;
 }
 
+.mobile-arrows {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 #globalArea {
   height: 90%;
   width: 70%;
@@ -67,5 +84,16 @@
 
 .country-name {
   text-align: center;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .mobile-arrows {
+    background-color: olive;
+    color: white;
+    display: none;
+    padding-top:300px
+  }
 }
 
