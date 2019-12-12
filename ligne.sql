@@ -405,8 +405,6 @@ COPY public.brands (id, name, description, country, logo_url, created_at, update
 --
 
 COPY public.products (id, name, price, description, url, brand_id, is_available, created_at, updated_at, image_url) FROM stdin;
-34	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:11:38.507789	2019-12-12 07:11:38.507789	\N
-35	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:12:38.435946	2019-12-12 07:12:38.435946	\N
 36	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:14:01.192348	2019-12-12 07:14:01.206548	image/upload/v1576134842/rwh2mgslvz3hwygapuqt.jpg
 44	DAIJA DRESS	525	\N	https://www.marahoffman.com/shop-all/daija-maxi-shift-dress-cream-black-color-block	31	\N	2019-12-12 07:14:30.972774	2019-12-12 07:14:30.976827	image/upload/v1576134872/c1qmffvf2rv4jnqc48jf.jpg
 37	ROSE TOP	315	\N	https://www.marahoffman.com/shop-all/rose-strapless-top-red	31	\N	2019-12-12 07:14:02.949739	2019-12-12 07:14:02.953581	image/upload/v1576134845/ejiqgtmbntcl2ejhp7kn.jpg
