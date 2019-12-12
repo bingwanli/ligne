@@ -9,13 +9,50 @@
   <!-- load data in this data script -->
     <script src="app/assets/javascripts/data.js"></script>
 
+<!-- POPUP MESSAGE -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+
+</style>
+<script type='text/javascript'>
+$(function(){
+var overlay = $('<div id="overlay"></div>');
+overlay.show();
+overlay.appendTo(document.body);
+$('.popup').show();
+$('.close').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+
+$('.x').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+});
+</script>
+
+<div class='popup'>
+  <div class='cnt223'>
+  <h1>Welcome to Line</h1>
+    <p>
+    Navigate through the globe with the arrows. <br>Choose a country by pressing on it.
+    <br/>
+    <br/>
+    <a href='' class='close'>Close</a>
+    </p>
+  </div>
+</div>
+
+
 </head>
 
 <%= render "devise/shared/navbar" %>
 <body>
 
   <div class="main-banner parallax" style=";background-image:url(https://cdn.dribbble.com/users/89889/screenshots/6919200/contour-dribble_4x.jpg)">
-    <div class="page-title mobile-title">Navigate through the globe with the arrows. <br>Choose a country by pressing on it</div>
     <div class="globe-w-arrows">
       <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
       <div id="globalArea"></div>
