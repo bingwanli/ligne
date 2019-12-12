@@ -10,22 +10,21 @@
     </div>
 
 <!-- PRODUCT CARDS -->
-<% @products.each do |product| %>
-  <div><%= link_to product_path(product), method: :patch do%>
-      <div class="wrapper">
-        <a href="javascript:void(0);" class="like-button">
-          <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-          <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-          <span class="like-overlay"></span>
-        </a>
-      </div>
+<div class="product-card">
+  <% @products.each do |product| %>
+    <div><%= link_to product_path(product), method: :patch do%>
+        <div class="wrapper">
+          <a href="javascript:void(0);" class="like-button">
+            <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+            <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+            <span class="like-overlay"></span>
+          </a>
+        </div>
+      <%= cl_image_tag product.image_url, class: "wf-box", style: "border-top-left-radius:20px;border-top-right-radius:20px" %>
+    </div>
+    <% end %>
   <% end %>
-  </div>
-
-  <%= link_to product.url do %>
-    <%= cl_image_tag product.image_url, class: "wf-box", style: "border-top-left-radius:20px;border-top-right-radius:20px" %>
-  <% end %>
-<% end %>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
