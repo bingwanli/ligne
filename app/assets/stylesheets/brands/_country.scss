@@ -441,14 +441,11 @@ $white: #fff;
   .wrapper {
     padding-top: 50px;
     .like-button {
-      position: relative;
+      position: absolute;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       background: $grey;
-      display: flex;
-      justify-content: center;
-      align-items:center;
       margin: 0 auto;
       text-decoration: none;
       overflow: hidden;
@@ -520,26 +517,14 @@ $white: #fff;
     animation-fill-mode: both;
 }
 
-//Css Ninja link
-.link-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #6dacff;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all .4s;
-  img {
-    width: 32px;
-    height: 32px;
-    display: block;
-  }
-  &:hover {
-    transform: scale(1.1) rotate(180deg);
-    background: $heart;
-  }
+
+.heart {
+  margin-left: 20px;
+  margin-top: 7px;
+  width: 30px;
+  height: 30px;
+
+}
+.wf-box {
+  position: relative;
 }
