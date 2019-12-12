@@ -124,10 +124,16 @@ canvas {
   }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 801px) {
   .main-banner {
     background-color: white;
-    background-image: url();
+    background-image:url(https://media.istockphoto.com/vectors/white-studio-room-background-spotlight-vector-gradient-photobox-vector-id868640660?k=6&m=868640660&s=612x612&w=0&h=LENhO2KgAfYBrYTMuY5fzZGo-ZeNBT7xtzQZhmVjSQc=) !important;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .second-banner {
+    display:none;
   }
 }
 
