@@ -24,15 +24,21 @@
 
 <div class="title">
   <h4>Brands I like</h4>
-  <% current_user.liked_brands.each do |brand| %>
-    <div class="wf-box">
-
-      <%= cl_image_tag brand.brand_images.second.url, style: "border-radius:50%;" %>
-      <div class="content">
-        <h3><%= link_to brand.name, brand_path(brand) %>
-        <h5><%= brand.country %></h5>
+  <% if current_user.liked_brands.empty? %>
+    <h6>No liked brands!</h6>
+  <% else %>
+    <% current_user.liked_brands.each do |brand| %>
+      <div class="wf-box">
+        <% if brand.brand_images.second.nil? %>
+        <% else %>
+          <%= cl_image_tag brand.brand_images.second.url, style: "border-radius:50%;" %>
+          <div class="content">
+            <h3><%= link_to brand.name, brand_path(brand) %>
+            <h5><%= brand.country %></h5>
+          </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
