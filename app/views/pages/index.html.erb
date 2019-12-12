@@ -49,10 +49,15 @@ return false;
 
 </head>
 
-<%= render "devise/shared/navbar" %>
+
 <body>
 
   <div class="main-banner parallax" style=";background-image:url(https://cdn.dribbble.com/users/89889/screenshots/6919200/contour-dribble_4x.jpg)">
+<!-- <<<<<<< HEAD
+=======
+    <%= render "devise/shared/navbar" %>
+    <div class="page-title mobile-title">Navigate through the globe with the arrows. <br>Choose a country by pressing on it</div>
+>>>>>>> 0859e91a5cfa54ed42cf91b2803472c51593b354 -->
     <div class="globe-w-arrows">
       <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
       <div id="globalArea"></div>
@@ -89,12 +94,20 @@ return false;
       controller.setAutoRotation(false);
     }
 
-    container.addEventListener('click', disableRotate)
 
+    container.addEventListener('click', disableRotate)
 
 let CountryName = document.querySelector(".country-name");
 
 function callback ( selectedCountry, relatedCountries ) {
+
+      let left = document.querySelector(".left");
+      let right = document.querySelector(".right");
+
+      left.addEventListener("click", log)
+      function log() {
+        console.log(selectedCountry.name)
+      }
 
 CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
   function doSomething() {
@@ -120,8 +133,12 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
       function goLeft() {
         let num = places[Math.floor(Math.random()*places.length)];
-        setTimeout(controller.setAutoRotation(false), 5000);
+        controller.setAutoRotation(false);
+        function doAnotherThing() {
+          controller.setAutoRotation(true, 1);
+        }
         controller.switchCountry(num);
+        setTimeout(doAnotherThing, 5000);
         CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
       };
 
