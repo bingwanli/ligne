@@ -1,6 +1,8 @@
 
 <%= render "devise/shared/navbar" %>
 <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %>
+<script src="app/assets/javascripts/responsive_waterfall.js"></script>
+
 
 <div class="title">
   <h2>MY STYLE</h2>
@@ -33,12 +35,11 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <!-- BRANDS LIKED -->
-<div class="title">
-  <h4>Brands I like</h4>
+<div class="wf-container">
+  <h4>Brands I like</h4><br>
   <% current_user.liked_brands.each do |brand| %>
     <div class="wf-box">
-
-      <%= cl_image_tag brand.brand_images.second.url, style: "border-radius:50%;" %>
+      <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
       <div class="content">
         <h3><%= link_to brand.name, brand_path(brand) %>
         <h5><%= brand.country %></h5>
@@ -46,8 +47,6 @@
     </div>
   <% end %>
 </div>
-
-
 
 <!-- POP-UP EDIT FORM -->
 
