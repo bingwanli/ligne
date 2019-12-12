@@ -12,61 +12,54 @@
     <div class="page-title" style="text-align:center">
       <div>
         <h2><%= params[:query] %> BRANDS</h2>
-        <h5>Please Select 5 Cards Below For Styling</h5>
+        <h5>Find out what's new</h5>
       </div>
     </div>
-
     <div class="country-btn">
       <%= link_to "BACK", :back, class: "filter-btn" %>
       <%= link_to "GO TO...", brands_path, class: "filter-btn" %>
     </div>
-
     <% @brands.each do |brand| %>
       <% brand.brand_images.each do |image| %>
         <div class="wf-box" data-aos="fade-right">
-          <div class="wrapper">
+          <div class="heart" data-aos="fade-right"><%= link_to brand_path(brand.id), method: :patch do%>
+            <div class="wrapper">
+                <a href="javascript:void(0);" class="like-button">
+                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                  <span class="like-overlay"></span>
+                </a>
+            </div>
+          <% end %>
+          </div>
           <%= cl_image_tag image.url, style: "border-radius:20px;" %>
-          <a rel="nofollow" data-method="patch" href="<%=brand_path(brand)%>" class="like-button" data-aos="fade-right">
-                <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-                <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                <span class="like-overlay"></span>
-            </a>
         </div>
-      </div>
       <% end %>
     <% end %>
-
-    <script type="text/javascript">
-    $(document).ready(function(){
-
-      $('.like-button').click(function(){
-          $(this).toggleClass('is-active');
-      })
-
-    })
-    </script>
-    <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-    <script type="text/javascript">
-      // use querySelector/querySelectorAll internally
-      var waterfall = new Waterfall({
-          containerSelector: '.wf-container',
-          boxSelector: '.wf-box',
-          minBoxWidth: 250
-      });
-    </script>
   </div>
-  </script>
 
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.like-button').click(function(){
+        $(this).toggleClass('is-active');
+    })
+
+})
+</script>
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-
   <script type="text/javascript">
     // use querySelector/querySelectorAll internally
     var waterfall = new Waterfall({
         containerSelector: '.wf-container',
         boxSelector: '.wf-box',
-        minBoxWidth: 250;
+        minBoxWidth: 250
+    });
   </script>
+
 
 </body>
 
-</div>
+  <!-- pinterest style -->
+<!-- FOOTER -->

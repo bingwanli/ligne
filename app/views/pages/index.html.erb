@@ -1,8 +1,6 @@
 <!-- BANNER -->
 <!-- <div class="container"> -->
 <head>
-
-
     <meta charset="UTF-8">
     <title>Hello World (Simplest Usage) / Gio.js</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -11,13 +9,14 @@
   <!-- load data in this data script -->
     <script src="app/assets/javascripts/data.js"></script>
 
-
 </head>
 
-<%= render "devise/shared/navbar" %>
+
 <body>
 
   <div class="main-banner parallax" style=";background-image:url(https://cdn.dribbble.com/users/89889/screenshots/6919200/contour-dribble_4x.jpg)">
+    <%= render "devise/shared/navbar" %>
+    <div class="page-title mobile-title">Navigate through the globe with the arrows. <br>Choose a country by pressing on it</div>
     <div class="globe-w-arrows">
       <div class="left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
       <div id="globalArea"></div>
@@ -34,9 +33,9 @@
 <!-- GLOBE -->
   <script type="text/javascript">
     // Get the container to hold the IO globe
-    var container = document.getElementById( "globalArea" );
+    const container = document.getElementById( "globalArea" );
     // Create Gio.controller
-    var controller = new GIO.Controller( container );
+    let controller = new GIO.Controller( container );
     // Add data
     controller.setTransparentBackground(true);
     controller.addData( data );
@@ -46,20 +45,35 @@
     // enable auto-rotation, 1 is the default speed.
     controller.setAutoRotation( true, 1 );
     controller.setSelectedColor("#fcfcfc");
-    controller.adjustOceanBrightness(1.0);
+    controller.adjustOceanBrightness(0.0);
     // use the onCountryPicked() to set callback when clicked country changed
     controller.onCountryPicked( callback );
+
+    function disableRotate() {
+      controller.setAutoRotation(false);
+    }
+
+
+    container.addEventListener('click', disableRotate)
 
 let CountryName = document.querySelector(".country-name");
 
 function callback ( selectedCountry, relatedCountries ) {
+
+      let left = document.querySelector(".left");
+      let right = document.querySelector(".right");
+
+      left.addEventListener("click", log)
+      function log() {
+        console.log(selectedCountry.name)
+      }
 
 CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
   function doSomething() {
     window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
   }
   setTimeout(doSomething, 1500);
-  console.log(selectedCountry);
+
   // highlight the mouseenter target
   // window.location.href = "hey.html"
 }
@@ -78,7 +92,12 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
       function goLeft() {
         let num = places[Math.floor(Math.random()*places.length)];
+        controller.setAutoRotation(false);
+        function doAnotherThing() {
+          controller.setAutoRotation(true, 1);
+        }
         controller.switchCountry(num);
+        setTimeout(doAnotherThing, 5000);
         CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
       };
 
@@ -104,7 +123,6 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
   </script>
 
-
 <!-- ABOUT US -->
   <div class="second-banner">
     <div class="flip">
@@ -118,7 +136,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
     <div class="flip">
       <div class="card-choose front" style="background-image: url(https://i.pinimg.com/474x/b5/29/d6/b529d6d5a1f25fd6f8809af956b1e9be.jpg);">
-        <h4><strong>Choose</strong></h4>
+        <h4 style="color:#131313"><strong>Choose</strong></h4>
       </div>
       <div class="back">
         <p style="color:white;font-size:20px;">State your international <strong>style</strong></p>
@@ -127,7 +145,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
     <div class="flip">
       <div class="card-buy front" style="background-image: url(https://i.pinimg.com/564x/f7/11/da/f711da2184b1d5a9b6bbc2105739a3ce.jpg);">
-       <h4><strong>Acquire</strong></h4>
+       <h5 style="color:#EDDF3A"><strong>Acquire</strong></h5>
       </div>
       <div class="back">
        <p style="color:white;font-size:20px;">Be trustfully <strong>unique</strong></p>
