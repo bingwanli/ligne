@@ -22,17 +22,25 @@
 <div class="wf-container">
   <h4 class="page-title">Wishlist</h4>
 </div>
+
 <div class="main-carousel">
-  <div class="card">
-    <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP168-956x709.jpg" alt="first">
-  </div>
-  <div class="card">
-    <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2015/11/21.jpg" alt="second">
-  </div>
-  <div class="card">
-    <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP166.jpg" alt="third">
-  </div>
-</div>
+  <% if current_user.liked_products.nil? %>
+    <p><h6>No liked products!</h6></p>
+  <% else %>
+    <% current_user.liked_products.each do |product| %>
+      <div class="card">
+        <% if product.img_url.nil? %>
+        <% else %>
+          <%= cl_image_tag product.image_url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+          <div class="content">
+            <h3><%= link_to product.name, product_path(product) %>
+            <h6><%= product.brand %></h6>
+            <h6><%= product.price %></h6>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+  <% end %>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <br><br>
@@ -42,7 +50,7 @@
     <h4>My Brands</h4>
   </div>
     <% if current_user.liked_brands.empty? %>
-      <h6>No liked brands!</h6>
+      <p><h6>No liked brands!</h6></p>
     <% else %>
       <% current_user.liked_brands.each do |brand| %>
         <div class="wf-box">
