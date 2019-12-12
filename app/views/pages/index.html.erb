@@ -51,8 +51,8 @@
       controller.setAutoRotation(false);
     }
 
-    container.addEventListener('click', disableRotate)
 
+    container.addEventListener('click', disableRotate)
 
 let CountryName = document.querySelector(".country-name");
 
@@ -82,7 +82,11 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
       function goLeft() {
         let num = places[Math.floor(Math.random()*places.length)];
-        setTimeout(controller.setAutoRotation(false), 5000);
+        controller.setAutoRotation(false);
+        function doAnotherThing() {
+          controller.setAutoRotation(true, 1);
+        }
+        setTimeout(doAnotherThing, 5000);
         controller.switchCountry(num);
         CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
       };
