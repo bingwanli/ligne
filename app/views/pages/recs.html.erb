@@ -13,17 +13,20 @@
 <!-- PRODUCT CARDS -->
 <div class="product-card">
   <% @products.each do |product| %>
-    <div><%= link_to product_path(product), method: :patch do%>
+    <div class="wf-box" data-aos="fade-right">
+      <div class="heart" data-aos="fade-right"><%= link_to product_path(product), method: :patch do%>
         <div class="wrapper">
           <a href="javascript:void(0);" class="like-button">
-            <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-            <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+            <i class="mdc-icon-button material-icons not-liked bouncy" id="add">✚</i>
+            <i class="mdc-icon-button material-icons is-liked bouncy" id="add">✚</i>
             <span class="like-overlay"></span>
           </a>
         </div>
-      <%= cl_image_tag product.image_url, class: "wf-box", style: "border-top-left-radius:20px;border-top-right-radius:20px" %>
+
+      </div>
+      <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
     </div>
-    <% end %>
+     <% end %>
   <% end %>
 </div>
 
