@@ -12,7 +12,7 @@
     <div class="page-title" style="text-align:center">
       <div>
         <h2><%= params[:query] %> BRANDS</h2>
-        <h5>Find out what's new</h5>
+        <h5>Please Select 9 Cards Below For Styling</h5>
       </div>
     </div>
 
@@ -36,13 +36,26 @@
       <% end %>
     <% end %>
 
+    <script type="text/javascript">
+    $(document).ready(function(){
 
-<script type="text/javascript">
-  $(document).ready(function(){
+      $('.like-button').click(function(){
+          $(this).toggleClass('is-active');
+      })
 
-    $('.like-button').click(function(){
-        $(this).toggleClass('is-active');
     })
+<<<<<<< HEAD
+    </script>
+    <script src="app/assets/javascripts/responsive_waterfall.js"></script>
+    <script type="text/javascript">
+      // use querySelector/querySelectorAll internally
+      var waterfall = new Waterfall({
+          containerSelector: '.wf-container',
+          boxSelector: '.wf-box',
+          minBoxWidth: 250
+      });
+    </script>
+  </div>
 
 })
 </script>
