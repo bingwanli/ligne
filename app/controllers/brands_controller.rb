@@ -7,7 +7,6 @@ class BrandsController < ApplicationController
 
   def country
     @brands = Brand.where(country: params[:query])
-    # below is for testing purposes only, delete
   end
 
   def show
@@ -20,7 +19,6 @@ class BrandsController < ApplicationController
   def create
     @brand = Brand.new(brands_params)
     @brand_images = @brand.brand_images.build
-
     respond_to do |format|
       if @brand.save
         params[:brand_images]['url'].each do |i|
