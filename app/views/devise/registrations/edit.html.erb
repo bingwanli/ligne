@@ -35,16 +35,24 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <!-- BRANDS LIKED -->
-<div class="wf-container">
-  <h4>Brands I like</h4><br>
-  <% current_user.liked_brands.each do |brand| %>
-    <div class="wf-box">
-      <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
-      <div class="content">
-        <h3><%= link_to brand.name, brand_path(brand) %>
-        <h5><%= brand.country %></h5>
+
+<div class="title">
+  <h4>Brands I like</h4>
+  <% if current_user.liked_brands.empty? %>
+    <h6>No liked brands!</h6>
+  <% else %>
+    <% current_user.liked_brands.each do |brand| %>
+      <div class="wf-box">
+        <% if brand.brand_images.second.nil? %>
+        <% else %>
+          <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+          <div class="content">
+            <h3><%= link_to brand.name, brand_path(brand) %>
+            <h5><%= brand.country %></h5>
+          </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 

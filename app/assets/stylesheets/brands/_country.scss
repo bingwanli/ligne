@@ -1,3 +1,19 @@
+.wf-container {
+  height:auto;
+}
+
+.heart {
+  margin-left: 20px;
+  margin-top: 7px;
+  width: 30px;
+  height: 30px;
+
+}
+.wf-box {
+  position: relative;
+}
+
+
 .gridCentered {
   margin-left: auto;
   margin-right: auto;
@@ -439,7 +455,6 @@ $white: #fff;
     color: $heart;
   }
   .wrapper {
-    padding-top: 50px;
     .like-button {
       position: absolute;
       width: 50px;
@@ -517,14 +532,3 @@ $white: #fff;
     animation-fill-mode: both;
 }
 
-
-.heart {
-  margin-left: 20px;
-  margin-top: 7px;
-  width: 30px;
-  height: 30px;
-
-}
-.wf-box {
-  position: relative;
-}

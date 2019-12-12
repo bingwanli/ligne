@@ -1,6 +1,6 @@
 <!-- BRAND CARDS -->
 <body>
-      <%= render "devise/shared/navbar" %>
+  <%= render "devise/shared/navbar" %>
 
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
   <div style="display:flex;justify-content:space-evenly" >
@@ -22,13 +22,16 @@
     </div>
 
     <% @brands.each do |brand| %>
-      <div class="wf-box">
-        <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
-        <div class="content">
-          <h3><%= brand.name %></h3>
-          <h5><%= brand.country %></h5>
+      <% if brand.brand_images.second.nil? %>
+      <% else %>
+        <div class="wf-box">
+          <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+          <div class="content">
+            <h3><%= brand.name %></h3>
+            <h5><%= brand.country %></h5>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <script type="text/javascript">
@@ -41,7 +44,6 @@
   </script>
 
 <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-<%= render "devise/shared/footer" %>
 </body>
 
 

@@ -42,10 +42,8 @@ class BrandsController < ApplicationController
      @brand = Brand.find(params[:id])
     if current_user.likes?(@brand)
       current_user.unlike(@brand)
-      flash[:notice] = "Unloved!"
     else
       current_user.like(@brand)
-      flash[:notice] = "Loved!"
     end
   end
 

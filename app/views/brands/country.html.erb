@@ -12,7 +12,7 @@
     <div class="page-title" style="text-align:center">
       <div>
         <h2><%= params[:query] %> BRANDS</h2>
-        <h5>Please Select 9 Cards Below For Styling</h5>
+        <h5>Please Select 5 Cards Below For Styling</h5>
       </div>
     </div>
 
@@ -25,12 +25,12 @@
       <% brand.brand_images.each do |image| %>
         <div class="wf-box" data-aos="fade-right">
           <div class="wrapper">
-            <a rel="nofollow" data-method="patch" href="<%=brand_path(brand)%>" class="like-button" data-aos="fade-right">
+          <%= cl_image_tag image.url, style: "border-radius:20px;" %>
+          <a rel="nofollow" data-method="patch" href="<%=brand_path(brand)%>" class="like-button" data-aos="fade-right">
                 <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
                 <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
                 <span class="like-overlay"></span>
             </a>
-          <%= cl_image_tag image.url, style: "border-radius:20px;" %>
         </div>
       </div>
       <% end %>
@@ -44,7 +44,6 @@
       })
 
     })
-<<<<<<< HEAD
     </script>
     <script src="app/assets/javascripts/responsive_waterfall.js"></script>
     <script type="text/javascript">
@@ -56,9 +55,7 @@
       });
     </script>
   </div>
-
-})
-</script>
+  </script>
 
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
 
@@ -67,14 +64,9 @@
     var waterfall = new Waterfall({
         containerSelector: '.wf-container',
         boxSelector: '.wf-box',
-        minBoxWidth: 250
-    });
+        minBoxWidth: 250;
   </script>
 
 </body>
-<%= render "devise/shared/footer" %>
 
 </div>
-
-  <!-- pinterest style -->
-<!-- FOOTER -->
