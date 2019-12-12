@@ -1,7 +1,6 @@
 <!-- BANNER -->
 <!-- <div class="container"> -->
 <head>
-
     <meta charset="UTF-8">
     <title>Hello World (Simplest Usage) / Gio.js</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -9,7 +8,6 @@
     <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
   <!-- load data in this data script -->
     <script src="app/assets/javascripts/data.js"></script>
-
 
 </head>
 
@@ -34,9 +32,9 @@
 <!-- GLOBE -->
   <script type="text/javascript">
     // Get the container to hold the IO globe
-    var container = document.getElementById( "globalArea" );
+    const container = document.getElementById( "globalArea" );
     // Create Gio.controller
-    var controller = new GIO.Controller( container );
+    let controller = new GIO.Controller( container );
     // Add data
     controller.setTransparentBackground(true);
     controller.addData( data );
@@ -46,9 +44,16 @@
     // enable auto-rotation, 1 is the default speed.
     controller.setAutoRotation( true, 1 );
     controller.setSelectedColor("#fcfcfc");
-    controller.adjustOceanBrightness(1.0);
+    controller.adjustOceanBrightness(0.0);
     // use the onCountryPicked() to set callback when clicked country changed
     controller.onCountryPicked( callback );
+
+    function disableRotate() {
+      controller.setAutoRotation(false);
+    }
+
+    container.addEventListener('click', disableRotate)
+
 
 let CountryName = document.querySelector(".country-name");
 
@@ -59,7 +64,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
     window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
   }
   setTimeout(doSomething, 1500);
-  console.log(selectedCountry);
+
   // highlight the mouseenter target
   // window.location.href = "hey.html"
 }
@@ -78,6 +83,7 @@ CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</stron
 
       function goLeft() {
         let num = places[Math.floor(Math.random()*places.length)];
+        setTimeout(controller.setAutoRotation(false), 5000);
         controller.switchCountry(num);
         CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
       };
