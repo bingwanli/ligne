@@ -339,6 +339,21 @@ environment	development	2019-12-12 02:10:58.911136	2019-12-12 02:10:58.911136
 --
 
 COPY public.brand_images (id, url, alt, brand_id, created_at, updated_at) FROM stdin;
+1	http://www.dudihasson.com/dyncontent/Item/636074637589897583.jpg	mara hoffman editorial image	1	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+2	http://alanajonesmann.com/wp-content/uploads/2015/02/Mara_Hoffman_Spring_2015_2.jpg	mara hoffman editorial image	1	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+3	http://www.marahoffman.com/world-of/wp-content/uploads/2015/11/6.jpg	mara hoffman editorial image	1	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+4	https://fashioneditorials.com/wp-content/uploads/2015/11/Free-People-Holiday-November-2015-Moonlight-Magic-1.jpg	free people editorial image	2	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+5	https://fashioneditorials.com/wp-content/uploads/2017/11/Free-People-November-2017-1-700x700.jpg	free people editorial image	2	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+6	https://cdn.trendhunterstatic.com/phpthumbnails/237/237244/237244_1_600.jpeg	free people editorial image	2	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+7	https://ariadibari.com/wp-content/uploads/2018/07/realisation-par-naomi-leopard-silk-skirt-aria-di-bari-french-street-style-blogger-knit-tank-top-zara-balzac-paris-bocage-summer-outfit-editorial-1.jpg	realisation par editorial image	3	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+8	https://i0.wp.com/www.inspiringwit.com/wp-content/uploads/2019/01/Realisation-Par-devon-dress-inspiring-wit-editorial.jpg	realisation par editorial image	3	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+9	https://cdn.cliqueinc.com/posts/270171/realisation-par-christy-dress-outfits-270171-1540408944839-promo.700x0c.jpg	realisation par editorial image	3	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+10	https://i.pinimg.com/originals/6a/b4/5e/6ab45e2886f4a9ea5bd393479fd98b70.jpg	urban outfitters editorial image	4	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+11	http://sole-u.com/wp-content/uploads/2017/11/simi-and-haze-x-fila-x-urban-outfitters-2.jpg	urban outfitters editorial image	4	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+12	https://static1.squarespace.com/static/55f45174e4b0fb5d95b07f39/56375ccde4b0e79c6cce6b27/56375ccde4b09ef9b6271180/1446468813949/Stella-Maxwell-Urban-Outfitters-Holiday-2015-02.jpg	urban outfitters editorial image	4	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+13	http://malendyer.com/wp-content/uploads/2018/11/loveshackfancy-resort19-01.jpg	love shack fancy editorial image	5	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+14	https://www.fashiongonerogue.com/wp-content/uploads/2019/05/Maya-Stepper-LoveShackFancy-Summer-2019-Campaign01.jpg	love shack fancy editorial image	5	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
+15	https://www.beautyscene.net/wp-content/uploads/2018/05/LoveShackFancy-SS18-Dean-Isidro-04-620x930.jpg	love shack fancy editorial image	5	2019-12-12 02:10:59.058462	2019-12-12 02:10:59.058462
 17	image/upload/v1576128636/ix9jinlr9u2uwvqlatbf.jpg	\N	29	2019-12-12 05:30:32.523887	2019-12-12 05:30:32.523887
 35	image/upload/v1576130057/ckjin4swbplzaecx1kqe.jpg	\N	34	2019-12-12 05:54:14.934958	2019-12-12 05:54:14.934958
 21	\N	\N	31	2019-12-12 05:41:27.358325	2019-12-12 05:41:27.358325
@@ -359,24 +374,6 @@ COPY public.brand_images (id, url, alt, brand_id, created_at, updated_at) FROM s
 37	image/upload/v1576130110/fxvf5otefs9gkq0bgyrl.jpg	\N	35	2019-12-12 05:55:08.274895	2019-12-12 05:55:08.274895
 38	image/upload/v1576130115/ki5tj6ezwgyg7806abef.jpg	\N	35	2019-12-12 05:55:11.351283	2019-12-12 05:55:11.351283
 39	image/upload/v1576130118/chx52tlucayijo0qtmy1.jpg	\N	35	2019-12-12 05:55:16.325914	2019-12-12 05:55:16.325914
-40	\N	\N	36	2019-12-12 06:01:28.777837	2019-12-12 06:01:28.777837
-41	image/upload/v1576130493/zaqa7gbdxkpj9pre8pyd.jpg	\N	36	2019-12-12 06:01:28.78352	2019-12-12 06:01:28.78352
-42	image/upload/v1576130502/stgn8spdaxuospwwnfjy.jpg	\N	36	2019-12-12 06:01:33.852101	2019-12-12 06:01:33.852101
-43	image/upload/v1576130507/qaasmm8e9fi8f33fuqdd.jpg	\N	36	2019-12-12 06:01:45.384109	2019-12-12 06:01:45.384109
-44	\N	\N	37	2019-12-12 06:03:38.408785	2019-12-12 06:03:38.408785
-45	image/upload/v1576130620/nrtppztwjfunldrhhbas.jpg	\N	37	2019-12-12 06:03:38.412826	2019-12-12 06:03:38.412826
-46	image/upload/v1576130633/h4pmpwiu73cicn2ispes.jpg	\N	37	2019-12-12 06:03:42.673606	2019-12-12 06:03:42.673606
-47	image/upload/v1576130645/rcluthycbxieyipgx5nf.jpg	\N	37	2019-12-12 06:03:54.324785	2019-12-12 06:03:54.324785
-48	\N	\N	38	2019-12-12 06:11:44.24249	2019-12-12 06:11:44.24249
-49	image/upload/v1576131109/mhr5pvpoike86hxybqjo.jpg	\N	38	2019-12-12 06:11:44.24875	2019-12-12 06:11:44.24875
-50	image/upload/v1576131114/emb1rie3h8rl8iixf47r.jpg	\N	38	2019-12-12 06:11:50.053302	2019-12-12 06:11:50.053302
-51	image/upload/v1576131116/oapr7bmjycig6157jsku.jpg	\N	38	2019-12-12 06:11:54.504309	2019-12-12 06:11:54.504309
-52	image/upload/v1576131122/zomltgcrox3kicaym3kc.jpg	\N	38	2019-12-12 06:11:57.359345	2019-12-12 06:11:57.359345
-53	image/upload/v1576131127/btg4yh2sfi7cfnx3h2ty.jpg	\N	38	2019-12-12 06:12:03.488595	2019-12-12 06:12:03.488595
-54	\N	\N	39	2019-12-12 06:19:05.4605	2019-12-12 06:19:05.4605
-55	image/upload/v1576131552/fivoccco2gzgpxbq04yv.jpg	\N	39	2019-12-12 06:19:05.466266	2019-12-12 06:19:05.466266
-56	image/upload/v1576131558/zxw9j0f332qtjpullejx.png	\N	39	2019-12-12 06:19:13.394112	2019-12-12 06:19:13.394112
-57	image/upload/v1576131562/hr88mndvcg7nhvgufrub.jpg	\N	39	2019-12-12 06:19:19.724932	2019-12-12 06:19:19.724932
 \.
 
 
@@ -392,8 +389,6 @@ COPY public.brands (id, name, description, country, logo_url, created_at, update
 3	Realisation Par X	A clothing label by Alexandra Spencer & Teale Talbot.	er	\N	2019-12-12 05:15:08.318836	2019-12-12 05:15:08.320019	https://realisationpar.com/
 1	Mara Hoffman X	Mara Hoffman founded her label in 2000 after graduating from Parsons School of Design in New York City. Fifteen years later, the brand committed itself to implementing more sustainable and responsible practices. In an effort to foster mindful consumption habits, the brand maintains an open conversation about its approach and encourages consumers to reevaluate the relationship society has with clothing. The company continues to focus on sustainable materials, processes, and production in order to improve and extend each garment’s life. President and Creative Director, Mara Hoffman, presents collections with a devotion to color, each inspired by and in celebration of women.	er	\N	2019-12-12 05:15:08.312899	2019-12-12 05:15:08.314406	https://www.marahoffman.com/
 6	DollsKill X	Dolls Kill is an online boutique featuring a rebellious spirit and attitude, mixed with a bit of punk rock, goth, glam and festival fashion. 	er	\N	2019-12-12 05:15:08.325593	2019-12-12 05:15:08.32666	https://www.dollskill.com/
-38	Ulla Johnson	The Ulla Johnson label has become synonymous with custom prints, intricate embroideries, and fine tailoring, all of which have earned her a loyal and global customer base. With the introduction of a shoe collection in Fall 2013, the line now encompasses a full range of product categories sourced and produced worldwide with an emphasis on artisanal and handcrafted processes.	US	\N	2019-12-12 06:11:44.241187	2019-12-12 06:11:44.241187	https://ullajohnson.com
-39	Reformation	Reformation’s design mission is to make effortless silhouettes that celebrate the feminine figure. The design process starts with us thinking about what we really want to wear right now. We source the most beautiful and sustainable fabrics possible to bring those designs to life quickly.	US	\N	2019-12-12 06:19:05.459254	2019-12-12 06:19:05.459254	https://www.thereformation.com/
 29	Kitri Studio	Born out of the frustration of not being able to find well-made, distinctive designs without breaking the bank, Haeni Kim launched Kitri Studio in March 2017, assembling a small but expert team to bring that plan to fruition. Named after the feisty, playful, and willful heroine of Don Quixote, Kitri encapsulates the wonderful women who have inspired the studio team to create a collection of elegant clothes that fit their exciting, demanding lives.	er	\N	2019-12-12 05:30:32.514131	2019-12-12 05:30:32.514131	https://kitristudio.com/
 7	Christy Dawn X	Minimalist showroom for vintage-inspired women’s clothes & dresses locally made with surplus fabric.	er	\N	2019-12-12 05:15:08.327742	2019-12-12 05:15:08.328956	https://christydawn.com/
 10	Rosie Assoulin X	Rosie Assoulin worked at Adam Lippes, Oscar de la Renta and Lanvin before launching her eponymous label in 2014 – scooping the CFDA Swarovski Award for Womenswear just a year later. She plays with volume and bold color to create pieces that are glamorous yet highly functional. The Edit star Leandra Medine is a noteworthy admirer.	er	\N	2019-12-12 05:15:08.334809	2019-12-12 05:15:08.335919	https://rosieassoulin.com/
@@ -404,8 +399,6 @@ COPY public.brands (id, name, description, country, logo_url, created_at, update
 33	Realisation Par	A clothing label by Alexandra Spencer & Teale Talbot.	US	\N	2019-12-12 05:53:30.429678	2019-12-12 05:53:30.429678	https://realisationpar.com/
 34	Urban Outfitters	Founded in 1970 in a small space across the street from the University of Pennsylvania, Urban Outfitters now operates over 200 stores in the United States, Canada and Europe, offering experiential retail environments and a well-curated mix of on-trend women’s and men’s clothes, from boho dresses, denim and graphics to shoes, hats, and backpacks, as well as beauty, intimates, swim and a collection of handpicked vintage clothing.	US	\N	2019-12-12 05:54:06.021815	2019-12-12 05:54:06.021815	https://www.urbanoutfitters.com
 35	Love Shack Fancy	Embracing unabashed femininity and strength, LoveShackFancy is inspired by enchanting vintage romantic floral prints.	US	\N	2019-12-12 05:55:08.262025	2019-12-12 05:55:08.262025	https://www.loveshackfancy.com/
-36	Dolls Kill	Dolls Kill is an online boutique featuring a rebellious spirit and attitude, mixed with a bit of punk rock, goth, glam and festival fashion. 	US	\N	2019-12-12 06:01:28.776147	2019-12-12 06:01:28.776147	https://www.dollskill.com/
-37	Christy Dawn	Minimalist showroom for vintage-inspired women’s clothes & dresses locally made with surplus fabric.	US	\N	2019-12-12 06:03:38.407666	2019-12-12 06:03:38.407666	https://christydawn.com/
 \.
 
 
@@ -414,19 +407,28 @@ COPY public.brands (id, name, description, country, logo_url, created_at, update
 --
 
 COPY public.products (id, name, price, description, url, brand_id, is_available, created_at, updated_at, image_url) FROM stdin;
-34	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:11:38.507789	2019-12-12 07:11:38.507789	\N
-35	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:12:38.435946	2019-12-12 07:12:38.435946	\N
-36	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	31	\N	2019-12-12 07:14:01.192348	2019-12-12 07:14:01.206548	image/upload/v1576134842/rwh2mgslvz3hwygapuqt.jpg
-44	DAIJA DRESS	525	\N	https://www.marahoffman.com/shop-all/daija-maxi-shift-dress-cream-black-color-block	31	\N	2019-12-12 07:14:30.972774	2019-12-12 07:14:30.976827	image/upload/v1576134872/c1qmffvf2rv4jnqc48jf.jpg
-37	ROSE TOP	315	\N	https://www.marahoffman.com/shop-all/rose-strapless-top-red	31	\N	2019-12-12 07:14:02.949739	2019-12-12 07:14:02.953581	image/upload/v1576134845/ejiqgtmbntcl2ejhp7kn.jpg
-38	JUNO DRESS	550	\N	https://www.marahoffman.com/shop-all/juno-button-front-pocket-dress-navy-white-stitching	31	\N	2019-12-12 07:14:05.796869	2019-12-12 07:14:05.799865	image/upload/v1576134848/fnsmmrdehsjaql0sxi4c.jpg
-39	ADRIANA DRESS	650	\N	https://www.marahoffman.com/shop-all/adriana-sleeveless-zip-front-a-line-dress-black-stripe	31	\N	2019-12-12 07:14:09.187176	2019-12-12 07:14:09.191033	image/upload/v1576134850/wrm2lv0rjxzse7nbdi0q.jpg
-45	FONTANA PANT	340	\N	https://www.marahoffman.com/shop-all/fontana-high-waisted-flat-front-straight-pant-white	31	\N	2019-12-12 07:14:32.741244	2019-12-12 07:14:32.745051	image/upload/v1576134875/scqhcdymn7nwqwueooyf.jpg
-40	EDMONIA DRESS	225	\N	https://www.marahoffman.com/shop-all/edmonia-full-sleeve-turtleneck-dress-sheer-lime-green	31	\N	2019-12-12 07:14:10.758311	2019-12-12 07:14:10.762161	image/upload/v1576134852/wxtmr64rzvg411mgyksl.jpg
-41	VENUS BODYSUIT	350	\N	https://www.marahoffman.com/shop-all/venus-ribbed-knit-scoop-neck-bodysuit-white	31	\N	2019-12-12 07:14:13.92038	2019-12-12 07:14:13.923809	image/upload/v1576134855/ma5xs7nojqqu7q8sckok.jpg
-42	JADE PANT	100	\N	https://www.marahoffman.com/shop-all/jade-trouser-pant-black-stripe	31	\N	2019-12-12 07:14:15.93977	2019-12-12 07:14:15.94365	image/upload/v1576134867/zvapxnxlftvbqsvborun.jpg
-46	ELISABETTA DRESS	495	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-white	31	\N	2019-12-12 07:14:35.484934	2019-12-12 07:14:35.488418	image/upload/v1576134876/xnihnwzgofnrahgooxo1.jpg
-43	VERONICA SWEATER	295	\N	https://www.marahoffman.com/shop-all/veronica-collared-button-front-sweater-sheer-black	31	\N	2019-12-12 07:14:28.427898	2019-12-12 07:14:28.431476	image/upload/v1576134870/pbatrjxeb6g2m8vy3pll.jpg
+1	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	1	\N	2019-12-12 02:10:59.084607	2019-12-12 02:10:59.084607	\N
+2	ROSE TOP	315	\N	https://www.marahoffman.com/shop-all/rose-strapless-top-red	1	\N	2019-12-12 02:10:59.095299	2019-12-12 02:10:59.095299	\N
+3	JUNO DRESS	550	\N	https://www.marahoffman.com/shop-all/juno-button-front-pocket-dress-navy-white-stitching	1	\N	2019-12-12 02:10:59.106207	2019-12-12 02:10:59.106207	\N
+4	ADRIANA DRESS	650	\N	https://www.marahoffman.com/shop-all/adriana-sleeveless-zip-front-a-line-dress-black-stripe	1	\N	2019-12-12 02:10:59.110209	2019-12-12 02:10:59.110209	\N
+5	EDMONIA DRESS	225	\N	https://www.marahoffman.com/shop-all/edmonia-full-sleeve-turtleneck-dress-sheer-lime-green	1	\N	2019-12-12 02:10:59.113628	2019-12-12 02:10:59.113628	\N
+6	VENUS BODYSUIT	350	\N	https://www.marahoffman.com/shop-all/venus-ribbed-knit-scoop-neck-bodysuit-white	1	\N	2019-12-12 02:10:59.116541	2019-12-12 02:10:59.116541	\N
+7	JADE PANT	100	\N	https://www.marahoffman.com/shop-all/jade-trouser-pant-black-stripe	1	\N	2019-12-12 02:10:59.119072	2019-12-12 02:10:59.119072	\N
+8	VERONICA SWEATER	295	\N	https://www.marahoffman.com/shop-all/veronica-collared-button-front-sweater-sheer-black	1	\N	2019-12-12 02:10:59.121615	2019-12-12 02:10:59.121615	\N
+9	DAIJA DRESS	525	\N	https://www.marahoffman.com/shop-all/daija-maxi-shift-dress-cream-black-color-block	1	\N	2019-12-12 02:10:59.124061	2019-12-12 02:10:59.124061	\N
+10	FONTANA PANT	340	\N	https://www.marahoffman.com/shop-all/fontana-high-waisted-flat-front-straight-pant-white	1	\N	2019-12-12 02:10:59.126783	2019-12-12 02:10:59.126783	\N
+11	ELISABETTA DRESS	495	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-white	1	\N	2019-12-12 02:10:59.129511	2019-12-12 02:10:59.129511	\N
+12	ELISABETTA DRESS	650	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-sheer-black-red-dot	1	\N	2019-12-12 02:11:09.017689	2019-12-12 02:11:09.017689	\N
+13	ROSE TOP	315	\N	https://www.marahoffman.com/shop-all/rose-strapless-top-red	1	\N	2019-12-12 02:11:09.028087	2019-12-12 02:11:09.028087	\N
+14	JUNO DRESS	550	\N	https://www.marahoffman.com/shop-all/juno-button-front-pocket-dress-navy-white-stitching	1	\N	2019-12-12 02:11:09.031662	2019-12-12 02:11:09.031662	\N
+15	ADRIANA DRESS	650	\N	https://www.marahoffman.com/shop-all/adriana-sleeveless-zip-front-a-line-dress-black-stripe	1	\N	2019-12-12 02:11:09.03476	2019-12-12 02:11:09.03476	\N
+16	EDMONIA DRESS	225	\N	https://www.marahoffman.com/shop-all/edmonia-full-sleeve-turtleneck-dress-sheer-lime-green	1	\N	2019-12-12 02:11:09.037477	2019-12-12 02:11:09.037477	\N
+17	VENUS BODYSUIT	350	\N	https://www.marahoffman.com/shop-all/venus-ribbed-knit-scoop-neck-bodysuit-white	1	\N	2019-12-12 02:11:09.040838	2019-12-12 02:11:09.040838	\N
+18	JADE PANT	100	\N	https://www.marahoffman.com/shop-all/jade-trouser-pant-black-stripe	1	\N	2019-12-12 02:11:09.044364	2019-12-12 02:11:09.044364	\N
+19	VERONICA SWEATER	295	\N	https://www.marahoffman.com/shop-all/veronica-collared-button-front-sweater-sheer-black	1	\N	2019-12-12 02:11:09.048038	2019-12-12 02:11:09.048038	\N
+20	DAIJA DRESS	525	\N	https://www.marahoffman.com/shop-all/daija-maxi-shift-dress-cream-black-color-block	1	\N	2019-12-12 02:11:09.051799	2019-12-12 02:11:09.051799	\N
+21	FONTANA PANT	340	\N	https://www.marahoffman.com/shop-all/fontana-high-waisted-flat-front-straight-pant-white	1	\N	2019-12-12 02:11:09.05489	2019-12-12 02:11:09.05489	\N
+22	ELISABETTA DRESS	495	\N	https://www.marahoffman.com/shop-all/elisabetta-puff-shoulder-shift-dress-white	1	\N	2019-12-12 02:11:09.05761	2019-12-12 02:11:09.05761	\N
 \.
 
 
@@ -490,21 +492,21 @@ COPY public.users (id, email, encrypted_password, reset_password_token, reset_pa
 -- Name: brand_images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ginili
 --
 
-SELECT pg_catalog.setval('public.brand_images_id_seq', 57, true);
+SELECT pg_catalog.setval('public.brand_images_id_seq', 39, true);
 
 
 --
 -- Name: brands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ginili
 --
 
-SELECT pg_catalog.setval('public.brands_id_seq', 39, true);
+SELECT pg_catalog.setval('public.brands_id_seq', 35, true);
 
 
 --
 -- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ginili
 --
 
-SELECT pg_catalog.setval('public.products_id_seq', 46, true);
+SELECT pg_catalog.setval('public.products_id_seq', 22, true);
 
 
 --

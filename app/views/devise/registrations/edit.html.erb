@@ -1,13 +1,27 @@
 
 <%= render "devise/shared/navbar" %>
 <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %>
+<script src="app/assets/javascripts/responsive_waterfall.js"></script>
+
+
 <div class="title">
   <h2>MY STYLE</h2>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<!-- PROFILE-MENU -->
 
-<h4 class="title">Wishlist</h4>
+<!--   <div class="user-panel">
+    <div class="inner-panel" style="text-align: center;">
+      <a class="form-btn" href="#popup1"> Edit Profile</a>
+    </div>
+  </div>
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+ -->
+<!-- PRODUCT WISHLIST -->
+<div class="wf-container">
+  <h4 class="page-title">Wishlist</h4>
+</div>
 <div class="main-carousel">
   <div class="card">
     <img src="https://www.marahoffman.com/world-of/wp-content/uploads/2016/06/SP168-956x709.jpg" alt="first">
@@ -21,59 +35,37 @@
 </div>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-<div class="title">
-  <h4>Brands I like</h4>
-  <% current_user.liked_brands.each do |brand| %>
-    <div class="wf-box">
-
-      <%= cl_image_tag brand.brand_images.second.url, style: "border-radius:50%;" %>
-      <div class="content">
-        <h3><%= link_to brand.name, brand_path(brand) %>
-        <h5><%= brand.country %></h5>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-
-<div class="bottom-container">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <h4 class="title">My Profile</h4>
-        <%= f.input :email, required: true, autofocus: true %>
-
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
-        <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Update" %>
-      </div>
-    <% end %>
-  </div><br><br><br>
-  <div class="align-btn">
-    <h4>Cancel my account</h4><br>
-    <%= link_to "Delete", registration_path(resource_name), class: "cancel-btn", data: { confirm: "Are you sure? All your information will be erased!" }, method: :delete %><br><br>
+<br><br>
+<!-- BRANDS LIKED -->
+<div class="wf-container">
+  <div class="page-title">
+    <h4>My Brands</h4>
   </div>
+    <% if current_user.liked_brands.empty? %>
+      <h6>No liked brands!</h6>
+    <% else %>
+      <% current_user.liked_brands.each do |brand| %>
+        <div class="wf-box">
+          <% if brand.brand_images.second.nil? %>
+          <% else %>
+            <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+            <div class="content">
+              <h3><%= link_to brand.name, brand_path(brand) %>
+              <h5><%= brand.country %></h5>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
 </div>
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+
+<!-- POP-UP EDIT FORM -->
+
+
+<!-- CAROUSEL JS -->
 <script type="text/javascript">
 // external js: flickity.pkgd.js
 var carousel = document.querySelector('.main-carousel');

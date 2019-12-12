@@ -1,3 +1,19 @@
+.wf-container {
+  height:auto;
+}
+
+.heart {
+  margin-left: 20px;
+  margin-top: 7px;
+  width: 30px;
+  height: 30px;
+
+}
+.wf-box {
+  position: relative;
+}
+
+
 .gridCentered {
   margin-left: auto;
   margin-right: auto;
@@ -439,43 +455,55 @@ $white: #fff;
     color: $heart;
   }
   .wrapper {
-    padding-top: 50px;
+  position: relative;
+  display: inline-block;
+
+
     .like-button {
+      display: inline;
       position: absolute;
+      top: 2em;
+      right: -2em;
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: $grey;
+      background-image: $grey;
       margin: 0 auto;
       text-decoration: none;
       overflow: hidden;
+
       .like-overlay {
-        display: block;
+        display: inline;
         position: absolute;
-        top: 0;
-        left: 0;
         width: 50px;
         height: 50px;
+        right: 0em;
         border-radius: 50%;
         background: $heart;
         transform: scale(0);
         transition: all .4s;
         z-index: 0;
       }
+
       i {
         &.not-liked {
           display: block;
-          color: $white;
-          position: relative;
+          top: 25%;
+          right: 25%;
+          color: $red;
+          position: absolute;
           z-index: 1;
+
         }
+
         &.is-liked {
           display: none;
-          color: $white;
-          position: relative;
+          color: $red;
+          position: absolute;
           z-index: 1;
         }
       }
+
       &.is-active {
         .like-overlay {
           transform: scale(1);
@@ -486,6 +514,8 @@ $white: #fff;
           }
           &.is-liked {
             display: block;
+            top: 25%;
+            right: 25%;
           }
         }
       }
@@ -517,14 +547,3 @@ $white: #fff;
     animation-fill-mode: both;
 }
 
-
-.heart {
-  margin-left: 20px;
-  margin-top: 7px;
-  width: 30px;
-  height: 30px;
-
-}
-.wf-box {
-  position: relative;
-}

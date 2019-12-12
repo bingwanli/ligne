@@ -1,8 +1,11 @@
-<h1>Admin Only</h1>
+<%= render "devise/shared/navbar" %>
+<div class="container">
+<h2 class="title">Admin Only</h2>
+
 
 <!-- form -->
 <div class="user-form-wrapper">
-  <h1>Add Brand</h1>
+  <h4>Add Brand</h4><br>
   <div class="user-form-container">
     <%= simple_form_for @brand, html: { multipart: true } do |f| %>
       <%= f.input :name, { maxlength: 100 } %>
@@ -19,9 +22,9 @@
         </div>
       <% end %>
       <p>
-        <%= f.submit "Add", class: "btn" %>
+        <%= f.submit "Add", class: "buy-btn" %>
       </p>
     <% end %>
   </div>
 </div>
-
+<%= render "devise/shared/footer" %>
