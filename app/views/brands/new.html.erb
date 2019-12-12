@@ -2,19 +2,19 @@
 
 <!-- form -->
 <div class="user-form-wrapper">
-  <h1>Add Editorial Images to Brand</h1>
+  <h1>Add Brand</h1>
   <div class="user-form-container">
     <%= simple_form_for @brand, html: { multipart: true } do |f| %>
-      <%= f.input :name, { maxlength: 100 }%>
+      <%= f.input :name, { maxlength: 100 } %>
       <%= f.input :description, { maxlength: 500 } %>
       <%= f.input :country, collection: ["US", "CN", "BR", "UK", "FR", "AU"] %>
       <%= f.input :url %>
       <%= f.fields_for :brand_images do |m| %>
-      <h5>Editorial Images</h5>
+        <h5>Editorial Images</h5>
         <div class="file-upload">
           <%= m.label :url %>
           <div class="file-btn">
-            <%= m.file_field :url, :multiple => true, name: "brand_images[url][]" %>
+            <%= m.file_field :url, multiple: true, name: "brand_images[url][]" %>
           </div>
         </div>
       <% end %>
