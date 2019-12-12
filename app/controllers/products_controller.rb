@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @my_liked_products = current_user.likes
-    @recommended_products = current_user.likes_in_common_with(friend)
   end
 
   def show
@@ -43,7 +42,7 @@ class ProductsController < ApplicationController
   private
 
   def products_params
-    params.require(:product).permit(:name, :price, :description, :url,
+    params.require(:product).permit(:name, :price, :description, :tag_list[], :url,
       :brand_id, :is_available, :image_url)
   end
 end

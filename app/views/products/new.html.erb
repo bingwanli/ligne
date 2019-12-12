@@ -8,6 +8,7 @@
       <%= f.input :price %>
       <%= f.input :description, { maxlength: 500 } %>
       <%= f.input :url %>
+      <%= f.input :tag_list, as: :check_boxes, collection: ["dress", "short-sleeve", "long-sleeve", "shorts", "pants"] %>
       <%= f.file_field :image_url %>
       <p>
         <%= f.submit "Add", class: "btn" %>
