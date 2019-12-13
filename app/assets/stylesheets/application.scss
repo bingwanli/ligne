@@ -31,3 +31,13 @@
  *= require_tree .
  *= require_self
  */
+ #alert-msg {
+    width: 300px;
+    margin-left: auto;
+  }
+
+.alert-dismissible {
+  z-index: 7;
+}
+
+
