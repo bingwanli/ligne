@@ -566,3 +566,14 @@ $white: #fff;
     animation-fill-mode: both;
 }
 
+.recs-button {
+  display: none;
+  position:fixed;
+  top:20px;
+}
+
+.recs-hi {
+  display: block;
+  position:fixed;
+  top:20px;
+}
