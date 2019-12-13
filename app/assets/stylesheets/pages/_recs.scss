@@ -433,7 +433,10 @@
 }
 
 #add {
-right: 1.1em;
+  right: 1.1em;
+  color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px 10px black;
 }
 
 .buy-link {
@@ -441,13 +444,14 @@ right: 1.1em;
   position: absolute;
   bottom: 2em;
   right: 2em;
-  color: $red;
+  color: $yellow;
   font-weight: 600;
+  text-shadow: 1px 1px 3px black;
+  font-size: 18px;
 }
 
 .buy-link:hover {
   text-decoration: none;
-  text-transform: uppercase;
   font-weight: 700;
-  color: $heart;
+  color: white;
 }
