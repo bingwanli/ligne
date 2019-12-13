@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'nokogiri'
 require 'open-uri'
 
@@ -358,11 +357,67 @@ prod30.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/sten
 
 prod30.save
 
+prod31 = Product.create({
+price: 68,
+name: "Jessie Top",
+url: "https://www.thereformation.com/products/jessie-top?color=Black",
+brand_id: 39,
+ })
+
+prod31.remote_image_url_url = "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:766/v1/prod/product_images/jessie-top/black/5deacf9de97bc726b14e055d/original.jpg"
+
+prod31.save
+
+prod32 = Product.create({
+price: 248,
+name: "Hamlet Dress",
+url: "https://www.thereformation.com/products/hamlet-dress?color=Ochre",
+brand_id: 39,
+ })
+
+prod32.remote_image_url_url = "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:766/v1/prod/product_images/hamlet-dress/ochre/5de5d0509e74a81618b8efd7/original.jpg"
+
+prod32.save
+
+prod33 = Product.create({
+price: 178,
+name: "Pratt Skirt",
+url: "https://www.thereformation.com/products/pratt-skirt?color=Mustang",
+brand_id: 39,
+ })
+
+prod33.remote_image_url_url = "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:766/v1/prod/product_images/pratt-skirt/mustang/5d8bc77fc3170b44dc25eb43/original.jpg"
+
+prod33.save
+
+prod34 = Product.create({
+price: 178,
+name: "Hari Dress",
+url: "https://www.thereformation.com/products/hari-dress?color=Met",
+brand_id: 39,
+ })
+
+prod34.remote_image_url_url = "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_2560_9_20:766/v1/prod/product_images/hari-dress/met/5dbca4eef35be276e6626901/original.jpg"
+
+prod34.save
+
+prod35 = Product.create({
+price: 278,
+name: "Strata Dress",
+url: "https://www.thereformation.com/products/strata-dress?color=Black",
+brand_id: 39,
+ })
+
+prod35.remote_image_url_url = "https://media.thereformation.com/image/upload/q_auto:eco/c_scale,w_auto:breakpoints_100_1668_9_20:766/v1/prod/product_images/strata-dress/black/5de5d0549e74a81618b8efde/original.jpg"
+
+prod35.save
+
+
 brimg1 = BrandImage.create({
-  brand_id: 31
+  brand_id: 39
 })
 
 
-brimg1.remote_url_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYo37IYmBGu05a_Uo7n5WQfBFU4i77D8SzGNL65gXTRv0U2lFHQ&s"
+brimg1.remote_url_url = "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2018%2F09%2Freformation-fall-2018-denim-editorial-3.jpg"
 
 brimg1.save
