@@ -27,8 +27,8 @@
               <div class="card" style="background:#F2EFEB">
                <%= cl_image_tag product.image_url %>
                 <div class="Wishlist-content">
-                  <h3><%= product.name %>
-                  <h6><%= link_to "Buy", product.url, target: "blank" style:"color:black font-weigh:bold" %></h6>
+                  <h6><%= product.name %>
+                  <h6><%= link_to "Buy", product.url, target: "blank", style:"color:black font-weigh:bold" %></h6>
                   <h6><%= product.brand.name %></h6>
                   <h6>$<%= product.price %></h6>
                 </div>

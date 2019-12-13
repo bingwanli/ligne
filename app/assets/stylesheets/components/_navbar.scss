@@ -1,6 +1,6 @@
 
 .navbar {
-  width: 100%;
+  width: 100vw;
   display: flex;
   background-color: transparent;
   border: none;
@@ -8,6 +8,37 @@
   z-index: 100;
   transition: background-color 1s ease 0s;
   position: fixed;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
+.collapse-nav {
+  top:0;
+  position: fixed;
+  display: flex;
+}
+
+.navbar-collapse {
+  background: rgba(120, 120, 120, 0.5);
+}
+
+@media screen and (min-width: 801px) {
+  .navbar-collapse {
+    background: transparent;
+    color: white !important;
+  }
+}
+
+
+@media screen and (max-width: 801px) {
+  .nav-link {
+   color: white !important;
+   // background: rgba(120, 120, 120, 0.5);
+
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .nav-item {
+     padding: 20px
+  }
+}
