@@ -113,14 +113,14 @@ return false;
     mright.addEventListener('click', goLeft);
     mleft.addEventListener('click', goLeft);
 
-    const doSomething = () => {
-      window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
-    }
 
   const callback = ( selectedCountry, relatedCountries ) => {
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
     CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
+    const doSomething = () => {
+      window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
+    }
 
     setTimeout(doSomething, 1500);
   }
