@@ -1,4 +1,18 @@
 // Buttons file
+.black-white-link {
+  color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: underline;
+}
+
+.black-white-link:hover {
+  color: white;
+  background: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .buy-btn {
   color: white;
   background-color: black;

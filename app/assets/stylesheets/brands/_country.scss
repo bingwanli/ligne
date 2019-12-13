@@ -31,7 +31,7 @@
 
 @media (min-width: 0px) and (max-width: 755px) {
   .gridCentered {
-    width: 504px;
+    width: 755px;
   }
   .gridCentered .Masonry-Premount .Collection-Item:nth-child(-n+2),
   .gridCentered .static:nth-child(-n+2) {
@@ -42,9 +42,9 @@
   }
 }
 
-@media (min-width: 756px) and (max-width: 1007px) {
+@media (min-width: 755px) and (max-width: 1007px) {
   .gridCentered {
-    width: 756px;
+    width: 1007px;
   }
   .gridCentered .Masonry-Premount .Collection-Item:nth-child(-n+3),
   .gridCentered .static:nth-child(-n+3) {
@@ -566,3 +566,14 @@ $white: #fff;
     animation-fill-mode: both;
 }
 
+.recs-button {
+  display: none;
+  position:fixed;
+  top:20px;
+}
+
+.recs-hi {
+  display: block;
+  position:fixed;
+  top:20px;
+}
