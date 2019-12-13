@@ -1,6 +1,7 @@
 
-<%= render "devise/shared/navbar" %>
 <script src="app/assets/javascripts/responsive_waterfall.js"></script>
+<%= render "devise/shared/navbar" %>
+
 
 
 <div class="title">
@@ -8,16 +9,6 @@
 </div>
 <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %>
 
-<!-- PROFILE-MENU -->
-
-<!--   <div class="user-panel">
-    <div class="inner-panel" style="text-align: center;">
-      <a class="form-btn" href="#popup1"> Edit Profile</a>
-    </div>
-  </div>
-
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
- -->
 <!-- PRODUCT WISHLIST -->
 <div class="wf-container">
   <h4 class="page-title">Wishlist</h4>
@@ -29,13 +20,14 @@
   <% else %>
     <% current_user.liked_products.each do |product| %>
       <div class="card">
-        <% if product.img_url.nil? %>
+        <% if product.image_url.nil? %>
+          <p>No Image Here, Sorry!</p>
         <% else %>
           <%= cl_image_tag product.image_url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
           <div class="content">
-            <h3><%= link_to product.name, product_path(product) %>
-            <h6><%= product.brand %></h6>
-            <h6><%= product.price %></h6>
+            <h3><%= link_to product.name, product_path(product)%>
+            <h6><%= product.brand.name %></h6>
+            <h6>$<%= product.price %></h6>
           </div>
         <% end %>
       </div>

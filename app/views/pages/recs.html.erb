@@ -12,19 +12,19 @@
 
 <!-- PRODUCT CARDS -->
 <div class="product-card">
-  <% @products.each do |product| %>
-    <div class="wf-box" data-aos="fade-right">
-      <div class="heart" data-aos="fade-right"><%= link_to product_path(product), method: :patch do%>
-        <div class="wrapper">
-          <a href="javascript:void(0);" class="like-button">
-            <i class="mdc-icon-button material-icons not-liked bouncy" id="add">✚</i>
-            <i class="mdc-icon-button material-icons is-liked bouncy" id="add">✚</i>
-            <span class="like-overlay"></span>
-          </a>
+  <% @brands.each do |brand| %>
+    <% brand.products.each do |product| %>
+      <div class="wf-box" data-aos="fade-right">
+        <div class="heart" data-aos="fade-right">
+          <div class="wrapper">
+            <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+              <i class="mdc-icon-button material-icons not-liked bouncy" id="add">✚</i>
+              <i class="mdc-icon-button material-icons is-liked bouncy" id="add">✚</i>
+              <span class="like-overlay"></span>
+            <% end %>
+          </div>
         </div>
-
-      </div>
-          <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+        <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
       </div>
     <% end %>
   <% end %>

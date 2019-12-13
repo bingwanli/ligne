@@ -39,7 +39,7 @@ class BrandsController < ApplicationController
   end
 
   def update
-     @brand = Brand.find(params[:id])
+    @brand = Brand.find(params[:id])
     if current_user.likes?(@brand)
       current_user.unlike(@brand)
     else

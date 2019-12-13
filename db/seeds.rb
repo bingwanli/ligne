@@ -146,3 +146,105 @@ prod11 = Product.create({
 prod11.remote_image_url_url = "https://www.marahoffman.com/media/catalog/product/cache/1/image/758x1136/17f82f742ffe127f42dca9de82fb58b1/e/l/elisabetta-puff-shoulder-shift-dress-white_1.jpg"
 
 prod11.save
+
+prod12 = Product.create({
+  price: 268,
+  name: "Meredith Gold Foil Maxi Dress",
+  url: "https://www.freepeople.com/shop/meredith-gold-foil-maxi-dress/?category=dresses&color=070",
+  brand_id: 32,
+  })
+
+prod12.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/54746458_070_0?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod12.save
+
+prod13 = Product.create({
+  price: 128,
+  name: "Arizona Nights Embellished Slip",
+  url: "https://www.freepeople.com/shop/arizona-nights-embellished-slip/?category=dresses&color=052",
+  brand_id: 32,
+  })
+
+prod13.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/42328740_052_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod13.save
+
+prod14 = Product.create({
+  price: 128,
+  name: "Layered Up Mesh Midi Slip",
+  url: "https://www.freepeople.com/shop/layered-up-mesh-midi-slip/?category=dresses&color=011",
+  brand_id: 32,
+  })
+
+prod14.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/54635586_011_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod14.save
+
+prod15 = Product.create({
+  price: 108,
+  name: "Nicole Sweater Dress",
+  url: "https://www.freepeople.com/shop/nicole-sweater-dress/?category=dresses&color=014",
+  brand_id: 32,
+  })
+
+prod15.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/54542881_014_0?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod15.save
+
+prod16 = Product.create({
+  price: 168,
+  name: "Retro Love Suede Mini Dress",
+  url: "https://www.freepeople.com/shop/retro-love-suede-mini-dress/?category=dresses&color=081",
+  brand_id: 32,
+  })
+
+prod16.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/38388161_081_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod16.save
+
+prod17 = Product.create({
+  price: 68,
+  name: "Scarlett Tank",
+  url: "https://www.freepeople.com/shop/scarlett-tank2/?category=whats-new&color=001",
+  brand_id: 32,
+  })
+
+prod17.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/54680996_001_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod17.save
+
+prod18 = Product.create({
+  price: 78,
+  name: "Stones Flocked Leopard Tongue Tee",
+  url: "https://www.freepeople.com/shop/stones-flocked-leopard-tongue-tee/?category=whats-new&color=001&quantity=1&type=REGULAR",
+  brand_id: 32,
+  })
+
+prod18.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/53277430_001_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod18.save
+
+prod19 = Product.create({
+  price: 128,
+  name: "Mad Love Wrap Skirt",
+  url: "https://www.freepeople.com/shop/mad-love-wrap-skirt/?category=holiday-collection&color=069",
+  brand_id: 32,
+  })
+
+prod19.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/54690250_069_0?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod19.save
+
+
+prod20 = Product.create({
+  price: 108,
+  name: "Birch Wide Leg Pant",
+  url: "https://www.freepeople.com/shop/birch-wide-leg-pant/?category=pants&color=001",
+  brand_id: 32,
+  })
+
+prod20.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/53469169_001_a?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain"
+
+prod20.save
+
+

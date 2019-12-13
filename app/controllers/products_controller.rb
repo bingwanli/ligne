@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    @my_liked_products = current_user.likes
+    @my_liked_products = current_user.liked_products
   end
 
   def show
