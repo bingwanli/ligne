@@ -2,37 +2,38 @@
 <script src="app/assets/javascripts/responsive_waterfall.js"></script>
 <%= render "devise/shared/navbar" %>
 
-
-
 <div class="title">
   <h2>MY STYLE</h2>
 </div>
 <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %>
 
 <!-- PRODUCT WISHLIST -->
+<h4 class="page-title" style="text-align:center;">Wishlist</h4>
 <div class="wf-container">
-  <h4 class="page-title">Wishlist</h4>
+  <div class="main-carousel">
+    <% if current_user.liked_products.nil? %>
+      <p><h6>No liked products!</h6></p>
+      <% else %>
+       <% current_user.liked_products.each do |product| %>
+          <% if product.image_url.nil? %>
+            <p>No Image Here, Sorry!</p>
+            <% else %>
+              <div class="card" style="background-image:url(https://i.pinimg.com/564x/8e/89/39/8e893915a1ff3b2ff676f7cfee1b6c87.jpg);">
+               <%= cl_image_tag product.image_url %>
+                <div class="Wishlist-content">
+                  <h3 ><%= link_to product.name, product_path(product)%>
+                  <h6><%= product.brand.name %></h6>
+                  <h6>$<%= product.price %></h6>
+                </div>
+              </div>
+          <% end %>
+
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="main-carousel">
-  <% if current_user.liked_products.nil? %>
-    <p><h6>No liked products!</h6></p>
-  <% else %>
-    <% current_user.liked_products.each do |product| %>
-      <div class="card">
-        <% if product.image_url.nil? %>
-          <p>No Image Here, Sorry!</p>
-        <% else %>
-          <%= cl_image_tag product.image_url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
-          <div class="content">
-            <h3><%= link_to product.name, product_path(product)%>
-            <h6><%= product.brand.name %></h6>
-            <h6>$<%= product.price %></h6>
-          </div>
-        <% end %>
-      </div>
-      <% end %>
-  <% end %>
+
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <br><br>
