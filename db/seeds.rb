@@ -259,12 +259,110 @@ prod21.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/sten
 prod21.save
 
 prod22 = Product.create({
-  price: 245,
-  name: "THE LIV in Rosalita",
-  url: "https://realisationpar.com/the-liv-rosalita/",
+  price: 210,
+  name: "THE IGGY",
+  url: "https://realisationpar.com/the-iggy-yellow-polka-dot/",
   brand_id: 33,
   })
 
-prod22.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/500x659/products/174/3059/DSC_5892AS__09250.1556949135.jpg?c=2"
+prod22.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/168/2907/IGGY_BlkYellowPD_Studio_1__30356__38331.1549337501.jpg?c=2"
 
 prod22.save
+
+prod23 = Product.create({
+  price: 210,
+  name: "THE JEET",
+  url: "https://realisationpar.com/the-jeet-flower-power/",
+  brand_id: 33,
+  })
+
+prod23.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/139/2299/JEET_FlowerPower_Studio_1__81611__14957.1549337137.jpg?c=2"
+
+prod23.save
+
+prod24 = Product.create({
+  price: 210,
+  name: "THE TEALE",
+  url: "https://realisationpar.com/the-teale-wild-cherry/",
+  brand_id: 33,
+  })
+
+prod24.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/111/2995/TEALE_WildCherry_Studio_1__83945__05100.1549337559.jpg?c=2"
+
+prod24.save
+
+prod25 = Product.create({
+  price: 100,
+  name: "THE ANNA",
+  url: "https://realisationpar.com/the-ana-white-squiggle/",
+  brand_id: 33,
+  })
+
+prod25.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/150/2432/ANA_WhiteSquiggle_Studio_1__38417__13723.1549337212.jpg?c=2"
+
+prod25.save
+
+prod26 = Product.create({
+price: 210,
+name: "THE MARYJANE",
+url: "https://realisationpar.com/the-mary-jane-sunflower/",
+brand_id: 33,
+ })
+
+prod26.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/118/2884/MARYJANE_Sunflower_Studio_1__81738__28134.1549337487.jpg?c=2"
+
+prod26.save
+
+prod27 = Product.create({
+price: 180,
+name: "THE KAIA TIGER",
+url: "https://realisationpar.com/the-kaia-tiger/",
+brand_id: 33,
+ })
+
+prod27.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/143/2347/KAIA_Tiger_Studio_1__14726__43853.1549337163.jpg?c=2"
+
+prod27.save
+
+prod28 = Product.create({
+price: 180,
+name: "THE VIVIENNE
+",
+url: "https://realisationpar.com/the-vivienne-purple-haze/",
+brand_id: 33,
+ })
+
+prod28.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/140/2310/VIVIENNE_PurpleHaze_Studio_1__89613__22286.1549337143.jpg?c=2"
+
+prod28.save
+
+prod29 = Product.create({
+price: 195,
+name: "THE LUNA",
+url: "https://realisationpar.com/the-luna-black-strawberry/",
+brand_id: 33,
+ })
+
+prod29.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/190/3167/Capture0028-2__52189.1559424258.jpg?c=2"
+
+prod29.save
+
+prod30 = Product.create({
+price: 220,
+name: "THE CAPULET",
+url: "https://realisationpar.com/the-capulet-jupiter/",
+brand_id: 33,
+ })
+
+prod30.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/759x1000/products/180/3096/Capulet_Jupiter_Ecom_Web_Front__92771.1558639393.jpg?c=2"
+
+prod30.save
+
+brimg1 = BrandImage.create({
+  brand_id: 31
+})
+
+
+brimg1.remote_url_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYo37IYmBGu05a_Uo7n5WQfBFU4i77D8SzGNL65gXTRv0U2lFHQ&s"
+
+brimg1.save
