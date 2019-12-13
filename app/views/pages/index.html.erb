@@ -68,94 +68,81 @@ return false;
 
 <!-- GLOBE -->
   <script type="text/javascript">
-    // Get the container to hold the IO globe
-    const container = document.getElementById( "globalArea" );
-    // Create Gio.controller
+
+(() => {
+
+    let container = document.getElementById( "globalArea" );
+    let CountryName = document.querySelector(".country-name");
     let controller = new GIO.Controller( container );
-    // Add data
+
+    // Initializers
     controller.setTransparentBackground(true);
     controller.addData( data );
-    // Initialize and render the globe
-    controller.init();
-    controller.clearData();
-    // enable auto-rotation, 1 is the default speed.
     controller.setAutoRotation( true, 1 );
     controller.setSelectedColor("#fcfcfc");
     controller.adjustOceanBrightness(0.0);
-    // use the onCountryPicked() to set callback when clicked country changed
-    controller.onCountryPicked( callback );
+    controller.init();
+    controller.clearData();
 
-    function disableRotate() {
+    // Desktop DOM Variables
+    let left = document.querySelector(".left");
+    let right = document.querySelector(".right");
+    let places = ["US", "CN", "BR", "FR", "CA", "AU"];
+
+    // Mobile DOM Variables
+    let mleft = document.querySelector(".m-left");
+    let mright = document.querySelector(".m-right");
+
+
+    // Custom Functions
+    const disableRotate = () => {
       controller.setAutoRotation(false);
     }
 
+    const goLeft = () => {
+      let num = places[Math.floor(Math.random()*places.length)];
+      controller.setAutoRotation(false);
+      controller.switchCountry(num);
+      setTimeout(doAnotherThing, 5000);
+    };
 
+    // Event Listeners
     container.addEventListener('click', disableRotate)
+    right.addEventListener('click', goLeft);
+    left.addEventListener('click', goLeft);
+    mright.addEventListener('click', goLeft);
+    mleft.addEventListener('click', goLeft);
 
-let CountryName = document.querySelector(".country-name");
 
-function callback ( selectedCountry, relatedCountries ) {
+  const callback = ( selectedCountry, relatedCountries ) => {
+    let left = document.querySelector(".left");
+    let right = document.querySelector(".right");
+    CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
+    const doSomething = () => {
+      window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
+    }
 
-      let left = document.querySelector(".left");
-      let right = document.querySelector(".right");
-
-      left.addEventListener("click", log)
-      function log() {
-        console.log(selectedCountry.name)
-      }
-
-CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
-  function doSomething() {
-    window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
+    setTimeout(doSomething, 1500);
   }
-  setTimeout(doSomething, 1500);
 
-  // highlight the mouseenter target
-  // window.location.href = "hey.html"
-}
+    controller.onCountryPicked(callback);
 
+  const doAnotherThing = () => {
+    controller.setAutoRotation(true, 1);
+  }
 
-      // DESKTOP
-      let left = document.querySelector(".left");
-      let right = document.querySelector(".right");
-      let places = ["US", "CN", "BR", "FR", "CA", "AU"];
+  controller.liveLoad( data, liveLoadCallback, 5000 );
 
+  function liveLoadCallback () {
 
-      // MOBILE
-      let mleft = document.querySelector(".m-left");
-      let mright = document.querySelector(".m-right");
+          console.log("Load data event happens.");
 
+  }
 
-      function goLeft() {
-        let num = places[Math.floor(Math.random()*places.length)];
-        controller.setAutoRotation(false);
-        function doAnotherThing() {
-          controller.setAutoRotation(true, 1);
-        }
-        controller.switchCountry(num);
-        setTimeout(doAnotherThing, 5000);
-        CountryName.innerHTML = "this is <strong>" +selectedCountry.name + "</strong>"
-      };
-
-      right.addEventListener('click', goLeft);
-      left.addEventListener('click', goLeft);
-      mright.addEventListener('click', goLeft);
-      mleft.addEventListener('click', goLeft);
-        // const myCanvas = document.querySelector("canvas")
-  // const myContext = myCanvas.getContext("2d")
-      // highlight the mouseenter target
-      // window.location.href = "hey.html"
-
-
-      // const myCanvas = document.querySelector("canvas")
-      // const myContext = myCanvas.getContext("2d")
+})();
 
 
 
-    // image.onload = () => {
-    //   myContext.drawImage(image, 0, 0, 100, 100)
-    //   // myContext.rotate(45 * Math.PI / 180);
-    // }
 
   </script>
 
