@@ -1,5 +1,5 @@
 desc "Updating Recommendations"
-task :update_feed => :environment do
+task :fit_recs_job => :environment do
   puts "Updating feed..."
   NewsFeed.update
   puts "done."
