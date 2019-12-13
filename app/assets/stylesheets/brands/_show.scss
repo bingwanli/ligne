@@ -24,19 +24,19 @@ body { font-family: sans-serif; }
 
 .card {
   overflow: hidden;
-
+  max-height: 550px;
 }
 
 .card img {
   display: block;
-  height: 200px;
+  height: 400px;
 }
 
 .card.is-selected {
 
 }
 
-@media screen and ( min-width: 768px ) {
+@media screen and ( max-width: 450px ) {
   .card img {
     height: 400px;
   }
