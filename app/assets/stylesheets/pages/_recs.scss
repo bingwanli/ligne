@@ -435,3 +435,19 @@
 #add {
 right: 1.1em;
 }
+
+.buy-link {
+  display: inline;
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  color: $red;
+  font-weight: 600;
+}
+
+.buy-link:hover {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $heart;
+}
