@@ -247,4 +247,24 @@ prod20.remote_image_url_url = "https://s7d5.scene7.com/is/image/FreePeople/53469
 
 prod20.save
 
+prod21 = Product.create({
+  price: 245,
+  name: "THE LIV in Rosalita",
+  url: "https://realisationpar.com/the-liv-rosalita/",
+  brand_id: 33,
+  })
 
+prod21.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/500x659/products/174/3059/DSC_5892AS__09250.1556949135.jpg?c=2"
+
+prod21.save
+
+prod22 = Product.create({
+  price: 245,
+  name: "THE LIV in Rosalita",
+  url: "https://realisationpar.com/the-liv-rosalita/",
+  brand_id: 33,
+  })
+
+prod22.remote_image_url_url = "https://cdn11.bigcommerce.com/s-233ct/images/stencil/500x659/products/174/3059/DSC_5892AS__09250.1556949135.jpg?c=2"
+
+prod22.save
