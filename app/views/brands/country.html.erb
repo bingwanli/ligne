@@ -9,16 +9,13 @@
 <body>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <%= render "devise/shared/navbar" %>
-        <a href="/pages/recs" class="recs-button filter-btn"  title="" data-aos="fade-right">Picks For You</a>
+      <a href="/pages/recs" class="recs-button filter-btn"  title="" data-aos="fade-right">Picks For You</a>
   <div class="wf-container">
     <div class="page-title" style="text-align:center">
       <div>
         <h2><%= params[:query] %> BRANDS</h2>
         <h5>Find out what's new</h5>
       </div>
-    </div>
-    <div class="country-btn">
-      <%= link_to "BACK", :back, class: "filter-btn" %>
     </div>
     <% @brands.each do |brand| %>
       <% brand.brand_images.each do |image| %>
@@ -43,8 +40,11 @@
 <!-- button popup -->
 <script type="text/javascript">
   $(window).scroll(function () {
-  if ($(window).scrollTop() > $('body').height() / 2) {
+  if ($(window).scrollTop() > $('body').height() / 0.5) {
     $('.recs-button').addClass('recs-hi');
+  }
+    if ($(window).scrollTop() < $('body').height() / 2) {
+    $('.recs-button').removeClass('recs-hi');
   }
 });
 </script>

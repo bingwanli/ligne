@@ -570,10 +570,17 @@ $white: #fff;
   display: none;
   position:fixed;
   top:20px;
+  width: 100px;
 }
 
 .recs-hi {
-  display: block;
+  display: inline;
   position:fixed;
   top:20px;
+  text-align: center;
+  margin-left: 700px;
+  z-index: 7;
+  top: 700px;
 }
+
+
