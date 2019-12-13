@@ -28,6 +28,7 @@
             <% end %>
           </div>
         </div>
+        <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
         <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
       </div>
     <% end %>
