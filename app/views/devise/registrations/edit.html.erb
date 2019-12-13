@@ -21,7 +21,8 @@
               <div class="card" style="background-image:url(https://i.pinimg.com/564x/8e/89/39/8e893915a1ff3b2ff676f7cfee1b6c87.jpg);">
                <%= cl_image_tag product.image_url %>
                 <div class="Wishlist-content">
-                  <h3 ><%= link_to product.name, product_path(product)%>
+                  <h3><%= product.name %>
+                  <h6><%= link_to "Buy", product.url, target: "blank" %></h6>
                   <h6><%= product.brand.name %></h6>
                   <h6>$<%= product.price %></h6>
                 </div>
