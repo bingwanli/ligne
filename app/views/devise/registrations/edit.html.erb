@@ -11,7 +11,7 @@
 <div class="title">
   <h2>MY STYLE</h2>
 </div>
-<%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %>
+<!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
 
 <!-- PRODUCT WISHLIST -->
 <h4 class="page-title" style="text-align:center;">Wishlist</h4>
@@ -25,9 +25,9 @@
             <p><h3>No Image Here, Sorry!</h3></p>
             <% else %>
               <div class="card" style="background:#F2EFEB">
-               <%= cl_image_tag product.image_url %>
-                <div class="Wishlist-content">
-                  <h6><%= product.name %></h6>
+               <%= cl_image_tag product.image_url, style: "padding-bottom:15px" %>
+                <div class="Wishlist-content" style="padding:5px ">
+                  <h6 style="font-weight:700" ><%= product.name %></h6>
                   <h6><%= link_to "Buy", product.url, target: "blank", class: "black-white-link"%></h6>
                   <h6><%= product.brand.name %></h6>
                   <h6>$<%= product.price %></h6>
@@ -100,3 +100,4 @@ flkty.on( 'scroll', function() {
   });
 });
 </script>
+
