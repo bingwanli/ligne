@@ -18,10 +18,10 @@
 }
 
 .navbar-collapse {
-  background: rgba(120, 120, 120, 0.5);
+  background: rgba(120, 120, 120, 0.9);
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 2000px) {
   .navbar-collapse {
     background: transparent;
     color: white !important;
@@ -29,7 +29,7 @@
 }
 
 
-@media screen and (max-width: 801px) {
+@media screen and (max-width: 2000px) {
   .nav-link {
    color: white !important;
    // background: rgba(120, 120, 120, 0.5);
@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (max-width: 801px) {
+@media screen and (max-width: 2000px) {
   .nav-item {
      padding: 20px
   }

@@ -30,27 +30,37 @@
 }
 
 .left {
-  width: 25px;
-  height:25px;
+  width: 50px;
+  height:50px;
   background-repeat: no-repeat;
 }
 
 .right {
-  width: 25px;
-  height:25px;
+  width: 50px;
+  height:50px;
   background-repeat: no-repeat;
 }
 
 .m-left {
-  width: 25px;
-  height:25px;
+  width: 40px;
+  height:40px;
   background-repeat: no-repeat;
 }
 
 .m-right {
-  width: 25px;
-  height:25px;
+  width: 40px;
+  height:40px;
   background-repeat: no-repeat;
+}
+
+.main-banner-title {
+  color: black;
+  margin-top: 40px;
+}
+
+.main-banner-title p {
+  color: black;
+
 }
 
 .second-banner {
@@ -89,10 +99,11 @@
 .mobile-arrows {
   display: flex;
   height: 50px;
-  width: 100%;
+  width: 90%;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-top: -50px
 }
 
 #globalArea {
@@ -128,7 +139,7 @@ canvas {
 @media screen and (max-width: 801px) {
   .main-banner {
     background-color: white;
-    background-image:url(https://i.pinimg.com/564x/34/e9/c4/34e9c45d178d4fba837eb4c1f9db5f65.jpg) !important;
+    // background-image:url(https://i.pinimg.com/564x/34/e9/c4/34e9c45d178d4fba837eb4c1f9db5f65.jpg) !important;
   }
 }
 
@@ -167,6 +178,12 @@ canvas {
   }
 }
 
+@media screen and (min-width: 801px) {
+  .buy-btn-2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .right {
     display: none;
@@ -175,6 +192,12 @@ canvas {
 
 @media screen and (max-width: 800px) {
   .left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .buy-btn {
     display: none;
   }
 }

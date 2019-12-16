@@ -5,50 +5,22 @@
     <title>Hello World (Simplest Usage) / Gio.js</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
-    <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
   <!-- load data in this data script -->
     <script src="app/assets/javascripts/data.js"></script>
 
-<!-- POPUP MESSAGE -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
-<style type="text/css">
-
-</style>
-<script type='text/javascript'>
-$(function(){
-var overlay = $('<div id="overlay"></div>');
-overlay.show();
-overlay.appendTo(document.body);
-$('.popup').show();
-$('.close').click(function(){
-$('.popup').hide();
-overlay.appendTo(document.body).remove();
-return false;
-});
-
-$('.x').click(function(){
-$('.popup').hide();
-overlay.appendTo(document.body).remove();
-return false;
-});
-});
-</script>
-</head>
-<div class='popup'>
-  <div class='cnt223'>
-  <h1>Welcome to LIGNE</h1>
-    <p>Navigate through the globe with the arrows. <br>Choose a country by pressing on it.</p>
-    <a href='' class="close">
-     <h5 style="z-index:1000;font-size:25px;color:yellow;padding:0; background-color:black ">Got it!</h5>
-    </a>
-
-  </div>
-</div>
-
-<!-- MAIN BANNER -->
 <body>
 
-  <div class="main-banner parallax" style="background-image:url(https://cdn.dribbble.com/users/89889/screenshots/6919200/contour-dribble_4x.jpg)">
+  <!-- MAIN BANNER -->
+  <div class="main-banner parallax" style="padding-top:0;background-image:url(https://marketplace.canva.com/MADBINdBC1Q/1/thumbnail_large-1/canva-catwalk-background-MADBINdBC1Q.jpg)">
+
+  <!-- NAVBAR -->
+
+    <div class="main-banner-title">
+      <h1 style="padding-top:25px">Welcome to LIGNE</h1>
+      <br>
+      <h5>Discover brands through the globe by pressing the arrows.</h5>
+
+    </div>
   <div class="collapse-nav">
     <%= render "devise/shared/navbar" %>
   </div>
@@ -57,15 +29,22 @@ return false;
       <div id="globalArea"></div>
       <div class="right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
     </div>
-      <div class="country-name"></div>
-      <div class="mobile-arrows">
+      <div class="mobile-arrows" style="margin-top:25px">
         <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
+        <div><a href="#" id="discover2" class="buy-btn-2">Travel to <strong>United States</strong>?</a></div>
         <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
-    </div>
+
+      </div>
+   <!--    <div class="country-name" style="margin-bottom:45px !important">
+        <a href="#" class="buy-btn" style="flex: 1 1 80px;padding:10px !important;">DISCOVER</a> -->
+      <div class="country-name">
+        <strong></strong>
+      </div>
+      <a id="discover" class="buy-btn" style="flex: 1 1 80px;">Travel to <strong>United States</strong>?</a>
     </div>
   </div>
 
-
+    <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
 <!-- GLOBE -->
   <script type="text/javascript">
 
@@ -74,8 +53,12 @@ return false;
     let container = document.getElementById( "globalArea" );
     let CountryName = document.querySelector(".country-name");
     let controller = new GIO.Controller( container );
+    let discover = document.querySelector("#discover");
+    let discoverMobile = document.querySelector("#discover2");
+    let countryIndex
 
     // Initializers
+    controller.setInitCountry("US");
     controller.setTransparentBackground(true);
     controller.addData( data );
     controller.setAutoRotation( true, 1 );
@@ -87,8 +70,8 @@ return false;
     // Desktop DOM Variables
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
-    let places = ["US", "CN", "BR", "FR", "CA", "AU"];
-
+    let places = ["FR", "CN", "BR", "US", "CA", "AU"];
+    let codename = {FR:"France", CN:"China", BR:"Brazil", US:"United States", CA:"Canada", AU:"Australia"};
     // Mobile DOM Variables
     let mleft = document.querySelector(".m-left");
     let mright = document.querySelector(".m-right");
@@ -99,55 +82,55 @@ return false;
       controller.setAutoRotation(false);
     }
 
-    const goLeft = () => {
-      let num = places[Math.floor(Math.random()*places.length)];
-      controller.setAutoRotation(false);
-      controller.switchCountry(num);
-      setTimeout(doAnotherThing, 5000);
-    };
-
     // Event Listeners
-    container.addEventListener('click', disableRotate)
-    right.addEventListener('click', goLeft);
-    left.addEventListener('click', goLeft);
-    mright.addEventListener('click', goLeft);
-    mleft.addEventListener('click', goLeft);
-
-
+    const doAnotherThing = () => {
+      controller.setAutoRotation(true, 1);
+    }
   const callback = ( selectedCountry, relatedCountries ) => {
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
-    CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
-    const doSomething = () => {
-      window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
+
+    let num = places[Math.floor(Math.random()*places.length)];
+    controller.setAutoRotation(false);
+    controller.switchCountry(num);
+    setTimeout(doAnotherThing, 5000);
+
+   discover.innerHTML = "Travel to <strong>" + codename[num] + "</strong>?";
+   discoverMobile.innerHTML = "Travel to <strong>" + codename[num] + "</strong>?";
+    countryIndex = num
+  }
+
+    // go to country brand
+  const doSomething = () => {
+    if (countryIndex === undefined) {
+      window.location.href = "/brands/country?query=US"
+    } else {
+      window.location.href = "/brands/country?query=" + countryIndex
     }
 
-    setTimeout(doSomething, 1500);
   }
 
-    controller.onCountryPicked(callback);
 
-  const doAnotherThing = () => {
-    controller.setAutoRotation(true, 1);
-  }
+  discover.addEventListener('click', doSomething);
+  discoverMobile.addEventListener('click', doSomething);
 
-  controller.liveLoad( data, liveLoadCallback, 5000 );
+  container.addEventListener('click', disableRotate)
 
-  function liveLoadCallback () {
+  right.addEventListener('click', callback);
+  left.addEventListener('click', callback);
+  mright.addEventListener('click', callback);
+  mleft.addEventListener('click', callback);
 
-          console.log("Load data event happens.");
 
-  }
+  controller.onCountryPicked(callback);
+
 
 })();
-
-
-
 
   </script>
 
 <!-- ABOUT US -->
-  <div class="second-banner">
+<!--   <div class="second-banner">
     <div class="flip">
       <div class="card-discover front" style="background-image: url(https://i.pinimg.com/564x/2b/d7/ca/2bd7ca8ec4ff621293588bef43a66699.jpg);">
         <h4><strong>Discover</strong></h4>
@@ -178,7 +161,7 @@ return false;
     <div>
       <a href="/brands" class="buy-btn" style="flex: 1 1 80px;">DISCOVER</a>
     </div>
-  </div>
+  </div> -->
 
 
 </body>
