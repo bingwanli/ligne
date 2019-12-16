@@ -16,22 +16,20 @@
 
 <!-- PRODUCT CARDS -->
 <div class="product-card">
-  <% @brands.each do |brand| %>
-    <% brand.products.each do |product| %>
-      <div class="wf-box" data-aos="fade-right">
-        <div class="heart aos-init aos-animate" data-aos="fade-right">
-          <div class="wrapper">
-            <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-              <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
-              <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
-              <span class="like-overlay"></span>
-            <% end %>
-          </div>
+  <% @products.first.each do |product| %>
+    <div class="wf-box" data-aos="fade-right">
+      <div class="heart aos-init aos-animate" data-aos="fade-right">
+        <div class="wrapper">
+          <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+            <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
+            <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
+            <span class="like-overlay"></span>
+          <% end %>
         </div>
-        <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
-        <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
       </div>
-    <% end %>
+      <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
+      <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+    </div>
   <% end %>
 </div>
 

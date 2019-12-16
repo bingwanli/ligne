@@ -8,8 +8,14 @@ class PagesController < ApplicationController
     current_user.liked_brand_images.each do |image|
       if brands.include?(image.brand)
       else brands << image.brand
+      @brands = brands
       end
     end
+
     @brands = brands
+    @products = []
+    @brands.each do |brand|
+      @products << brand.products.shuffle
+    end
   end
 end
