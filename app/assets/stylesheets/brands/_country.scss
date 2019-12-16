@@ -571,6 +571,7 @@ $white: #fff;
   position:fixed;
   top:20px;
   width: 100px;
+  margin-bottom: 150px;
 }
 
 .recs-hi {
@@ -578,7 +579,9 @@ $white: #fff;
   position:fixed;
   top:20px;
   text-align: center;
-  margin-left: 700px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
   z-index: 7;
   top: 700px;
 }
