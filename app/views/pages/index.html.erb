@@ -69,8 +69,9 @@ return false;
 
       </div>
       <div class="country-name">
-        <a href="#" class="buy-btn" style="flex: 1 1 80px;">DISCOVER</a>
+        <strong>United States</strong>
       </div>
+      <a id="discover" class="buy-btn" style="flex: 1 1 80px;">Travel?</a>
     </div>
   </div>
 
@@ -83,8 +84,11 @@ return false;
     let container = document.getElementById( "globalArea" );
     let CountryName = document.querySelector(".country-name");
     let controller = new GIO.Controller( container );
+    let discover = document.querySelector("#discover");
+    let countryIndex
 
     // Initializers
+    controller.setInitCountry("US");
     controller.setTransparentBackground(true);
     controller.addData( data );
     controller.setAutoRotation( true, 1 );
@@ -96,8 +100,8 @@ return false;
     // Desktop DOM Variables
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
-    let places = ["US", "CN", "BR", "FR", "CA", "AU"];
-
+    let places = ["FR", "CN", "BR", "US", "CA", "AU"];
+    let codename = {FR:"France", CN:"China", BR:"Brazil", US:"United States", CA:"Canada", AU:"Australia"};
     // Mobile DOM Variables
     let mleft = document.querySelector(".m-left");
     let mright = document.querySelector(".m-right");
@@ -108,44 +112,42 @@ return false;
       controller.setAutoRotation(false);
     }
 
-    const goLeft = () => {
-      let num = places[Math.floor(Math.random()*places.length)];
-      controller.setAutoRotation(false);
-      controller.switchCountry(num);
-      setTimeout(doAnotherThing, 5000);
-    };
-
     // Event Listeners
-    container.addEventListener('click', disableRotate)
-    right.addEventListener('click', goLeft);
-    left.addEventListener('click', goLeft);
-    mright.addEventListener('click', goLeft);
-    mleft.addEventListener('click', goLeft);
-
 
   const callback = ( selectedCountry, relatedCountries ) => {
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
-    CountryName.innerHTML = "Traveling to <strong>" +selectedCountry.name + "</strong> buckle in!";
-    const doSomething = () => {
-      window.location.href = "/brands/country?query=" + selectedCountry.ISOCode
-    }
 
-    setTimeout(doSomething, 1500);
+    let num = places[Math.floor(Math.random()*places.length)];
+    controller.setAutoRotation(false);
+    controller.switchCountry(num);
+    console.log(selectedCountry)
+    setTimeout(doAnotherThing, 5000);
+
+    CountryName.innerHTML = "<strong>" + codename[num] + "</strong>";
+
+    countryIndex = num
   }
 
-    controller.onCountryPicked(callback);
+    // go to country brand
+  const doSomething = () => {
+    window.location.href = "/brands/country?query=" + countryIndex
+  }
+
+
+  discover.addEventListener('click', doSomething)
+
+  container.addEventListener('click', disableRotate)
+  right.addEventListener('click', callback);
+  left.addEventListener('click', callback);
+  mright.addEventListener('click', callback);
+  mleft.addEventListener('click', callback);
+
+
+  controller.onCountryPicked(callback);
 
   const doAnotherThing = () => {
     controller.setAutoRotation(true, 1);
-  }
-
-  controller.liveLoad( data, liveLoadCallback, 5000 );
-
-  function liveLoadCallback () {
-
-          console.log("Load data event happens.");
-
   }
 
 })();
