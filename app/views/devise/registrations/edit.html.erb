@@ -1,6 +1,5 @@
 
 <script src="app/assets/javascripts/responsive_waterfall.js"></script>
-<%= render "devise/shared/navbar" %>
 
 <style>
   body {
@@ -16,6 +15,9 @@
 <!-- PRODUCT WISHLIST -->
 <h4 class="page-title" style="text-align:center;">Wishlist</h4>
 <div class="wf-container">
+  <div class="collapse-nav">
+    <%= render "devise/shared/navbar" %>
+  </div>
   <div class="main-carousel">
     <% if current_user.liked_products.nil? %>
       <p><h6>No liked products!</h6></p>

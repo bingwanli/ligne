@@ -1,6 +1,5 @@
 <!-- BRAND CARDS -->
 <body>
-  <%= render "devise/shared/navbar" %>
 
   <script src="app/assets/javascripts/responsive_waterfall.js"></script>
   <div style="display:flex;justify-content:space-evenly" >
@@ -9,6 +8,9 @@
 
 
   <div class="wf-container">
+    <div class="collapse-nav">
+      <%= render "devise/shared/navbar" %>
+    </div>
     <div class="page-title" style="text-align:center">
       <div>
         <h2>ALL BRANDS</h2>
@@ -16,10 +18,10 @@
       </div>
     </div>
 
-    <div class="country-btn">
+<!--     <div class="country-btn">
       <%= link_to "BACK", :back, class: "filter-btn" %>
       <%= link_to "GO TO...", brands_path, class: "filter-btn" %>
-    </div>
+    </div> -->
 
     <% @brands.each do |brand| %>
       <% if brand.brand_images.second.nil? %>
