@@ -22,9 +22,9 @@
         <div class="wf-box" data-aos="fade-right">
           <div class="heart" data-aos="fade-right">
             <div class="wrapper">
-              <%= link_to brand_path(image.brand), method: :patch, class: "like-button" do%>
-                <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+              <%= link_to brand_brand_image_path(brand, image), method: :patch, class: "like-button" do%>
                 <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
                 <span class="like-overlay"></span>
               <% end %>
             </div>
