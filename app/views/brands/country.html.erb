@@ -10,8 +10,10 @@
 <body>
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-      <a href="/pages/recs" class="recs-button filter-btn"  title="" data-aos="fade-right">Picks For You</a>
+
+
   <div class="wf-container">
+    <a href="/pages/recs" class="recs-button picks-for-you-btn"  title="" data-aos="fade-right">Picks For You</a>
     <div class="collapse-nav">
       <%= render "devise/shared/navbar" %>
     </div>
@@ -37,8 +39,9 @@
       </div>
     <% end %>
 
+
 <!-- button popup -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(window).scroll(function () {
   if ($(window).scrollTop() > $('body').height() / 0.5) {
     $('.recs-button').addClass('recs-hi');
@@ -48,13 +51,18 @@
   }
 });
 </script>
-
+ -->
 <!-- like button -->
 <script type="text/javascript">
   $(document).ready(function(){
-
+      let i = 0;
     $('.like-button').click(function(){
         $(this).toggleClass('is-active');
+        i = i + 1;
+        if (i >= 3) {
+          $('.recs-button').addClass('recs-hi');
+         // $('.recs-button').addClass('recs-hi');
+        }
     })
 
 })

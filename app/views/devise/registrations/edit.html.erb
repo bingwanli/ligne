@@ -7,7 +7,7 @@
   }
 </style>
 
-<div class="title">
+<div class="title" style="padding-top:30px">
   <h2>MY STYLE</h2>
 </div>
 <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
@@ -44,6 +44,7 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <br><br>
+
 <!-- BRANDS LIKED -->
 <div class="wf-container">
   <div class="page-title">
@@ -64,7 +65,7 @@
               <%= cl_image_tag bimage.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;"%>
             <% end %>
             <div class="content" style="text-align:center;align-items:center;">
-              <h3><%= link_to image.brand.name, brand_path(image.brand_id), style:"color:black;"%></h3>
+              <h3><%= link_to image.brand.name, image.brand.url, target:"blank", style:"color:black;"%></h3>
               <h5><%= image.brand.country %></h5>
             </div>
           </div>

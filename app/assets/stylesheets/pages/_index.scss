@@ -2,7 +2,7 @@
   background-size: cover;
   // background-image: url(https://cdn.dribbble.com/users/1404186/screenshots/3603919/corridor.gif);
   background-position: center;
-  height: 100vh;
+  height: 91vh;
   display: flex;
   text-align: center;
   align-items: center;
@@ -15,7 +15,7 @@
 }
 
 .parallax {
-  height: 100vh;
+  height: 91vh;
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
@@ -45,12 +45,14 @@
   width: 40px;
   height:40px;
   background-repeat: no-repeat;
+  display: none;
 }
 
 .m-right {
   width: 40px;
   height:40px;
   background-repeat: no-repeat;
+  display: none;
 }
 
 .main-banner-title {
@@ -98,7 +100,7 @@
 }
 
 .mobile-arrows {
-  display: flex;
+  // display: flex;
   height: 50px;
   width: 90%;
   flex-wrap: wrap;
@@ -162,7 +164,7 @@ canvas {
     padding-left: 0;
     margin-right: 0;
     margin-left: 0;
-    width: 100%;
+    width: 90%;
     height: 400px;
   }
 }
@@ -185,15 +187,29 @@ canvas {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1px) {
   .right {
     display: none;
+    z-index: 100
+  }
+}
+
+@media screen and (max-width: 1px) {
+  .left {
+    display: none;
+    z-index: 100;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .left {
-    display: none;
+  .navbar-brand {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navbar-brand-2 {
+    display: none !important;
   }
 }
 
@@ -202,6 +218,13 @@ canvas {
     display: none;
   }
 }
+
+@media screen and (min-width: 801px) {
+  .main-banner {
+    height: 100vh;
+  }
+}
+
 
 #stop-scrolling {
   height: 100%;
