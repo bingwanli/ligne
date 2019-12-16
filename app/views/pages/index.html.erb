@@ -75,7 +75,7 @@ return false;
     </div>
   </div>
 
-
+    <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
 <!-- GLOBE -->
   <script type="text/javascript">
 
@@ -113,7 +113,9 @@ return false;
     }
 
     // Event Listeners
-
+    const doAnotherThing = () => {
+      controller.setAutoRotation(true, 1);
+    }
   const callback = ( selectedCountry, relatedCountries ) => {
     let left = document.querySelector(".left");
     let right = document.querySelector(".right");
@@ -121,7 +123,6 @@ return false;
     let num = places[Math.floor(Math.random()*places.length)];
     controller.setAutoRotation(false);
     controller.switchCountry(num);
-    console.log(selectedCountry)
     setTimeout(doAnotherThing, 5000);
 
     CountryName.innerHTML = "<strong>" + codename[num] + "</strong>";
@@ -146,14 +147,8 @@ return false;
 
   controller.onCountryPicked(callback);
 
-  const doAnotherThing = () => {
-    controller.setAutoRotation(true, 1);
-  }
 
 })();
-
-
-
 
   </script>
 
