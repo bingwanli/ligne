@@ -18,6 +18,6 @@ class PagesController < ApplicationController
       @products << brand.products.shuffle
     end
 
-    @recommendations = current_user.recommended_for(Product, limit = 10, offset = 0)
+    @recommendations = current_user.recommended_products.limit(3)
   end
 end

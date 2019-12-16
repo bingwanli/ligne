@@ -18,27 +18,30 @@
 <!-- PRODUCT CARDS -->
     <div class="product-card">
       <% @products.first.each do |product| %>
-        <div class="wf-box" data-aos="fade-right">
-          <div class="heart aos-init aos-animate" data-aos="fade-right">
-            <div class="wrapper">
-              <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
-                <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
-                <span class="like-overlay"></span>
-              <% end %>
+        <% if @products.empty? %>
+          <h6>Oops you haven't liked any brand images yet!</h6>
+        <% else %>
+          <div class="wf-box" data-aos="fade-right">
+            <div class="heart aos-init aos-animate" data-aos="fade-right">
+              <div class="wrapper">
+                <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+                  <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
+                  <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
+                  <span class="like-overlay"></span>
+                <% end %>
+              </div>
             </div>
+            <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
+            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
           </div>
-          <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
-          <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
 
-  <div class="wf-container">
+  <div class="product-card">
     <h3>Recommended Products</h3>
-    <%= @recommendations %>
-    <% Product.top(5).each do |product| %>
+    <% @recommendations.each do |product| %>
       <div class="wf-box" data-aos="fade-right">
         <div class="heart aos-init aos-animate" data-aos="fade-right">
           <div class="wrapper">
