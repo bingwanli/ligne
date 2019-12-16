@@ -7,7 +7,7 @@
   color: white;
   z-index: 100;
   transition: background-color 1s ease 0s;
-  position: fixed;
+  // position: fixed;
   justify-content: space-between;
 }
 
@@ -17,6 +17,12 @@
   display: flex;
   z-index: 100;
   text-align:center;
+}
+
+
+.navbar-brand-2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navbar-collapse {
