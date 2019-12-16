@@ -178,6 +178,12 @@ canvas {
   }
 }
 
+@media screen and (min-width: 801px) {
+  .buy-btn-2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .right {
     display: none;
