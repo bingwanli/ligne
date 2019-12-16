@@ -1,11 +1,11 @@
 require 'nokogiri'
 require 'open-uri'
 
-brand = Brand.create({ id: 1,
+brand = Brand.create({
   name: 'Mara Hoffman',
   description: "Mara Hoffman founded her label in 2000 after graduating from Parsons School of Design in New York City. Fifteen years later, the brand committed itself to implementing more sustainable and responsible practices. In an effort to foster mindful consumption habits, the brand maintains an open conversation about its approach and encourages consumers to reevaluate the relationship society has with clothing. The company continues to focus on sustainable materials, processes, and production in order to improve and extend each garment’s life. President and Creative Director, Mara Hoffman, presents collections with a devotion to color, each inspired by and in celebration of women.",
   country: 'US',
-  logo_url: 'http://gfiny.com/wp-content/uploads/2016/02/mara-hoffman.jpg' })
+  url: 'www.marahoffman.com'})
 
 url = 'https://www.marahoffman.com/shop-all'
 html_file = open(url).read
@@ -414,10 +414,10 @@ prod35.save
 
 
 brimg1 = BrandImage.create({
-  brand_id: 39
+  brand_id: 33
 })
 
 
-brimg1.remote_url_url = "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2018%2F09%2Freformation-fall-2018-denim-editorial-3.jpg"
+brimg1.remote_url_url = "https://cloudfront.violetgrey.com/violet-files/routines/realisation-par/_desktop/realisation-par-feature-01.jpg"
 
 brimg1.save

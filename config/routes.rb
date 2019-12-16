@@ -17,9 +17,7 @@ Rails.application.routes.draw do
     collection do
       get 'country'
     end
-    resources :products, shallow: true do
-      resources :product_recs, only: [:create, :update]
-    end
-    resources :brand_images, only: [:create, :destroy]
+    resources :products, shallow: true
+    resources :brand_images, only: [:create, :destroy, :update]
   end
 end

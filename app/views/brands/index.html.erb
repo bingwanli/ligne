@@ -24,10 +24,10 @@
     </div> -->
 
     <% @brands.each do |brand| %>
-      <% if brand.brand_images.second.nil? %>
+      <% if brand.brand_images.first.nil? %>
       <% else %>
         <div class="wf-box">
-          <%= cl_image_tag brand.brand_images.second.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
+          <%= cl_image_tag brand.brand_images.first.url, style: "border-top-left-radius:20px;border-top-right-radius:20px;" %>
           <div class="content">
             <h3><%= brand.name %></h3>
             <h5><%= brand.country %></h5>
