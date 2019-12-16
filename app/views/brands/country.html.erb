@@ -43,8 +43,9 @@
 
 
 
+
 <!-- button popup -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(window).scroll(function () {
   if ($(window).scrollTop() > $('body').height() / 0.5) {
     $('.recs-button').addClass('recs-hi');
@@ -54,13 +55,18 @@
   }
 });
 </script>
-
+ -->
 <!-- like button -->
 <script type="text/javascript">
   $(document).ready(function(){
-
+      let i = 0;
     $('.like-button').click(function(){
         $(this).toggleClass('is-active');
+        i = i + 1;
+        if (i >= 3) {
+          $('.recs-button').addClass('recs-hi');
+         // $('.recs-button').addClass('recs-hi');
+        }
     })
 
 })
