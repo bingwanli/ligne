@@ -29,6 +29,24 @@
   color: white;
 }
 
+.buy-btn-2 {
+  color: white;
+  background-color: black;
+  width: 20px !important;
+  border: 1px solid white;
+  padding: 10px;
+  margin-left:10px;
+  margin-right:10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.buy-btn-2:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+}
+
 .style-btn {
   color: white;
   background-color: #0F4C81;
