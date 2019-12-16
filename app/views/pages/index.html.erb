@@ -5,45 +5,8 @@
     <title>Hello World (Simplest Usage) / Gio.js</title>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
-    <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
   <!-- load data in this data script -->
     <script src="app/assets/javascripts/data.js"></script>
-
-<!-- POPUP MESSAGE -->
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
-<style type="text/css">
-
-</style>
-<script type='text/javascript'>
-$(function(){
-var overlay = $('<div id="overlay"></div>');
-overlay.show();
-overlay.appendTo(document.body);
-$('.popup').show();
-$('.close').click(function(){
-$('.popup').hide();
-overlay.appendTo(document.body).remove();
-return false;
-});
-
-$('.x').click(function(){
-$('.popup').hide();
-overlay.appendTo(document.body).remove();
-return false;
-});
-});
-</script>
-</head>
-<div class='popup'>
-  <div class='cnt223'>
-  <h1>Welcome to LIGNE</h1>
-    <p>Navigate through the globe with the arrows. <br>Choose a country by pressing on it.</p>
-    <a href='' class="close">
-     <h5 style="z-index:1000;font-size:25px;color:yellow;padding:0; background-color:black ">Got it!</h5>
-    </a>
-
-  </div>
-</div> -->
 
 <body>
 
@@ -68,7 +31,7 @@ return false;
     </div>
       <div class="mobile-arrows" style="margin-top:25px">
         <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
-        <div><a href="#" id="discover2" class="buy-btn-2">DISCOVER</a></div>
+        <div><a href="#" id="discover2" class="buy-btn-2">Travel to <strong>United States</strong>?</a></div>
         <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
 
       </div>
@@ -77,7 +40,7 @@ return false;
       <div class="country-name">
         <strong></strong>
       </div>
-      <a id="discover" class="buy-btn" style="flex: 1 1 80px;">Click Arrows</a>
+      <a id="discover" class="buy-btn" style="flex: 1 1 80px;">Travel to <strong>United States</strong>?</a>
     </div>
   </div>
 
@@ -139,13 +102,20 @@ return false;
 
     // go to country brand
   const doSomething = () => {
-    window.location.href = "/brands/country?query=" + countryIndex
+    if (countryIndex === undefined) {
+      window.location.href = "/brands/country?query=US"
+    } else {
+      window.location.href = "/brands/country?query=" + countryIndex
+    }
+
   }
 
 
   discover.addEventListener('click', doSomething);
   discoverMobile.addEventListener('click', doSomething);
+
   container.addEventListener('click', disableRotate)
+
   right.addEventListener('click', callback);
   left.addEventListener('click', callback);
   mright.addEventListener('click', callback);
