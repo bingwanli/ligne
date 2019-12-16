@@ -6,11 +6,15 @@
 
 <!-- EDITORIAL CARDS -->
 <!-- BRAND CARDS -->
+
 <body>
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <%= render "devise/shared/navbar" %>
       <a href="/pages/recs" class="recs-button filter-btn"  title="" data-aos="fade-right">Picks For You</a>
   <div class="wf-container">
+    <div class="collapse-nav">
+      <%= render "devise/shared/navbar" %>
+    </div>
     <div class="page-title" style="text-align:center">
       <div>
         <h2><%= params[:query] %> BRANDS</h2>

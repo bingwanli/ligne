@@ -10,7 +10,7 @@
   flex-direction: column;
   color: white;
   // text-shadow: 1px 1px 10px black;
-  padding: 20px;
+  padding-bottom: 30px;
   font-family: "Montserrat"
 }
 
@@ -55,7 +55,8 @@
 
 .main-banner-title {
   color: black;
-  margin-top: 40px;
+  margin-top: 30px;
+  width: 60%
 }
 
 .main-banner-title p {
@@ -197,7 +198,7 @@ canvas {
 }
 
 @media screen and (max-width: 800px) {
-  .buy-btn {
+  .main-banner-btn {
     display: none;
   }
 }
