@@ -17,5 +17,7 @@ class PagesController < ApplicationController
     @brands.each do |brand|
       @products << brand.products.shuffle
     end
+
+    @recommendations = current_user.recommended_for(Product, limit = 10, offset = 0)
   end
 end
