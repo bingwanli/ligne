@@ -6,7 +6,7 @@ class BrandsController < ApplicationController
   end
 
   def country
-    @brands = Brand.where(country: params[:query])
+    random_brand_images
   end
 
   def show
@@ -51,5 +51,16 @@ class BrandsController < ApplicationController
 
   def brands_params
     params.require(:brand).permit(:name, :description, :country, :url, brand_images_attributes: [:id, :url, :brand_id])
+  end
+
+  def random_brand_images
+    @brands = Brand.where(country: params[:query])
+    @randomized_images = []
+    @brands.each do |brand|
+      brand.brand_images.each do |image|
+        @randomized_images << image
+      end
+    end
+    @randomized_images = @randomized_images.shuffle
   end
 end
