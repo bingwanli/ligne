@@ -45,12 +45,14 @@
   width: 40px;
   height:40px;
   background-repeat: no-repeat;
+  display: none;
 }
 
 .m-right {
   width: 40px;
   height:40px;
   background-repeat: no-repeat;
+  display: none;
 }
 
 .main-banner-title {
@@ -98,7 +100,7 @@
 }
 
 .mobile-arrows {
-  display: flex;
+  // display: flex;
   height: 50px;
   width: 90%;
   flex-wrap: wrap;
@@ -162,7 +164,7 @@ canvas {
     padding-left: 0;
     margin-right: 0;
     margin-left: 0;
-    width: 100%;
+    width: 90%;
     height: 400px;
   }
 }
@@ -185,15 +187,17 @@ canvas {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1px) {
   .right {
     display: none;
+    z-index: 100
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1px) {
   .left {
     display: none;
+    z-index: 100;
   }
 }
 
