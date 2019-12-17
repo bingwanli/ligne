@@ -4,10 +4,13 @@
   margin-top: 7px;
   width: 30px;
   height: 30px;
-
 }
-.wf-box {
-  position: relative;
+
+@media (min-width: 0px) and (max-width: 800px) {
+  .wf-column img {
+    display: flex;
+    text-align: center;
+  }
 }
 
 .gridCentered {
@@ -466,7 +469,7 @@ $white: #fff;
   display: flex;
   text-align: center;
   align-items: center;
-
+  width: 95%;
 
 }
 

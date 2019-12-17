@@ -11,7 +11,6 @@
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
   <div class="wf-container">
     <a href="/pages/recs" class="recs-button picks-for-you-btn"  title="" data-aos="fade-right">Picks For You</a>
     <div class="collapse-nav">
@@ -26,7 +25,7 @@
 
     <div class="centered-cards">
       <% @randomized_images.each do |image| %>
-        <div class="wf-box" data-aos="fade-right">
+        <div class="wf-box wf-box-2" data-aos="fade-right">
           <div class="heart" data-aos="fade-right">
             <div class="wrapper">
               <%= link_to brand_brand_image_path(image.brand, image), method: :patch, class: "like-button" do%>
