@@ -10,7 +10,6 @@
   position: relative;
 }
 
-
 .gridCentered {
   margin-left: auto;
   margin-right: auto;
@@ -461,10 +460,15 @@ $white: #fff;
   text-transform: uppercase;
   font-weight: 700;
   color: $heart;
-
 }
 
+.centered-cards {
+  display: flex;
+  text-align: center;
+  align-items: center;
 
+
+}
 
   .love {
     font-size: 0.9rem;
