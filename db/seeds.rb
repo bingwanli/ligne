@@ -582,7 +582,7 @@ brimg3 = BrandImage.create({
 })
 
 
-b5img3.remote_url_url = "https://www.zoemagazine.net/wp-content/uploads/2018/10/000064850003.jpg"
+brimg3.remote_url_url = "https://www.zoemagazine.net/wp-content/uploads/2018/10/000064850003.jpg"
 
 brimg3.save
 
@@ -631,7 +631,7 @@ brimg3 = BrandImage.create({
 })
 
 
-b5img3.remote_url_url = "https://img.sezane.com/visuels/mega-menu/444x406/237_menu_dropdown(3).jpg"
+brimg3.remote_url_url = "https://img.sezane.com/visuels/mega-menu/444x406/237_menu_dropdown(3).jpg"
 
 brimg3.save
 
