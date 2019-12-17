@@ -1,3 +1,8 @@
+
+<!-- icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+
 <%= render "/devise/shared/navbar" %>
 <!-- TITLE -->
 <body>
@@ -25,8 +30,8 @@
             <div class="heart aos-init aos-animate" data-aos="fade-right">
               <div class="wrapper">
                 <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                  <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
-                  <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
+                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
                   <span class="like-overlay"></span>
                 <% end %>
               </div>
@@ -39,25 +44,36 @@
     </div>
   </div>
 
-  <div class="product-card">
-    <h3>Recommended Products</h3>
-    <% @recommendations.each do |product| %>
-      <div class="wf-box" data-aos="fade-right">
-        <div class="heart aos-init aos-animate" data-aos="fade-right">
-          <div class="wrapper">
-            <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-              <i class="mdc-icon-button material-icons not-liked bouncy" style="font-size:15px;">♥︎</i>
-              <i class="mdc-icon-button material-icons is-liked bouncy" style="font-size:15px;">♥︎</i>
-              <span class="like-overlay"></span>
-            <% end %>
-          </div>
-        </div>
-        <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
-        <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
-      </div>
-    <% end %>
-  </div>
 
+<!-- RECOMMENDED PRODUCTS -->
+  <% if @recommendations.empty? %>
+  <% else %>
+    <div class="wf-container">
+      <div class="page-title" style="text-align:center">
+        <div>
+          <h5>Recommended Products</h5>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <% @recommendations.each do |product| %>
+          <div class="wf-box">
+            <div class="heart aos-init aos-animate" data-aos="fade-right">
+              <div class="wrapper">
+                <%= link_to product_path(product), method: :patch, class: "like-button" do %>
+                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                  <span class="like-overlay"></span>
+                <% end %>
+              </div>
+            </div>
+            <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
+            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
