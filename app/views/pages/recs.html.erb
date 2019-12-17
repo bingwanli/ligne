@@ -57,7 +57,7 @@
 
       <div class="product-card">
         <% @recommendations.each do |product| %>
-          <div class="wf-box" data-aos="fade-right">
+          <div class="wf-box">
             <div class="heart aos-init aos-animate" data-aos="fade-right">
               <div class="wrapper">
                 <%= link_to product_path(product), method: :patch, class: "like-button" do %>
