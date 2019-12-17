@@ -412,12 +412,245 @@ prod35.remote_image_url_url = "https://media.thereformation.com/image/upload/q_a
 
 prod35.save
 
-
+# sezane
 brimg1 = BrandImage.create({
-  brand_id: 33
+  brand_id: 42
 })
 
 
-brimg1.remote_url_url = "https://cloudfront.violetgrey.com/violet-files/routines/realisation-par/_desktop/realisation-par-feature-01.jpg"
+brimg1.remote_url_url = "https://images.squarespace-cdn.com/content/v1/53c71197e4b0db5fbd4fa87e/1542210317170-LR6AV392E13PVJ1KSVRQ/ke17ZwdGBToddI8pDm48kOjTV1uZCgyJAjIbkNy9T0x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0p5uBJOnOmCWBN4JfYsIDySyRzZDKQ5aTF1-uPU_lIxipTn1CsZ0qKwpNSYy-euwcw/ROSE+%26+IVY+Journal+Giving+Back+%7C+A+Few+Moments+with+Morgane+S%C3%A9zalory+of+S%C3%A9zane+and+DEMAIN"
 
 brimg1.save
+
+brimg2 = BrandImage.create({
+  brand_id: 42
+})
+
+
+brimg2.remote_url_url = "https://models1blog.com/wp-content/uploads/2016/04/tess4-730x515.jpg"
+
+brimg2.save
+
+brimg3 = BrandImage.create({
+  brand_id: 42
+})
+
+
+brimg3.remote_url_url = "https://i.pinimg.com/originals/34/e8/9f/34e89ffd4dcda5a27eced234b2d082b8.jpg"
+
+brimg3.save
+
+
+brimg4 = BrandImage.create({
+  brand_id: 42
+})
+
+
+brimg4.remote_url_url = "https://img.sezane.com/visuels/mega-menu/444x406/352_MENUDIMANCHE(1).jpg"
+
+brimg4.save
+
+
+brimg5 = BrandImage.create({
+  brand_id: 42
+})
+
+
+brimg5.remote_url_url = "https://i.pinimg.com/originals/ff/ff/71/ffff71cceb47082237df468244c835c8.jpg"
+
+brimg5.save
+
+# rouje
+
+brimg1 = BrandImage.create({
+  brand_id: 43
+})
+
+
+brimg1.remote_url_url = "https://i.pinimg.com/originals/10/41/dd/1041ddbb12a77a9bbebd35b3d59b3109.jpg"
+
+brimg1.save
+
+brimg2 = BrandImage.create({
+  brand_id: 43
+})
+
+
+brimg2.remote_url_url = "https://i.pinimg.com/originals/77/c8/21/77c821d06c5c593d2d4910295da50e82.jpg"
+
+brimg2.save
+
+brimg3 = BrandImage.create({
+  brand_id: 43
+})
+
+
+brimg3.remote_url_url = "https://www.blufashion.com/wp-content/uploads/2019/02/Rouje-clothing.jpg"
+
+brimg3.save
+
+
+brimg4 = BrandImage.create({
+  brand_id: 43
+})
+
+
+brimg4.remote_url_url = "https://i.pinimg.com/736x/f2/d8/6d/f2d86d469a05f7f1c2b178a4f9280b2f.jpg"
+
+brimg4.save
+
+
+brimg5 = BrandImage.create({
+  brand_id: 43
+})
+
+
+brimg5.remote_url_url = "https://i.pinimg.com/originals/b2/33/01/b233013d48a4a278122a893de184c585.jpg"
+
+brimg5.save
+
+# Maison Chateau Rouge
+brimg1 = BrandImage.create({
+  brand_id: 44
+})
+
+
+brimg1.remote_url_url = "https://superselected.com/wp-content/uploads/2015/05/Maison-Ch%C3%A2teau-Rouge-Jerseys-01.jpg"
+
+brimg1.save
+
+brimg2 = BrandImage.create({
+  brand_id: 44
+})
+
+
+brimg2.remote_url_url = "https://legacy.travelnoire.com/wp-content/uploads/2019/02/maison-1.jpg"
+
+brimg2.save
+
+brimg3 = BrandImage.create({
+  brand_id: 44
+})
+
+
+brimg3.remote_url_url = "https://tissuwax.com/wp-content/uploads/2017/08/maison-chateau-rouge.jpg"
+
+brimg3.save
+
+
+brimg4 = BrandImage.create({
+  brand_id: 44
+})
+
+
+brimg4.remote_url_url = "http://www.stylistic.fr/wp-content/uploads/2015/06/maison-chateau-rouge-marque.jpg"
+
+brimg4.save
+
+
+brimg5 = BrandImage.create({
+  brand_id: 44
+})
+
+
+brimg5.remote_url_url = "https://mediaslide-europe.storage.googleapis.com/metromodels/news_pictures/2019/09/large-1567575705-026ebb3402875c8697bd9ff8000107b5.jpg"
+
+brimg5.save
+
+#Musier
+
+brimg1 = BrandImage.create({
+  brand_id: 45
+})
+
+
+brimg1.remote_url_url = "https://i.pinimg.com/originals/e7/a0/06/e7a0066a9fc94af8e1a9a0ce0dd5d078.jpg"
+
+brimg1.save
+
+brimg2 = BrandImage.create({
+  brand_id: 45
+})
+
+
+brimg2.remote_url_url = "https://www.zoemagazine.net/wp-content/uploads/2018/10/000064890010.jpg"
+
+brimg2.save
+
+brimg3 = BrandImage.create({
+  brand_id: 45
+})
+
+
+b5img3.remote_url_url = "https://www.zoemagazine.net/wp-content/uploads/2018/10/000064850003.jpg"
+
+brimg3.save
+
+
+brimg4 = BrandImage.create({
+  brand_id: 45
+})
+
+
+brimg4.remote_url_url = ""
+
+brimg4.save
+
+
+brimg5 = BrandImage.create({
+  brand_id: 45
+})
+
+
+brimg5.remote_url_url = ""
+
+brimg5.save
+
+#Rixo
+
+brimg1 = BrandImage.create({
+  brand_id: 46
+})
+
+
+brimg1.remote_url_url = "https://images.squarespace-cdn.com/content/v1/53c71197e4b0db5fbd4fa87e/1544210317170-LR6AV392E13PVJ1KSVRQ/ke17ZwdGBToddI8pDm48kOjTV1uZCgyJAjIbkNy9T0x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0p5uBJOnOmCWBN4JfYsIDySyRzZDKQ5aTF1-uPU_lIxipTn1CsZ0qKwpNSYy-euwcw/ROSE+%26+IVY+Journal+Giving+Back+%7C+A+Few+Moments+with+Morgane+S%C3%A9zalory+of+S%C3%A9zane+and+DEMAIN"
+
+brimg1.save
+
+brimg2 = BrandImage.create({
+  brand_id: 46
+})
+
+
+brimg2.remote_url_url = "https://models1blog.com/wp-content/uploads/2016/04/tess4-730x515.jpg"
+
+brimg2.save
+
+brimg3 = BrandImage.create({
+  brand_id: 46
+})
+
+
+b5img3.remote_url_url = "https://img.sezane.com/visuels/mega-menu/444x406/237_menu_dropdown(3).jpg"
+
+brimg3.save
+
+
+brimg4 = BrandImage.create({
+  brand_id: 46
+})
+
+
+brimg4.remote_url_url = "https://img.sezane.com/visuels/look/1080x1514/573.jpg"
+
+brimg4.save
+
+
+brimg5 = BrandImage.create({
+  brand_id: 46
+})
+
+
+brimg5.remote_url_url = "https://cloudfront.violetgrey.com/violet-files/routines/realisation-par/_desktop/realisation-par-feature-01.jpg"
+
+brimg5.save
