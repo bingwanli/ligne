@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       get 'recs'
     end
+    collection do
+      get 'explore'
+    end
   end
 
   require "sidekiq/web"
