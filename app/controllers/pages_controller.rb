@@ -9,6 +9,9 @@ class PagesController < ApplicationController
     recommendations
   end
 
+  def explore
+  end
+
   private
 
   def brand_image_array
