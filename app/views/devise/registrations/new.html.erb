@@ -8,6 +8,7 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
+                      pattern: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                       required: true,
