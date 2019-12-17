@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   root to: 'pages#index'
-  devise_for :users
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
+
+  resources :ugcs, only: [:create, :destroy]
 
   resources :pages, only: [:index] do
     collection do
