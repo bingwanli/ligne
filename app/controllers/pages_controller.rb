@@ -27,7 +27,9 @@ class PagesController < ApplicationController
   def brand_image_to_products
     @products = []
     @brands.each do |brand|
-      @products << brand.products.shuffle
+      brand.products.each do |product|
+        @products << product
+      end
     end
   end
 
