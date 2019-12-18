@@ -592,7 +592,7 @@ brimg4 = BrandImage.create({
 })
 
 
-brimg4.remote_url_url = ""
+brimg4.remote_url_url = "https://i.pinimg.com/originals/85/3f/d9/853fd9cc604d6b40a182ac2795fbccb1.jpg"
 
 brimg4.save
 
@@ -602,7 +602,7 @@ brimg5 = BrandImage.create({
 })
 
 
-brimg5.remote_url_url = ""
+brimg5.remote_url_url = "https://cdn.cliqueinc.com/posts/279688/best-online-boutiques-279688-1557266937290-main.700x0c.jpg"
 
 brimg5.save
 
@@ -613,7 +613,7 @@ brimg1 = BrandImage.create({
 })
 
 
-brimg1.remote_url_url = "https://images.squarespace-cdn.com/content/v1/53c71197e4b0db5fbd4fa87e/1544210317170-LR6AV392E13PVJ1KSVRQ/ke17ZwdGBToddI8pDm48kOjTV1uZCgyJAjIbkNy9T0x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0p5uBJOnOmCWBN4JfYsIDySyRzZDKQ5aTF1-uPU_lIxipTn1CsZ0qKwpNSYy-euwcw/ROSE+%26+IVY+Journal+Giving+Back+%7C+A+Few+Moments+with+Morgane+S%C3%A9zalory+of+S%C3%A9zane+and+DEMAIN"
+brimg1.remote_url_url = ""
 
 brimg1.save
 
@@ -622,7 +622,7 @@ brimg2 = BrandImage.create({
 })
 
 
-brimg2.remote_url_url = "https://models1blog.com/wp-content/uploads/2016/04/tess4-730x515.jpg"
+brimg2.remote_url_url = ""
 
 brimg2.save
 
@@ -631,7 +631,7 @@ brimg3 = BrandImage.create({
 })
 
 
-brimg3.remote_url_url = "https://img.sezane.com/visuels/mega-menu/444x406/237_menu_dropdown(3).jpg"
+brimg3.remote_url_url = ""
 
 brimg3.save
 
@@ -641,7 +641,7 @@ brimg4 = BrandImage.create({
 })
 
 
-brimg4.remote_url_url = "https://img.sezane.com/visuels/look/1080x1514/573.jpg"
+brimg4.remote_url_url = ""
 
 brimg4.save
 
@@ -651,6 +651,6 @@ brimg5 = BrandImage.create({
 })
 
 
-brimg5.remote_url_url = "https://cloudfront.violetgrey.com/violet-files/routines/realisation-par/_desktop/realisation-par-feature-01.jpg"
+brimg5.remote_url_url = ""
 
 brimg5.save

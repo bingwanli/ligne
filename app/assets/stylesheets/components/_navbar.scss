@@ -12,12 +12,17 @@
   font-size:18px;
 }
 
+// .navbar-nav {
+//   width: 50vw;
+// }
+
 .collapse-nav {
   top:0;
   position: fixed;
   display: flex;
   z-index: 100;
   text-align:center;
+  // width: 50vw;
 }
 
 
@@ -29,12 +34,14 @@
 .navbar-collapse {
   background: rgba(120, 120, 120, 0.9);
   text-align:center;
+
 }
 
 @media screen and (min-width: 800px) {
   .navbar-collapse {
     text-align:center;
     align-items: right;
+    width: 100vw;
   }
 }
 
@@ -66,5 +73,15 @@
     display: block;
     text-align: center;
 
+}
+
+.dropdown-item {
+  padding: 15px;
+  color: white
+
+}
+
+.dropdown-menu {
+  background: rgba(90, 90, 90, 0.8);
 }
 
