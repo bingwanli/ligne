@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_072501) do
+ActiveRecord::Schema.define(version: 2019_12_17_072721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,17 @@ ActiveRecord::Schema.define(version: 2019_12_11_072501) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "ugcs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "brand"
+    t.string "title"
+    t.string "comment"
+    t.string "photo_url"
+    t.index ["user_id"], name: "index_ugcs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,4 +105,5 @@ ActiveRecord::Schema.define(version: 2019_12_11_072501) do
   add_foreign_key "brand_images", "brands"
   add_foreign_key "products", "brands"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "ugcs", "users"
 end

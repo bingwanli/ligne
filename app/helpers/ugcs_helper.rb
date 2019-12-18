@@ -1,0 +1,2 @@
+module UgcsHelper
+end

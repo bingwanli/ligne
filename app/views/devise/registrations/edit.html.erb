@@ -1,5 +1,5 @@
 
-<script src="app/assets/javascripts/responsive_waterfall.js"></script>
+<script src="../..app/assets/javascripts/responsive_waterfall.js"></script>
 
 <style>
   body {
@@ -7,10 +7,68 @@
   }
 </style>
 
+
+
+
+
+
 <div class="title" style="padding-top:30px">
   <h2>MY STYLE</h2>
 </div>
 <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
+
+<!-- PROFILE-MENU -->
+<div class="inner-panel" style="text-align: center;">
+  <a href="#popup1" class="form-btn">Change Password</a> |
+  <%= link_to "Delete Account", registration_path(resource_name), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
+</div>
+
+
+<!-- ADD UGC -->
+<div class="wf-container">
+  <div class="page-title">
+    <h4>My Wardrobe</h4>
+    <% if current_user.ugcs.empty? %>
+      <br><h6 style="text-align: center">Empty! Add photos below</h6>
+  </div>
+    <% else %>
+      <% @ugcs.each do |ugc| %>
+        <div class="content" style="text-align:center;align-items:center;">
+          <%= cl_image_tag ugc.photo_url, style: "padding-bottom:15px" %>
+          <h5><%= ugc.title %></h5>
+          <h5><%= ugc.brand %></h5>
+          <h5><%= ugc.comment %></h5>
+        </div>
+      <% end %>
+    <% end %>
+</div>
+
+
+
+<div class="wrapper">
+  <h4>Add to Your Wardrobe</h4>
+    <div class="user-form-container">
+      <%= simple_form_for [@ugc] do |f| %>
+        <div class="field">
+          <%= f.input :title, { maxlength: 100 }%>
+        </div>
+        <div class="field">
+          <%= f.input :brand, { maxlength: 100 } %>
+        </div>
+        <div class="field">
+          <%= f.input :comment, { maxlength: 250 } %>
+        </div>
+        <div class="field">
+          <%= f.file_field :photo_url, class: "file-btn" %>
+        </div>
+        <%= f.submit "Submit", class: "btn" %>
+      <% end %>
+    </div>
+</div>
+
+
+
+
 
 <!-- PRODUCT WISHLIST -->
 <h4 class="page-title" style="text-align:center;">Wishlist</h4>
@@ -85,7 +143,35 @@
 
 
 <!-- POP-UP EDIT FORM -->
+<div id="popup1" class="overlay">
+    <div class="popup">
+    <a class="close" href="#">&times;</a>
+    <div>
 
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :current_password,
+                    hint: "If you want to change password, please enter your current password",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :password,
+                    hint: "If you don't want to change password, please leave it blank",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="form-btn">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
+    </div>
 
 <!-- CAROUSEL JS -->
 <script type="text/javascript">
