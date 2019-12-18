@@ -29,19 +29,19 @@
     <div id="carouselContent" class="carousel slide" >
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active text-center p-4">
-                <a class="dropdown-item" href="/brands/country?query=US">United States</a>
+                <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=US">United States</a>
             </div>
             <div class="carousel-item text-center p-4">
-                <a class="dropdown-item" href="/brands/country?query=FR">France</a>
+                <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=FR">France</a>
             </div>
             <div class="carousel-item text-center p-4">
-                <a class="dropdown-item" href="/brands/country?query=BR">Brazil</a>
+                <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=BR">Brazil</a>
             </div>
             <div class="carousel-item text-center p-4">
-                <a class="dropdown-item" href="/brands/country?query=AU">Australia</a>
+                <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=AU">Australia</a>
             </div>
             <div class="carousel-item text-center p-4">
-                <a class="dropdown-item" href="/brands/country?query=CA">Canada</a>
+                <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=CA">Canada</a>
             </div>
         </div>
       </div>
@@ -59,7 +59,6 @@
       <div class="mobile-arrows" style="margin-top:25px">
         <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
 
-        <div><a href="#" id="discover2" class="buy-btn-2">Discover <strong>United States</strong>!</a></div>
         <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
 
       </div>
@@ -102,6 +101,7 @@
     // Mobile DOM Variables
     let mleft = document.querySelector(".m-left");
     let mright = document.querySelector(".m-right");
+    let country_index;
 
     function getKeyByValue(object, value) {
       return Object.keys(object).find(key => object[key] === value);
@@ -112,21 +112,27 @@
       controller.setAutoRotation(false);
     }
 
-    // Event Listeners
-    const doAnotherThing = () => {
-      controller.setAutoRotation(true, 1);
-    }
+  const fn = () => {console.log("first")}
 
   const callback = ( selectedCountry, relatedCountries ) => {
-    let country_index = document.querySelector(".active");
+    console.log("second")
+    country_index = document.querySelector(".active")
     console.log(country_index);
     let num = getKeyByValue(codename, country_index.firstElementChild.innerHTML);
-    controller.setAutoRotation(false);
     controller.switchCountry(num);
-    // setTimeout(doAnotherThing, 5000);
+    controller.setAutoRotation(false);
 
     // countryIndex = num
   }
+
+    const prom1 = () => new Promise((resolve, reject) => {
+      return setTimeout(() => {
+        callback()
+        resolve()
+      }, 1200)
+    })
+
+    prom1().then(fn)
 
     // go to country brand
   const doSomething = () => {
@@ -143,11 +149,11 @@
 
   container.addEventListener('click', disableRotate)
 
-  right.addEventListener('click', callback);
-  left.addEventListener('click', callback);
-  mright.addEventListener('click', callback);
-  mleft.addEventListener('click', callback);
-  controller.onCountryPicked(callback);
+  right.addEventListener('click', prom1);
+  left.addEventListener('click', prom1);
+  mright.addEventListener('click', prom1);
+  mleft.addEventListener('click', prom1);
+  // controller.onCountryPicked(callback);
 
 
 })();
