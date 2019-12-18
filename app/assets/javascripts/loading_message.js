@@ -29,57 +29,54 @@ var defaults = {
     shadow: '0 0 1px transparent',
     position: 'absolute',
 };
-var Spinner = /** @class */ (function () {
-    function Spinner(opts) {
-        if (opts === void 0) { opts = {}; }
-        this.opts = __assign(__assign({}, defaults), opts);
+
+function Spinner(opts) {
+    if (opts === void 0) { opts = {}; }
+    this.opts = __assign(__assign({}, defaults), opts);
+}
+/**
+ * Adds the spinner to the given target element. If this instance is already
+ * spinning, it is automatically removed from its previous target by calling
+ * stop() internally.
+ */
+Spinner.prototype.spin = function (target) {
+    this.stop();
+    this.el = document.createElement('div');
+    this.el.className = this.opts.className;
+    this.el.setAttribute('role', 'progressbar');
+    css(this.el, {
+        position: this.opts.position,
+        width: 0,
+        zIndex: this.opts.zIndex,
+        left: this.opts.left,
+        top: this.opts.top,
+        transform: "scale(" + this.opts.scale + ")",
+    });
+    if (target) {
+        target.insertBefore(this.el, target.firstChild || null);
     }
-    /**
-     * Adds the spinner to the given target element. If this instance is already
-     * spinning, it is automatically removed from its previous target by calling
-     * stop() internally.
-     */
-    Spinner.prototype.spin = function (target) {
-        this.stop();
-        this.el = document.createElement('div');
-        this.el.className = this.opts.className;
-        this.el.setAttribute('role', 'progressbar');
-        css(this.el, {
-            position: this.opts.position,
-            width: 0,
-            zIndex: this.opts.zIndex,
-            left: this.opts.left,
-            top: this.opts.top,
-            transform: "scale(" + this.opts.scale + ")",
-        });
-        if (target) {
-            target.insertBefore(this.el, target.firstChild || null);
+    drawLines(this.el, this.opts);
+    return this;
+};
+/**
+ * Stops and removes the Spinner.
+ * Stopped spinners may be reused by calling spin() again.
+ */
+Spinner.prototype.stop = function () {
+    if (this.el) {
+        if (typeof requestAnimationFrame !== 'undefined') {
+            cancelAnimationFrame(this.animateId);
         }
-        drawLines(this.el, this.opts);
-        return this;
-    };
-    /**
-     * Stops and removes the Spinner.
-     * Stopped spinners may be reused by calling spin() again.
-     */
-    Spinner.prototype.stop = function () {
-        if (this.el) {
-            if (typeof requestAnimationFrame !== 'undefined') {
-                cancelAnimationFrame(this.animateId);
-            }
-            else {
-                clearTimeout(this.animateId);
-            }
-            if (this.el.parentNode) {
-                this.el.parentNode.removeChild(this.el);
-            }
-            this.el = undefined;
+        else {
+            clearTimeout(this.animateId);
         }
-        return this;
-    };
-    return Spinner;
-}());
-export { Spinner };
+        if (this.el.parentNode) {
+            this.el.parentNode.removeChild(this.el);
+        }
+        this.el = undefined;
+    }
+    return this;
+}
 /**
  * Sets multiple style properties at once.
  */
