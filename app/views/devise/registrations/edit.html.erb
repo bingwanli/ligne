@@ -8,13 +8,10 @@
 </style>
 
 
-
-
-
-
-<div class="title" style="padding-top:30px">
+<div class="title" style="padding:30px">
   <h2>MY STYLE</h2>
 </div>
+<h4 style="text-align: center;"><%= current_user.email %></h4>
 <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
 
 <!-- PROFILE-MENU -->
@@ -25,7 +22,7 @@
 
 
 <!-- UGC BOARD -->
-<div class="wf-container">
+<!-- <div class="wf-container">
   <div class="page-title">
     <h4>My Wardrobe</h4>
     <% if current_user.ugcs.empty? %>
@@ -43,11 +40,11 @@
       <% end %>
     <% end %>
 
-</div>
+</div> -->
 
 
 <!-- ADD UGC -->
-<div class="wrapper">
+<!-- <div class="wrapper">
   <h4>Add to Your Wardrobe</h4>
     <div class="user-form-container">
       <%= simple_form_for [@ugc] do |f| %>
@@ -67,7 +64,7 @@
       <% end %>
     </div>
 </div>
-
+ -->
 
 
 
@@ -101,7 +98,6 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <br><br>
 
