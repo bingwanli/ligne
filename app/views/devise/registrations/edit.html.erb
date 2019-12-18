@@ -24,7 +24,7 @@
 </div>
 
 
-<!-- ADD UGC -->
+<!-- UGC BOARD -->
 <div class="wf-container">
   <div class="page-title">
     <h4>My Wardrobe</h4>
@@ -38,13 +38,15 @@
           <h5><%= ugc.title %></h5>
           <h5><%= ugc.brand %></h5>
           <h5><%= ugc.comment %></h5>
+          <%= link_to "Delete", ugc_path(ugc), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
         </div>
       <% end %>
     <% end %>
+
 </div>
 
 
-
+<!-- ADD UGC -->
 <div class="wrapper">
   <h4>Add to Your Wardrobe</h4>
     <div class="user-form-container">
