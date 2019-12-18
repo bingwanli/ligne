@@ -236,8 +236,18 @@ canvas {
   }
 }
 
-
 #stop-scrolling {
   height: 100%;
   overflow: hidden;
+}
+
+.country-list {
+  display: flex;
+  z-index: 7;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+    display:block;
 }
