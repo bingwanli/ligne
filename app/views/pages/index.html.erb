@@ -46,7 +46,7 @@
         </div>
       </div>
     <div class="globe-w-arrows">
-        <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="next">
             <span class="carousel-control-prev-icon left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg)" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
@@ -87,7 +87,7 @@
     controller.setInitCountry("US");
     controller.setTransparentBackground(true);
     controller.addData( data );
-    controller.setAutoRotation( true, 1 );
+    // controller.setAutoRotation( true, 1 );
     controller.setSelectedColor("#fcfcfc");
     controller.adjustOceanBrightness(0.0);
     controller.init();
@@ -107,49 +107,69 @@
       return Object.keys(object).find(key => object[key] === value);
     }
 
+/////
     // Custom Functions
     const disableRotate = () => {
       controller.setAutoRotation(false);
     }
 
-  const fn = () => {console.log("first")}
+  const fn = () => {
 
-  const callback = ( selectedCountry, relatedCountries ) => {
-    console.log("second")
+  }
+
+  // const countryPicker = () => {
+  //   country_index = document.querySelector(".active")
+  //   console.log ("Next Element", country_index.nextElementSibling)
+  // }
+
+    function callback ( selectedCountry, relatedCountries ) {
+
+          console.log(selectedCountry.ISOCode);
+          countryIndex = selectedCountry.ISOCode;
+          changetoBrandpage(countryIndex);
+  }
+
+  controller.onCountryPicked( callback );
+
+  const changeCountry= () => {
     country_index = document.querySelector(".active")
-    console.log(country_index);
     let num = getKeyByValue(codename, country_index.firstElementChild.innerHTML);
+    // console.log("Country index", country_index);
+    // console.log("Callback Num", num)
     controller.switchCountry(num);
-    controller.setAutoRotation(false);
 
     // countryIndex = num
   }
 
     const prom1 = () => new Promise((resolve, reject) => {
       return setTimeout(() => {
-        callback()
-        resolve()
-      }, 1200)
+        changeCountry()
+        resolve(changeCountry())
+      }, 450)
     })
 
     prom1().then(fn)
 
+    // click event listener
+    // change the active item
+    // trigger callback
+
     // go to country brand
-  const doSomething = () => {
+  const changetoBrandpage = (index) => {
     if (countryIndex === undefined) {
       window.location.href = "/brands/country?query=US"
     } else {
-      window.location.href = "/brands/country?query=" + countryIndex
+      window.location.href = "/brands/country?query=" + index
     }
 
   }
-
   // discover.addEventListener('click', doSomething);
   // discoverMobile.addEventListener('click', doSomething);
 
-  container.addEventListener('click', disableRotate)
+  // container.addEventListener('click', disableRotate)
 
   right.addEventListener('click', prom1);
+  // right.addEventListener('click', countryPicker);
   left.addEventListener('click', prom1);
   mright.addEventListener('click', prom1);
   mleft.addEventListener('click', prom1);

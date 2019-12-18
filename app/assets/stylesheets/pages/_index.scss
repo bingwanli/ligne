@@ -256,6 +256,10 @@ canvas {
     display:block;
 }
 
+.carousel-item {
+  transition: transform 0.3s ease-in-out;
+}
+
 
 
 .speech-bubble-ds {
