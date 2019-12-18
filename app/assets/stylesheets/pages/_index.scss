@@ -256,6 +256,11 @@ canvas {
     display:block;
 }
 
+.carousel-item {
+  transition: transform 0.3s ease-in-out;
+  text-decoration: underline overline;
+}
+
 
 
 .speech-bubble-ds {
@@ -304,3 +309,27 @@ canvas {
     right: 6px;
 }
 
+.carousel-control-prev {
+  height:80%;
+  position: relative;
+  bottom: 0;
+}
+
+.carousel-control-next {
+  height:80%;
+  position: relative;
+  bottom: 0;
+}
+
+
+@media screen and (max-width: 801px) {
+  .carousel-control-next {
+    padding-right: 35px;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .carousel-control-prev {
+    padding-left: 35px;
+  }
+}
