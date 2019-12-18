@@ -621,7 +621,7 @@ $white: #fff;
   display: flex;
   position:fixed;
   z-index: 7;
-  top: 665px;
+  top: 85%;
   justify-content: center;
   text-decoration: none;
   align-items: center;
@@ -650,6 +650,6 @@ $white: #fff;
 @media screen and (max-width: 800px) {
   .picks-for-you-btn {
     width: 90%;
-    top: 710px;
+    top: 85%;
   }
 }
