@@ -309,3 +309,27 @@ canvas {
     right: 6px;
 }
 
+.carousel-control-prev {
+  height:80%;
+  position: relative;
+  bottom: 0;
+}
+
+.carousel-control-next {
+  height:80%;
+  position: relative;
+  bottom: 0;
+}
+
+
+@media screen and (max-width: 801px) {
+  .carousel-control-next {
+    padding-right: 35px;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .carousel-control-prev {
+    padding-left: 35px;
+  }
+}
