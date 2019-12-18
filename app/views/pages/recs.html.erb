@@ -3,17 +3,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
 
+<!-- Navbar -->
 <%= render "/devise/shared/navbar" %>
 <!-- TITLE -->
 <body>
 
-  <div class="wf-container">
+  <div class="container">
     <div class="page-title" style="text-align:center">
-      <div>
-        <h2>PICK FOR YOU</h2>
-        <h4><%= current_user.email %></h4>
-        <h5>Inspirations For Your Next Outfit</h5>
-      </div>
+        <h2>FROM BRANDS TO PRODUCTS</h2>
+        <h5>See the brands you have selected and some products you can buy below</h5>
     </div>
 
 <!--   <div class="country-btn">
@@ -21,34 +19,52 @@
   </div> -->
 
 <!-- PRODUCT CARDS -->
-    <div class="product-card">
-      <% @products.each do |product| %>
-        <% if @products.empty? %>
-          <h6>Oops you haven't liked any brand images yet!</h6>
-        <% else %>
-          <div class="wf-box" data-aos="fade-right">
-            <div class="heart aos-init aos-animate" data-aos="fade-right">
-              <div class="wrapper">
-                <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-                  <span class="like-overlay"></span>
-                <% end %>
-              </div>
-            </div>
-            <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
-            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+    <% @brands.each do |brand| %>
+    <h3 class="brand-name"><%= brand.name %></h3>
+      <div class="brand-card">
+        <div class="brand-flex">
+          <div class="brand-text">
+            <h6><%= brand.description %></h6>
+            <h6><%= brand.country %></h6>
           </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
 
+          <div class="brand-images">
+            <% brand.brand_images.each do |br_image| %>
+                <%= cl_image_tag br_image.url %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="product-images" >
+          <% brand.products.each do |product| %>
+            <% if brand.products.empty? %>
+              <h6>Oops you haven't liked any brand images yet!</h6>
+            <% else %>
+            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+            <div class="box">
+              <div class="heart aos-init aos-animate">
+                <div class="wrapper">
+                  <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+                    <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                    <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                    <span class="like-overlay"></span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+
+  </div>
 
 <!-- RECOMMENDED PRODUCTS -->
   <% if @recommendations.empty? %>
   <% else %>
-    <div class="wf-container">
+    <div class="container">
       <div class="page-title" style="text-align:center">
         <div>
           <h5>Recommended Products</h5>
@@ -57,7 +73,7 @@
 
       <div class="product-card">
         <% @recommendations.each do |product| %>
-          <div class="wf-box">
+          <div class="box">
             <div class="heart aos-init aos-animate" data-aos="fade-right">
               <div class="wrapper">
                 <%= link_to product_path(product), method: :patch, class: "like-button" do %>
@@ -86,7 +102,7 @@
     })
 })
 </script>
-
+<!--
 <script src="app/assets/javascripts/responsive_waterfall.js"></script>
   <script type="text/javascript">
     // use querySelector/querySelectorAll internally
@@ -95,7 +111,7 @@
         boxSelector: '.wf-box',
         minBoxWidth: 250
     });
-  </script>
+  </script> -->
 </div>
 </body>
 
