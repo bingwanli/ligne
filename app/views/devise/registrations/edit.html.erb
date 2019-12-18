@@ -18,11 +18,11 @@
 </div>
 
 <!-- Email button -->
-<button class="black-white-link" style="padding: 20px 10px; text-decoration: none; text-align: center; margin: 20px auto; display: block;">Email My Recommendations</button>
+<button class="black-white-link" style="padding: 10px 10px; text-decoration: none; text-align: center; margin: auto; display: block;">Email My Recommendations</button>
 
 <!-- SAVED PRODUCTS -->
-<div class="centered">
-  <h4 class="page-title" style="text-align:center;">Wishlist</h4>
+<div class="centered main-container">
+  <h4 class="page-title" style="text-align:center;">My Saved Products</h4>
   <div class="cards">
     <% if current_user.liked_products.nil? %>
       <p><h6>No liked products!</h6></p>
@@ -32,14 +32,18 @@
           <p><h3>No Image Here, Sorry!</h3></p>
         <% else %>
           <div class="product-card">
-           <%= cl_image_tag product.image_url, style: "padding-bottom:15px" %>
+            <div class="product-image">
+            <%= cl_image_tag product.image_url %>
+            <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+            </div>
             <div class="product-card-content">
-              <h6 style="font-weight:700" ><%= product.name %></h6>
-              <h6><%= link_to "Buy", product.url, target: "blank", class: "black-white-link"%></h6>
+              <h6 class="product-title" ><%= product.name %></h6>
+
               <h6><%= product.brand.name %></h6>
               <h6>$<%= product.price %></h6>
             </div>
           </div>
+
         <% end %>
       <% end %>
     <% end %>
