@@ -88,52 +88,6 @@
 
 
 
-<!-- UGC BOARD -->
-<!-- <div class="wf-container">
-  <div class="page-title">
-    <h4>My Wardrobe</h4>
-    <% if current_user.ugcs.empty? %>
-      <br><h6 style="text-align: center">Empty! Add photos below</h6>
-  </div>
-    <% else %>
-      <% @ugcs.each do |ugc| %>
-        <div class="content" style="text-align:center;align-items:center;">
-          <%= cl_image_tag ugc.photo_url, style: "padding-bottom:15px" %>
-          <h5><%= ugc.title %></h5>
-          <h5><%= ugc.brand %></h5>
-          <h5><%= ugc.comment %></h5>
-          <%= link_to "Delete", ugc_path(ugc), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
-        </div>
-      <% end %>
-    <% end %>
-
-</div> -->
-
-
-<!-- ADD UGC -->
-<!-- <div class="wrapper">
-  <h4>Add to Your Wardrobe</h4>
-    <div class="user-form-container">
-      <%= simple_form_for [@ugc] do |f| %>
-        <div class="field">
-          <%= f.input :title, { maxlength: 100 }%>
-        </div>
-        <div class="field">
-          <%= f.input :brand, { maxlength: 100 } %>
-        </div>
-        <div class="field">
-          <%= f.input :comment, { maxlength: 250 } %>
-        </div>
-        <div class="field">
-          <%= f.file_field :photo_url, class: "file-btn" %>
-        </div>
-        <%= f.submit "Submit", class: "btn" %>
-      <% end %>
-    </div>
-</div>
- -->
-
-
 <!-- POP-UP EDIT FORM -->
 <div id="popup1" class="overlay">
     <div class="popup">
