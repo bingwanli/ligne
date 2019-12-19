@@ -9,39 +9,41 @@
     <script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
 
   </head>
+  <div class="collapse-nav">
+    <%= render "devise/shared/navbar" %>
+  </div>
 <body>
 
   <!-- MAIN BANNER -->
-  <div class="main-banner parallax" style="padding-top:0;background:white;">
-<!--   background-image:url(https://marketplace.canva.com/MADBINdBC1Q/1/thumbnail_large-1/canva-catwalk-background-MADBINdBC1Q.jpg)">
+  <div class="main-banner parallax" style="padding-top:0">
+<!--   background-image:url(https://i.pinimg.com/originals/7d/46/f1/7d46f112d21e227c49a8bdde9875ffa5.gif)">
  -->
-  <div>
+
+  <div class="main-banner-info">
     <div class="main-banner-title">
-      <h2 style="padding-top:25px">DISCOVER BRANDS FROM</h2><br>
-     <div id="carouselContent" class="carousel slide" >
-       <div class="carousel-inner" role="listbox">
-         <div class="carousel-item active text-center p-4">
-             <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=US">United States</a>
+      <h1 style="padding-top:25px">_DISCOVER</h1> <br> <h2>BRANDS </h2><br> <h3 style="color:white">FROM__</h3><br>
+     <div id="carouselContent" class="carousel slide text-left"  >
+       <div class="carousel-inner" role="listbox" style="text-transform: uppercase;">
+         <div class="carousel-item active text-left p-4">
+             <a class="dropdown-item text-center" style="color:#DC3545; font-size: 30px" href="/brands/country?query=US">United States</a>
          </div>
          <div class="carousel-item text-center p-4">
-             <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=FR">France</a>
+             <a class="dropdown-item" style="color:#DC3545; font-size: 30px" href="/brands/country?query=FR">France</a>
          </div>
          <div class="carousel-item text-center p-4">
-             <a class="dropdown-item" style="color:black; font-size: 30px" href="/brands/country?query=BR">Brazil</a>
+             <a class="dropdown-item" style="color:#DC3545; font-size: 30px" href="/brands/country?query=BR">Brazil</a>
          </div>
          <div class="carousel-item text-center p-4">
-             <a class="dropdown-item" style="color:black;font-size: 30px" href="/brands/country?query=AU">Australia</a>
+             <a class="dropdown-item" style="color:#DC3545;font-size: 30px" href="/brands/country?query=AU">Australia</a>
          </div>
          <div class="carousel-item text-center p-4">
-             <a class="dropdown-item" style="color:black;font-size: 30px" href="/brands/country?query=CA">Canada</a>
+             <a class="dropdown-item" style="color:#DC3545;font-size: 30px" href="/brands/country?query=CA">Canada</a>
          </div>
        </div>
      </div>
     </div>
   </div>
-  <div class="collapse-nav">
-    <%= render "devise/shared/navbar" %>
-  </div>
+
 
   <div class="globe-w-arrows">
       <div class="carousel-control-prev" href="#carouselContent" role="button" data-slide="next">
@@ -55,10 +57,10 @@
         <span class="sr-only">Next</span>
       </div>
     </div>
-    <div class="mobile-arrows" style="margin-top:25px">
+<!--     <div class="mobile-arrows" style="margin-top:25px">
       <div class="m-left" style="background-image:url(https://image.flaticon.com/icons/svg/467/467274.svg);"></div>
       <div class="m-right" style="background-image:url(https://image.flaticon.com/icons/svg/467/467282.svg);"></div>
-    </div>
+    </div> -->
   </div>
         <!--    <div class="country-name" style="margin-bottom:45px !important">
         <a href="#" class="buy-btn" style="flex: 1 1 80px;padding:10px !important;">DISCOVER</a> -->
