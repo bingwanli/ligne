@@ -13,7 +13,7 @@
   padding-bottom: 30px;
   font-family: "Montserrat";
   background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(250,250,250,1) 50%);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%);
 }
 
 .main-banner-info {
@@ -36,6 +36,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-right: 60px;
+
   }
 }
 
@@ -88,14 +89,14 @@
 .main-banner-title {
   color: black;
   margin-top: 30px;
-  width: 90%;
+  width: 85%;
   z-index: 2;
   padding: 10px;
 }
 
 @media screen and (max-width: 801px) {
   .main-banner-title  {
-    padding:20px !important;
+    padding-top:80px !important;
   }
 }
 
@@ -287,7 +288,6 @@ canvas {
 .dropdown-item {
   color: black;
   padding-top:0;
-  width: 300px;
 }
 
 .dropdown-item:hover {
@@ -304,13 +304,14 @@ canvas {
 .carousel-item {
   transition: transform 0.3s ease-in-out;
   // text-decoration: underline overline;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: left;
+
 }
 
 .carousel-inner {
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: left;
 }
 
 .speech-bubble-ds {
@@ -362,15 +363,20 @@ canvas {
 .carousel-control-prev {
   height:80%;
   position: relative;
-  bottom: 0;
+  bottom: 40;
 }
 
 .carousel-control-next {
   height:80%;
   position: relative;
-  bottom: 0;
+  bottom: 40;
 }
 
+#carouselContent {
+  align-text: left !important;
+  justify-content: left !important;
+
+}
 
 @media screen and (max-width: 801px) {
   .carousel-control-next {

@@ -1,33 +1,19 @@
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-<!-- NAVBAR -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
-
-<!-- EDITORIAL CARDS -->
-<!-- BRAND CARDS -->
-
-<body>
-  <!-- loading msg -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
-
-<!--  <a id="" data-toggle="tooltip myBtn" href="/" title="Discover">🌎</a>
- --><!-- <button type="button" class="btn btn-secondary " data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  🌎
-</button> -->
+</head>
+<body>
+  <%= render "devise/shared/navbar" %>
+  <!-- loading msg -->
   <div class="wf-container">
-    <a href="/pages/recs" class="recs-button picks-for-you-btn"  title="" data-aos="fade-right">Picks For You</a>
-    <div class="collapse-nav">
-      <%= render "devise/shared/navbar" %>
-    </div>
+    <a href="/pages/recs" class="recs-button picks-for-you-btn"  title="" data-aos="fade-right">See My Brands</a>
+    <div class="collapse-nav"></div>
     <div class="page-title" style="text-align:center">
       <div>
-        <h2><%= params[:query] %> BRANDS</h2>
-        <h5>Choose Your Favorites</h5>
+        <h2><%= params[:query] %> BRANDS - CHOOSE YOUR STYLE</h2>
+        <h5>Like at least three images to get started</h5>
       </div>
     </div>
 
@@ -35,23 +21,19 @@
       <% @randomized_images.each do |image| %>
         <div class="wf-box wf-box-2" data-aos="fade-right">
           <div class="heart" data-aos="fade-right">
-
-            <div class="wrapper">
+            <div class="wrapper-c">
               <% if user_signed_in? && current_user.liked_brand_images.include?(image) %>
-
                 <%= link_to brand_brand_image_path(image.brand, image), method: :patch, class: "like-button is-active" do%>
                     <i class="mdc-icon-button material-icons is-liked bouncy is-active">favorite</i>
                     <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
                   <span class="like-overlay"></span>
                 <% end %>
-
               <% else %>
                 <%= link_to brand_brand_image_path(image.brand, image), method: :patch, class: "like-button" do%>
                   <i class="mdc-icon-button material-icons is-liked bouncy is-active">favorite</i>
                   <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
                   <span class="like-overlay"></span>
                 <% end %>
-
               <% end %>
             </div>
           </div>
@@ -59,7 +41,10 @@
         </div>
       <% end %>
     </div>
+
   </div>
+  <div class="test-class"></div>
+
 <!-- button popup -->
 <!-- <script type="text/javascript">
   $(window).scroll(function () {
@@ -70,39 +55,29 @@
     $('.recs-button').removeClass('recs-hi');
   }
 });
-</script>
- -->
+</script> -->
 
 <!-- like button -->
-<script type="text/javascript">
-  $(document).ready(function(){
+  <script type="text/javascript">
+    $(document).ready(function(){
       let i = 0;
-    $('.like-button').click(function(){
+      $('.like-button').click(function(){
+        let recBtn = $('.recs-button')
         $(this).toggleClass('is-active');
         i = i + 1;
         if (i >= 3) {
-          $('.recs-button').addClass('recs-hi');
-         // $('.recs-button').addClass('recs-hi');
+          recBtn.removeClass('recs-button')
+          recBtn.addClass('recs-hi picks-for-you-btn');
         }
+      })
     })
-
-})
-</script>
-  <script src="app/assets/javascripts/responsive_waterfall.js"></script>
+  </script>
+  <script src="/app/assets/javascripts/responsive_waterfall.js"></script>
   <script type="text/javascript">
-    // use querySelector/querySelectorAll internally
     var waterfall = new Waterfall({
-        containerSelector: '.wf-container',
-        boxSelector: '.wf-box',
-        minBoxWidth: 250
+      containerSelector: '.wf-container',
+      boxSelector: '.wf-box',
+      minBoxWidth: 250
     });
-
-
- </script>
-
-
-
+  </script>
 </body>
-
-  <!-- pinterest style -->
-<!-- FOOTER -->
