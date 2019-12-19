@@ -1,6 +1,11 @@
 // Place all the styles related to the product_rec controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$fade-grey: #ededed;
+$grey: #ccc;
+$muted-grey: #999;
+$heart: #ff4f8f;
+$white: #fff;
 
 .gridCentered {
   margin-left: auto;
@@ -529,11 +534,12 @@ body {
   object-fit: fit;
 }
 
+#img-plus {
+
+}
 
 .product-images {
   display: flex;
-  justify-content: margin-left;
-  align-items: center;
   height: 40%;
   overflow: auto;
   width: 100%;
@@ -569,6 +575,102 @@ body {
 }
 
 
+  .love {
+    font-size: 0.9rem;
+    color: $heart;
+  }
+  .wrapper {
+  position: relative;
+  display: inline-block;
+
+
+    .like-button {
+      display: inline;
+      position: absolute;
+      top: 2em;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: $grey;
+      margin: 0 auto;
+      text-decoration: none;
+      overflow: hidden;
+
+      .like-overlay {
+        display: inline;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 0em;
+        border-radius: 50%;
+        background: $heart;
+        transform: scale(0);
+        transition: all .4s;
+        z-index: 0;
+      }
+
+      i {
+        &.not-liked {
+          display: block;
+          top: 25%;
+          right: 25%;
+          color: $red;
+          position: absolute;
+          z-index: 1;
+
+        }
+
+        &.is-liked {
+          display: none;
+          color: $red;
+          position: absolute;
+          z-index: 1;
+        }
+      }
+
+      &.is-active {
+        .like-overlay {
+          transform: scale(1);
+        }
+        i {
+          &.not-liked {
+            display: none;
+          }
+          &.is-liked {
+            display: block;
+            top: 25%;
+            right: 25%;
+          }
+        }
+      }
+    }
+  }
+
+
+//Watch me get bouncy
+@-webkit-keyframes bouncy {
+    from, to { -webkit-transform: scale(1, 1); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0.9); }
+    75% { -webkit-transform: scale(0.95, 1.05); }
+}
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05);}
+}
+
+//Settings
+.bouncy {
+    -webkit-animation: bouncy 0.6s;
+    animation: bouncy 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 
 // .buy-link {
 //   display: inline;

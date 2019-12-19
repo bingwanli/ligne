@@ -5,7 +5,6 @@
    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -36,9 +35,6 @@
         <h5>See the brands you have selected and some products you can buy below</h5>
     </div>
 
-<!--   <div class="country-btn">
-    <%= link_to "BACK", :back, class: "filter-btn" %>
-  </div> -->
 
 <!-- PRODUCT CARDS -->
   <div class="main-carousel">
@@ -68,8 +64,8 @@
               <div class="heart aos-init aos-animate">
                 <div class="wrapper">
                   <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                    <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                    <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                    <i class="mdc-icon-button material-icons is-liked bouncy">➕</i>
+                    <i class="mdc-icon-button material-icons not-liked bouncy">➕</i>
                     <span class="like-overlay"></span>
                   <% end %>
                 </div>
@@ -91,15 +87,16 @@
           <h5>Recommended Products</h5>
         </div>
       </div>
-
+    <div class="cards">
       <div class="product-card">
+        <div id="img-plus">
         <% @recommendations.each do |product| %>
           <div class="box">
             <div class="heart aos-init aos-animate" data-aos="fade-right">
               <div class="wrapper">
                 <%= link_to product_path(product), method: :patch, class: "like-button" do %>
-                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                  <i class="mdc-icon-button material-icons is-liked bouncy">➕</i>
+                  <i class="mdc-icon-button material-icons not-liked bouncy">➕</i>
                   <span class="like-overlay"></span>
                 <% end %>
               </div>
@@ -109,8 +106,10 @@
           </div>
         <% end %>
       <% end %>
+      </div>
     </div>
   </div>
+ </div>
 
 
 <script type="text/javascript">
