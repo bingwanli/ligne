@@ -461,7 +461,7 @@ body {
 .brand-name {
   text-align: center;
   font-weight: 700;
-  padding-top: 55px;
+  padding-top: 15px;
   padding-bottom: 8px;
   text-shadow: 1px 1px 1px rgb(230,230,230);
   margin:0;
@@ -483,39 +483,64 @@ body {
   text-justify: distribute;
   text-align-last: center;
   word-spacing:1px;
+  margin-bottom:10px
 }
 
 
 
 .brand-card {
   display: block;
-  height: 100vh;
-  max-height: auto;
   // margin: 10px 10px;
   padding: 5px 0px;
   background-color: rgb(250,250,250);
   // box-shadow: 2px 2px 2px 2px rgb(245,245,245);
   border-radius: 5px;
+  object-fit: fit;
+  max-height:500px;
+  justify-content: center;
 }
 
-.brand-card h6 {
+.brand-flex h6 {
   margin: 0;
   text-align: center;
 }
 
-.brand-card h5 {
+.brand-flex h5 {
   margin: 0;
   text-align: center;
 }
 
 .brand-flex {
-
+  background-size: cover;
   justify-content: center;
   align-items: center;
   background-color: rgb(255,255,255);
   padding: 0px 0px;
-  margin: 0px 0px;
+  margin-top: 10px;
   height: 55%;
+}
+
+.brand-flex img {
+  background-size: cover;
+}
+
+.brand-flex-2 {
+
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 0px 0px;
+  height: 55%;
+}
+
+.brand-flex-2 h6 {
+  margin: 0;
+  text-align: center;
+}
+
+.brand-flex-2 h5 {
+  margin: 0;
+  text-align: center;
 }
 
 // .brand-text {
@@ -530,14 +555,17 @@ body {
 .brand-images {
   display: flex;
   justify-content: center;
-  height: 80%;
+  height: 50%;
   overflow: auto;
+  width:100%;
+  background-size: cover;
 }
 
 .brand-images img {
-  height: 100%;
-  max-height: 100%;
-  object-fit: fit;
+  height: 500px;
+  max-height: 40%;
+  width:auto;
+  background-size: cover;
 }
 
 #img-plus {
@@ -552,11 +580,19 @@ body {
   width: 100%;
   padding-left: 20px;
   margin-bottom: 20px;
+  margin-bottom: 10px;
+
 }
 
 .product-images img {
-  max-height: 82%;
+  height: 100%;
+  margin-right: 20px;
+}
 
+.brands-infos {
+  background-color: #F5F5F5;
+  padding:20px;
+  margin-top: 5px;
 }
 
 
@@ -572,6 +608,12 @@ body {
   .brand-flex {
     justify-content: flex-start;
 
+  }
+}
+
+@media screen and ( min-width: 800px ) {
+  .brand-images {
+    justify-content: center;
   }
 }
 
@@ -603,8 +645,8 @@ body {
     .like-button {
       display: inline;
       position: absolute;
-      top: 2em;
-      right: 20px;
+      top: 1em;
+      right: 70px;
       width: 50px;
       height: 50px;
       border-radius: 50%;
