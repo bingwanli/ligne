@@ -217,15 +217,40 @@ font-weight: 500;
 
 .newPage {
   display: none;
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
-  justify-content: space-between;
-  margin-right: 205px;
-  margin-left: 205px;
+ /* Do not repeat the image */
+  // margin-right: 205px;
+  // margin-left: 205px;
+}
+
+.pageFlex {
+   display: flex;
+   justify-content: space-between;
+   z-index: 100;
+   margin-left: 260px;
 }
 
 .btn-secondary {
   height: 50px;
 }
 
+.img1 {
+  top: 16;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+  // margin-left: 205px;
+}
+
+.img2 {
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+}
+
+.vid {
+  z-index: -3;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
 
