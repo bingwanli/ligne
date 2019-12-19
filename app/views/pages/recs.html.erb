@@ -7,69 +7,71 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<!-- Navbar -->
-<%= render "/devise/shared/navbar" %>
+
 <!-- TITLE -->
+<%= render "/devise/shared/navbar" %>
 <body>
-
     <!-- expand btn -->
-    <div class="fixed-action-btn">
-      <a class="btn-floating btn-large red">
-        <i class="large material-icons">sort</i>
-      </a>
-      <ul>
-        <li><a href="/users/edit" class="btn-floating green"><i class="material-icons">shopping_cart</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">email</i></a></li>
-      </ul>
-    </div>
+    <!-- Navbar -->
 
-    <div class="page-title" style="text-align:center;padding-top:0;">
-        <h2 style="font-size:2rem">MY STYLES</h2>
-        <h5 style="font-size:1.25rem">See the brands you have selected and some products you can buy below</h5>
-    </div>
+    <div>
+      <div class="fixed-action-btn">
+        <a href="/users/edit" style="font-size:22px;text-align:center" class="btn-floating material-icons green">shopping_cart</a>
+        <!-- <ul>
+          <li><a href="/users/edit" class="btn-floating green"><i class="material-icons">shopping_cart</i></a></li>
+          <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">email</i></a></li>
+        </ul> -->
+      </div>
 
-<!-- PRODUCT CARDS -->
-  <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
+      <div class="page-title" style="text-align:center;padding-top:50px;">
+          <h2 style="font-size:2rem;margin-top:0 !important;">MY BRANDS</h2>
+          <h5 style="font-size:1.25rem">See the brands you have selected and some products you can buy below</h5>
+          <h6 style="font-size:1rem;">Add products to your list and share with your friends later</h6>
+      </div>
 
-    <% @brands.each do |brand| %>
-    <div class="brand-flex">
-      <div class="brand-card" style="background-color:white ">
-        <div class="brand-images ">
-          <% brand.brand_images.each do |br_image| %>
-            <%= cl_image_tag br_image.url %>
-          <% end %>
+  <!-- PRODUCT CARDS -->
+    <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
+
+      <% @brands.each do |brand| %>
+      <div class="brand-flex">
+        <div class="brand-card" style="background-color:white ">
+          <div class="brand-images ">
+            <% brand.brand_images.each do |br_image| %>
+              <%= cl_image_tag br_image.url %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="brands-infos">
-      <h3 class="brand-name"><%= brand.name %></h3>
-      <h5 class="brand-country"><%= brand.country %></h5>
-      <h6 class="brand-description"><%= brand.description %></h6>
-    </div>
-      <div class="brand-flex-2">
-        <h5 style="padding-top:25px;padding-bottom:10px;">PRODUCTS</h5>
-        <div class="product-images" >
-          <% brand.products.each do |product| %>
-            <% if brand.products.empty? %>
-              <h6>Oops you haven't liked any brand images yet!</h6>
-            <% else %>
-            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
-            <div class="box">
-              <div class="heart aos-init aos-animate">
-                <div class="wrapper">
-                  <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                    <i class="mdc-icon-button material-icons is-liked bouncy">➕</i>
-                    <i class="mdc-icon-button material-icons not-liked bouncy">➕</i>
-                    <span class="like-overlay"></span>
-                  <% end %>
+      <div class="brands-infos">
+        <h3 class="brand-name"><%= brand.name %></h3>
+        <h5 class="brand-country"><%= brand.country %></h5>
+        <h6 class="brand-description"><%= brand.description %></h6>
+      </div>
+        <div class="brand-flex-2">
+          <h5 style="padding-top:25px;padding-bottom:10px;font-size:1.25rem;">PRODUCTS</h5>
+          <div class="product-images" >
+            <% brand.products.each do |product| %>
+              <% if brand.products.empty? %>
+                <h6>Oops you haven't liked any brand images yet!</h6>
+              <% else %>
+              <%= cl_image_tag product.image_url, style: "border-radius:20px" %>
+              <div class="box">
+                <div class="heart aos-init aos-animate">
+                  <div class="wrapper">
+                    <%= link_to product_path(product), method: :patch, class: "add-button" do%>
+                      <i class="mdc-icon-button material-icons is-added bouncy">➕</i>
+                      <i class="mdc-icon-button material-icons not-added bouncy">➕</i>
+                      <span class="add-overlay"></span>
+                    <% end %>
+                  </div>
                 </div>
+              <% end %>
               </div>
             <% end %>
-            </div>
-          <% end %>
+          </div>
+          <h6 style="padding-top:20px;padding-bottom:20px;">_______________</h6>
+        <% end %>
         </div>
-        <h6 style="padding-top:20px;padding-bottom:20px;">__________</h6>
-      <% end %>
       </div>
     </div>
   </div>

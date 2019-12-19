@@ -8,10 +8,12 @@
   transition: background-color 1s ease 0s;
   // position: fixed;
   font-size: 12px !important;
-  padding: 0;
+  padding-top: 20px;
   border-bottom: 1px solid rgb(245,245,245);
   line-height: 18px;
   box-shadow: none;
+  position: fixed;
+  top: 0;
 }
 
 .navbar-brand {
@@ -27,6 +29,7 @@
 
 .navbar-light a {
   color: black !important;
+  line-height: 18px;
 }
 
 .navbar-light a:hover {
@@ -54,8 +57,8 @@
 }
 
 .dropdown-item {
-  padding: 1rem;
   font-size: 12px;
+  line-height: 18px;
 }
 
 
@@ -98,19 +101,19 @@
   }
 }
 
-@media screen and (max-width: 2000px) {
-  .nav-item {
-     padding-top: 20px;
-     padding-bottom: 20px;
-  .nav-link {
-     font-size: 12px;
-  }
-  .nav-link:hover {
-  background-color: none;
-  opacity: 1;
-  }
-  }
-}
+// @media screen and (max-width: 2000px) {
+//   .nav-item {
+//      padding-top: 20px;
+//      padding-bottom: 20px;
+//   .nav-link {
+//      font-size: 12px;
+//   }
+//   .nav-link:hover {
+//   background-color: none;
+//   opacity: 1;
+//   }
+//   }
+// }
 
 
 

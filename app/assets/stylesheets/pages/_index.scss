@@ -13,7 +13,7 @@
   padding-bottom: 30px;
   font-family: "Montserrat";
   background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(250,250,250,1) 50%);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%);
 }
 
 .main-banner-info {
@@ -287,7 +287,6 @@ canvas {
 .dropdown-item {
   color: black;
   padding-top:0;
-  width: 300px;
 }
 
 .dropdown-item:hover {
@@ -362,13 +361,13 @@ canvas {
 .carousel-control-prev {
   height:80%;
   position: relative;
-  bottom: 0;
+  bottom: 40;
 }
 
 .carousel-control-next {
   height:80%;
   position: relative;
-  bottom: 0;
+  bottom: 40;
 }
 
 
