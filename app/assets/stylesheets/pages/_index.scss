@@ -30,6 +30,12 @@
     color: white !important;
   }
 }
+@media screen and (max-width: 801px) {
+  .carousel-item a {
+    font-weight: 700;
+    // color:black !important;
+  }
+}
 
 @media screen and (min-width: 801px) {
   .main-banner {
@@ -100,7 +106,6 @@
   margin-top: 30px;
   width: 85%;
   z-index: 2;
-  padding: 10px;
 }
 
 @media screen and (max-width: 801px) {
@@ -224,7 +229,7 @@ canvas {
     margin-right: 0;
     margin-left: 0;
     width: 100%;
-    height: 400px;
+    height: 350px;
   }
 }
 
@@ -317,6 +322,7 @@ canvas {
   justify-content: left;
 
 }
+
 
 .carousel-inner {
   text-align: left;

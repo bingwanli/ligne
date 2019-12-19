@@ -10,7 +10,7 @@
       </div>
     </div>
   <div><h1>V.S.</h1></div>
-  <button type="button" href="/" class="btn btn-secondary">Go back</button>
+  <button type="button" href="#" class="btn btn-secondary">Go back</button>
     <div class="product-card">
       <div class="product-image">
         <img class="img2"></img>
@@ -22,14 +22,14 @@
 <div class="page">
   <%= render "/devise/shared/navbar" %>
   <body>
-    <div class="title" style="padding-top:70px;margin-top:20px">
+    <div class="title" style="padding-top:70px;margin-top:20px;margin-bottom:0;">
       <h2>MY STYLE</h2>
     </div>
     <h4 style="font-size:1.25rem;text-align:center;"><%= current_user.email %></h4>
-
     <!-- SAVED PRODUCTS -->
     <div class="centered main-container">
       <h4 class="page-title" style="margin-top:10px;text-align:center;">My Saved Products</h4>
+      <h5 style="text-align:center;padding-right:20px;padding-left:20px">Choose two images to compare and share with your friends <br> or click buy to access the brand website</h5>
       <div class="product-images-2">
         <!-- cards -->
         <% if current_user.liked_products.nil? %>
