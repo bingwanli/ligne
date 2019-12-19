@@ -648,7 +648,7 @@ body {
     .like-button {
       display: inline;
       position: absolute;
-      top: .75em;
+      top: -16.75em;
       right: 4.5em;
       width: 50px;
       height: 50px;
@@ -663,7 +663,6 @@ body {
         position: absolute;
         width: 50px;
         height: 50px;
-        top: 0em;
         right: 0em;
         border-radius: 50%;
         background: #ff4f8f;
@@ -675,8 +674,8 @@ body {
       i {
         &.not-liked {
           display: block;
-          top: 25%;
-          right: 25%;
+          top: .40em;
+          right: .60em;
           color: $red;
           position: absolute;
           z-index: 1;
@@ -701,8 +700,8 @@ body {
           }
           &.is-liked {
             display: block;
-            top: 25%;
-            right: 25%;
+            top: .40em;
+            right: .60em;
           }
         }
       }
