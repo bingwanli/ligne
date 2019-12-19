@@ -19,22 +19,13 @@
     <div class="title" style="padding-top:70px;margin-top:20px">
       <h2>MY STYLE</h2>
     </div>
-    <h4 style="text-align: center;"><%= current_user.email %></h4>
-    <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
-
-    <!-- PROFILE-MENU -->
-    <div class="inner-panel" style="text-align: center;">
-      <a href="#popup1" class="form-btn">Change Password</a> |
-      <%= link_to "Delete Account", registration_path(resource_name), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
-    </div>
-
-    <!-- Email button -->
-    <button class="black-white-link" style="padding: 10px 10px; text-decoration: none; text-align: center; margin: auto; display: block;">Email My Recommendations</button>
+    <h4 style="font-size:1.25rem;text-align:center;"><%= current_user.email %></h4>
 
     <!-- SAVED PRODUCTS -->
     <div class="centered main-container">
-      <h4 class="page-title" style="text-align:center;">My Saved Products</h4>
-      <div class="cards">
+      <h4 class="page-title" style="margin-top:10px;text-align:center;">My Saved Products</h4>
+      <div class="product-images-2">
+        <!-- cards -->
         <% if current_user.liked_products.nil? %>
           <p><h6>No liked products!</h6></p>
         <% else %>
@@ -111,23 +102,25 @@
         <h6 style="text-align:center;padding-bottom:60px;"><%= link_to "Click here", recs_pages_path %> to browse products and brands</h6>
       <% else %>
         <div class="cards">
-          <% current_user.recommended_products.each do |product| %>
-            <% if product.image_url.nil? %>
-              <p><h3>No Image, Sorry!</h3></p>
-            <% else %>
-              <div class="product-card">
-                <div class="product-image">
-                  <%= cl_image_tag product.image_url %>
-                  <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+          <div class="product-images-2">
+            <% current_user.recommended_products.each do |product| %>
+              <% if product.image_url.nil? %>
+                <p><h3>No Image, Sorry!</h3></p>
+              <% else %>
+                <div class="product-card">
+                  <div class="product-image">
+                    <%= cl_image_tag product.image_url %>
+                    <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+                  </div>
+                  <div class="product-card-content">
+                    <h6 class="product-title" ><%= product.name.upcase %></h6>
+                    <h6><%= product.brand.name %></h6>
+                    <h6>$<%= product.price %></h6>
+                  </div>
                 </div>
-                <div class="product-card-content">
-                  <h6 class="product-title" ><%= product.name.upcase %></h6>
-                  <h6><%= product.brand.name %></h6>
-                  <h6>$<%= product.price %></h6>
-                </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       <% end %>
     </div>
@@ -162,7 +155,9 @@
       <% end %>
     </div>
   </body>
+  <%= render "/devise/shared/footer" %>
 </div>
+
 
 
 <!-- CAROUSEL JS -->
