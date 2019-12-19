@@ -15,7 +15,7 @@
 
 
 
-  <div class="container-recs" style="padding-top:0 !important ">
+
 
     <!-- expand btn -->
     <div class="fixed-action-btn">
@@ -28,56 +28,56 @@
       </ul>
     </div>
 
-    <div class="page-title" style="text-align:center;padding-top:0">
-        <h2>MY STYLES</h2>
-        <h5>See the brands you have selected and some products you can buy below</h5>
+    <div class="page-title" style="text-align:center;padding-top:0;">
+        <h2 style="font-size:2rem">MY STYLES</h2>
+        <h5 style="font-size:1.25rem">See the brands you have selected and some products you can buy below</h5>
     </div>
-
-<!--   <div class="country-btn">
-    <%= link_to "BACK", :back, class: "filter-btn" %>
-  </div> -->
 
 <!-- PRODUCT CARDS -->
   <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
+
     <% @brands.each do |brand| %>
-    <h3 class="brand-name"><%= brand.name %></h3>
-    <h5 class="brand-country"><%= brand.country %></h5>
-    <h6 class="brand-description"><%= brand.description %></h6>
+    <div class="brand-flex">
+      <div class="brand-card" style="background-color:white ">
+        <div class="brand-images ">
+          <% brand.brand_images.each do |br_image| %>
+              <%= cl_image_tag br_image.url %>
+          <% end %>
+        </div>
+        <div class="brands-infos">
+          <h3 class="brand-name"><%= brand.name %></h3>
+          <h5 class="brand-country"><%= brand.country %></h5>
+          <h6 class="brand-description"><%= brand.description %></h6>
+        </div>
+      </div>
+    </div>
 
-      <div class="brand-card">
-        <h5 style="padding-top:20px;padding-bottom:10px;">EDITORIAL</h5>
-        <div class="brand-flex">
-
-          <div class="brand-images ">
-            <% brand.brand_images.each do |br_image| %>
-                <%= cl_image_tag br_image.url %>
-            <% end %>
-          </div>
-          <h5 style="padding-top:25px;padding-bottom:10px; ">PRODUCTS</h5>
-          <div class="product-images" >
-            <% brand.products.each do |product| %>
-              <% if brand.products.empty? %>
-                <h6>Oops you haven't liked any brand images yet!</h6>
-              <% else %>
-              <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
-              <div class="box">
-                <div class="heart aos-init aos-animate">
-                  <div class="wrapper">
-                    <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                      <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                      <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-                      <span class="like-overlay"></span>
-                    <% end %>
-                  </div>
+      <div class="brand-flex-2">
+        <h5 style="padding-top:25px;padding-bottom:10px; ">PRODUCTS</h5>
+        <div class="product-images" >
+          <% brand.products.each do |product| %>
+            <% if brand.products.empty? %>
+              <h6>Oops you haven't liked any brand images yet!</h6>
+            <% else %>
+            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+            <div class="box">
+              <div class="heart aos-init aos-animate">
+                <div class="wrapper">
+                  <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+                    <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                    <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                    <span class="like-overlay"></span>
+                  <% end %>
                 </div>
-              <% end %>
               </div>
             <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
-
+        <h6 style="padding-top:20px;padding-bottom:50px;">__________</h6>
+      <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 
 <!-- RECOMMENDED PRODUCTS -->
