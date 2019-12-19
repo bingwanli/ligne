@@ -3,117 +3,167 @@
     overflow-x: hidden !important;
   }
 </style>
+  <div class="newPage">
+    <div>
+    <img class="img1"></img>
+    </div>
 
-<%= render "/devise/shared/navbar" %>
-<body>
-  <div class="title" style="padding:30px">
-    <h2>MY STYLE</h2>
+    <div>
+    <img class="img2"></img>
+    </div>
+
   </div>
-  <h4 style="text-align: center;"><%= current_user.email %></h4>
-  <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
+<div class="page">
+  <%= render "/devise/shared/navbar" %>
+  <body>
+    <div class="title" style="padding:30px">
+      <h2>MY STYLE</h2>
+    </div>
+    <h4 style="text-align: center;"><%= current_user.email %></h4>
+    <!--  <%= link_to "BACK", :back, class: "filter-btn", style: "margin:20px;width:90px" %> -->
 
-  <!-- PROFILE-MENU -->
-  <div class="inner-panel" style="text-align: center;">
-    <a href="#popup1" class="form-btn">Change Password</a> |
-    <%= link_to "Delete Account", registration_path(resource_name), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
-  </div>
+    <!-- PROFILE-MENU -->
+    <div class="inner-panel" style="text-align: center;">
+      <a href="#popup1" class="form-btn">Change Password</a> |
+      <%= link_to "Delete Account", registration_path(resource_name), class: "form-btn", data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
 
-  <!-- Email button -->
-  <button class="black-white-link" style="padding: 10px 10px; text-decoration: none; text-align: center; margin: auto; display: block;">Email My Recommendations</button>
+    <!-- Email button -->
+    <button class="black-white-link" style="padding: 10px 10px; text-decoration: none; text-align: center; margin: auto; display: block;">Email My Recommendations</button>
 
-  <!-- SAVED PRODUCTS -->
-  <div class="centered main-container">
-    <h4 class="page-title" style="text-align:center;">My Saved Products</h4>
-    <div class="cards">
-      <% if current_user.liked_products.nil? %>
-        <p><h6>No liked products!</h6></p>
-      <% else %>
-        <% current_user.liked_products.each do |product| %>
-          <% if product.image_url.nil? %>
-            <p><h3>No Image Here, Sorry!</h3></p>
-          <% else %>
-            <div class="product-card">
-              <div class="product-image">
-              <%= cl_image_tag product.image_url %>
-              <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+    <!-- SAVED PRODUCTS -->
+    <div class="centered main-container">
+      <h4 class="page-title" style="text-align:center;">My Saved Products</h4>
+      <div class="cards">
+        <% if current_user.liked_products.nil? %>
+          <p><h6>No liked products!</h6></p>
+        <% else %>
+          <% current_user.liked_products.each do |product| %>
+            <% if product.image_url.nil? %>
+              <p><h3>No Image Here, Sorry!</h3></p>
+            <% else %>
+              <div class="product-card">
+                <div class="product-image">
+                <%= cl_image_tag product.image_url%>
+                <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+                </div>
+                <div class="product-card-content">
+                  <h6 class="product-title" ><%= product.name.upcase %></h6>
+                  <h6><%= product.brand.name %></h6>
+                  <h6>$<%= product.price %></h6>
+                </div>
               </div>
-              <div class="product-card-content">
-                <h6 class="product-title" ><%= product.name.upcase %></h6>
-                <h6><%= product.brand.name %></h6>
-                <h6>$<%= product.price %></h6>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         <% end %>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    let imgs = document.querySelectorAll("img");
+    let newpage = document.querySelector(".newPage");
+    let realpage = document.querySelector(".page");
+    let img1 = document.querySelector(".img1");
+    let img2 = document.querySelector(".img2");
+    let i = 0;
+    let backimgs = [];
+    let change;
+    imgs.forEach(img => {
+
+      // const selectImgs = () => {
+      //   i += 1;
+      //   // console.log(img.src)
+      //   backimgs.push(img.src);
+      //   console.log(backimgs)
+      //   if (backimgs.length > 2) {
+      //     change = backimgs
+
+      img.addEventListener('click', (e) => {
+        let imgClass = e.target.classList;
+        imgClass.toggle("activeborder")
+         let selected = document.querySelectorAll(".activeborder");
+         if (selected.length >= 2){
+            console.log(selected[0].src, selected[1].src);
+              realpage.style.display = "none"
+              newpage.style.display = "flex"
+              img1.src = selected[0].src
+              img2.src = selected[1].src
+         }
+      })
+    });
+
+
+    // if (backimgs.length == 2) {
+    //     realpage.style.display = "none"
+    //     newpage.style.display = "block"
+    // }
+  </script>
+    <!-- RECOMMENDED PRODUCTS -->
+
+    <div class="centered main-container">
+      <div class="page-title">
+        <h4 style="text-align:center;">Products Recommended for You</h4>
+        <h5 style="text-align:center;">Based on users who saved similar products</h4>
+      </div>
+
+      <% if current_user.recommended_products.empty? %>
+        <h6 style="text-align:center;">You haven't saved enough products for recommendations yet!</h6>
+        <h6 style="text-align:center;padding-bottom:60px;"><%= link_to "Click here", recs_pages_path %> to browse products and brands</h6>
+      <% else %>
+        <div class="cards">
+          <% current_user.recommended_products.each do |product| %>
+            <% if product.image_url.nil? %>
+              <p><h3>No Image, Sorry!</h3></p>
+            <% else %>
+              <div class="product-card">
+                <div class="product-image">
+                  <%= cl_image_tag product.image_url %>
+                  <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
+                </div>
+                <div class="product-card-content">
+                  <h6 class="product-title" ><%= product.name.upcase %></h6>
+                  <h6><%= product.brand.name %></h6>
+                  <h6>$<%= product.price %></h6>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  </div>
 
-  <!-- RECOMMENDED PRODUCTS -->
-
-  <div class="centered main-container">
-    <div class="page-title">
-      <h4 style="text-align:center;">Products Recommended for You</h4>
-      <h5 style="text-align:center;">Based on users who saved similar products</h4>
-    </div>
-
-    <% if current_user.recommended_products.empty? %>
-      <h6 style="text-align:center;">You haven't saved enough products for recommendations yet!</h6>
-      <h6 style="text-align:center;padding-bottom:60px;"><%= link_to "Click here", recs_pages_path %> to browse products and brands</h6>
-    <% else %>
-      <div class="cards">
-        <% current_user.recommended_products.each do |product| %>
-          <% if product.image_url.nil? %>
-            <p><h3>No Image, Sorry!</h3></p>
-          <% else %>
-            <div class="product-card">
-              <div class="product-image">
-                <%= cl_image_tag product.image_url %>
-                <%= link_to "Buy", product.url, target: "blank", class: "buy-btn"%>
-              </div>
-              <div class="product-card-content">
-                <h6 class="product-title" ><%= product.name.upcase %></h6>
-                <h6><%= product.brand.name %></h6>
-                <h6>$<%= product.price %></h6>
-              </div>
-            </div>
+    <!-- POP-UP EDIT FORM -->
+    <div id="popup1" class="overlay">
+      <div class="popup">
+      <a class="close" href="#">&times;</a>
+      <div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-
-  <!-- POP-UP EDIT FORM -->
-  <div id="popup1" class="overlay">
-    <div class="popup">
-    <a class="close" href="#">&times;</a>
-    <div>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
-        <%= f.input :current_password,
-                    hint: "If you want to change password, please enter your current password",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :password,
-                    hint: "If you don't want to change password, please leave it blank",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
-      <div class="form-btn">
-        <%= f.button :submit, "Update" %>
-      </div>
-    <% end %>
+          <%= f.input :current_password,
+                      hint: "If you want to change password, please enter your current password",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :password,
+                      hint: "If you don't want to change password, please leave it blank",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-btn">
+          <%= f.button :submit, "Update" %>
+        </div>
+      <% end %>
     </div>
-  </div>
-</body>
+  </body>
+</div>
+
 
 <!-- CAROUSEL JS -->
 <!-- <script type="text/javascript">

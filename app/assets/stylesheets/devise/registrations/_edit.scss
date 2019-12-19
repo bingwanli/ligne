@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+.page {
+  display:block;
+}
 
 .main-container {
   max-width: 1000px;
@@ -115,4 +118,17 @@ font-weight: 500;
   visibility: hidden;
   opacity: 0;
 }
+
+.activeborder {
+  border-color: blue;
+  border-style: solid;
+}
+
+.newPage {
+  display: none;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  justify-content: center;
+}
+
 
