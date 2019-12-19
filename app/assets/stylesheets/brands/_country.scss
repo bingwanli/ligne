@@ -1,5 +1,6 @@
 // popup
 /* The Modal (background) */
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -516,7 +517,7 @@ $white: #fff;
     font-size: 0.9rem;
     color: $heart;
   }
-  .wrapper {
+  .wrapper-c {
   position: relative;
   display: inline-block;
 
@@ -585,18 +586,18 @@ $white: #fff;
 
 
 //Watch me get bouncy
-@-webkit-keyframes bouncy {
-    from, to { -webkit-transform: scale(1, 1); }
-    25% { -webkit-transform: scale(0.9, 1.1); }
-    50% { -webkit-transform: scale(1.1, 0.9); }
-    75% { -webkit-transform: scale(0.95, 1.05); }
-}
-@keyframes bouncy {
-    from, to { transform: scale(1, 1); }
-    25% { transform: scale(0.9, 1.1); }
-    50% { transform: scale(1.1, 0.9); }
-    75% { transform: scale(0.95, 1.05);}
-}
+// @-webkit-keyframes bouncy {
+//     from, to { -webkit-transform: scale(1, 1); }
+//     25% { -webkit-transform: scale(0.9, 1.1); }
+//     50% { -webkit-transform: scale(1.1, 0.9); }
+//     75% { -webkit-transform: scale(0.95, 1.05); }
+// }
+// @keyframes bouncy {
+//     from, to { transform: scale(1, 1); }
+//     25% { transform: scale(0.9, 1.1); }
+//     50% { transform: scale(1.1, 0.9); }
+//     75% { transform: scale(0.95, 1.05);}
+// }
 
 //Settings
 .bouncy {
@@ -618,7 +619,7 @@ $white: #fff;
 
 .recs-hi {
   display: flex;
-  position:fixed;
+  position: fixed;
   z-index: 7;
   top: 85%;
   justify-content: center;
@@ -628,22 +629,26 @@ $white: #fff;
 
 .picks-for-you-btn {
   color: white;
-  background-color: #DC3645;
-  border: 2px solid white;
-  padding: 15px;
+  background-color: black;
+  border: 1px solid white;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 100px;
-  width: 15%;
+  width: 20%;
   justify-content: center;
   text-decoration: none;
   transition: all 0.4s;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+
 }
 
 .picks-for-you-btn:hover {
   color: white;
   text-decoration: none;
-  opacity: 0.9 !important;
+  opacity: 0.8 !important;
 }
 
 @media screen and (max-width: 800px) {
