@@ -4,13 +4,62 @@
   box-sizing: border-box;
 }
 
+.newpage {
+  overflow: auto;
+  display: flex;
+
+
+}
+
+@media (max-width: 800px) {
+  .newPage {
+    display:flex;
+    flex-direction: column;
+    width:auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .img1 {
+  height:50vh;
+  width:auto;
+  padding-top: 150px;
+  padding:30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .img2 {
+  height:50vh;
+  width:auto;
+  padding-top: 150px;
+  padding:30px;
+  }
+}
+
+.img1 {
+  height:85vh;
+  width:auto;
+  padding-top: 150px;
+  padding:30px;
+}
+
+.img2 {
+  height:85vh;
+  width:auto;
+  padding-top: 150px;
+  padding:30px;
+}
+
 .page {
   display:block;
 }
 
 .main-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%;
+  height:100%;
+  // overflow: auto;
+  // overflow-y: hidden;
 }
 
 .cards {
@@ -20,51 +69,93 @@
   margin: 0;
   padding: 0;
   justify-content: center;
+  flex-direction: row;
 }
 
 .product-image {
 display: flex;
-flex-direction: column;
+flex-direction: row;
 position: relative;
+height:500px;
+width:330px;
+margin-left:0;
+margin-right:20px;
 }
 
 .product-card {
 display: flex;
 flex-direction: column;
-padding: .5rem;
-margin: .5rem;
-overflow: hidden;
-background-color: rgb(245,245,245);
+padding: 20px;
+margin-right: 50px;
+background-color: white;
 border-radius: .5rem;
-box-shadow: 1px 1px 1px 1px rgb(240,240,240);
+width:330px;
 }
-
-@media (min-width: 40rem) {
-  .product-card {
-    width: 45%;
-  }
-}
-
-@media (min-width: 56rem) {
-  .product-card {
-    width: 30%;
-  }
-}
-
 
 .product-card img {
-  max-width: 100%;
   border-radius: 10px;
-  max-width: 100%;
   vertical-align: middle;
-  height: 375px;
-  object-fit: cover;
+  height:100%;
 }
+
+.product-images-2 {
+  display: flex;
+  height: auto;
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  height:100%;
+  margin-bottom: 10px;
+  margin-left:0;
+}
+
+// @media (min-width: 40rem) {
+//   .product-card {
+//     width: 45%;
+//   }
+// }
+
+// @media (min-width: 56rem) {
+//   .product-card {
+//     width: 30%;
+//   }
+// }
+
+// @media (max-width: 800px) {
+//   .product-card {
+//     margin: 50px;
+//   }
+// }
+
+@media (max-width: 800px) {
+  .product-images-2 {
+
+    padding:0
+  }
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    margin-left:0;
+  }
+}
+
+@media (max-width: 800px) {
+  .product-card img {
+    padding:0;
+    margin-right:20px;
+  }
+}
+
+
 
 
 .product-card-content {
   padding: .5rem;
   text-align: center;
+  width:350px;
+  align-items:center;
+
 }
 
 .product-card-content .product-title {

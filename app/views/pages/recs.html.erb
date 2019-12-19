@@ -15,13 +15,7 @@
     <!-- Navbar -->
 
     <div>
-      <div class="fixed-action-btn">
-        <a href="/users/edit" style="font-size:22px;text-align:center" class="btn-floating material-icons black">shopping_cart</a>
-        <!-- <ul>
-          <li><a href="/users/edit" class="btn-floating green"><i class="material-icons">shopping_cart</i></a></li>
-          <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">email</i></a></li>
-        </ul> -->
-      </div>
+
 
       <div class="page-title" style="text-align:center;padding-top:50px;">
           <h2 style="font-size:2rem;margin-top:0 !important;">MY BRANDS</h2>
@@ -31,7 +25,9 @@
 
   <!-- PRODUCT CARDS -->
     <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
-
+      <div class="fixed-action-btn">
+        <a href="/users/edit" style="font-size:22px;text-align:center;justify-content:center;align-items:center;padding-top:7px" class="btn-floating material-icons black">shopping_cart</a>
+      </div>
       <% @brands.each do |brand| %>
       <div class="brand-flex">
         <div class="brand-card" style="background-color:white ">

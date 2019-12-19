@@ -708,6 +708,20 @@ body {
     }
   }
 
+.btn-floating {
+  height:60px !important;
+  width:60px !important;
+  border: 1px solid white;
+}
+
+
+.fixed-action-btn {
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+
+}
 
 //Watch me get bouncy
 @-webkit-keyframes bouncy {
