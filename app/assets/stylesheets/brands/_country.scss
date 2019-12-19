@@ -586,18 +586,18 @@ $white: #fff;
 
 
 //Watch me get bouncy
-// @-webkit-keyframes bouncy {
-//     from, to { -webkit-transform: scale(1, 1); }
-//     25% { -webkit-transform: scale(0.9, 1.1); }
-//     50% { -webkit-transform: scale(1.1, 0.9); }
-//     75% { -webkit-transform: scale(0.95, 1.05); }
-// }
-// @keyframes bouncy {
-//     from, to { transform: scale(1, 1); }
-//     25% { transform: scale(0.9, 1.1); }
-//     50% { transform: scale(1.1, 0.9); }
-//     75% { transform: scale(0.95, 1.05);}
-// }
+@-webkit-keyframes bouncy {
+    from, to { -webkit-transform: scale(1, 1); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0.9); }
+    75% { -webkit-transform: scale(0.95, 1.05); }
+}
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05);}
+}
 
 //Settings
 .bouncy {
