@@ -4,21 +4,20 @@
   }
 </style>
   <div class="newPage">
-    <div class="product-card">
+    <video class="vid" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://cdn.dribbble.com/users/108671/screenshots/7038650/media/0db5c56437c9bead0557b3736e86d6b0.mp4" type="video/mp4">
+    </video>
+    <div class="pageFlex">
       <div class="product-image">
         <img class="img1"></img>
       </div>
-    </div>
-  <div><h1>V.S.</h1></div>
-  <button type="button" href="/" class="btn btn-secondary">Go back</button>
-    <div class="product-card">
+
       <div class="product-image">
         <img class="img2"></img>
       </div>
-
     </div>
-
   </div>
+<!--  -->
 <div class="page">
   <%= render "/devise/shared/navbar" %>
   <body>
@@ -91,7 +90,7 @@
          if (selected.length >= 2){
             console.log(selected[0].src, selected[1].src);
             setTimeout(function(){ realpage.style.display = "none"
-              newpage.style.display = "flex" }, 1000);
+              newpage.style.display = "block" }, 1000);
               img1.src = selected[0].src
               img2.src = selected[1].src
          }
