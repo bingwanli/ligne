@@ -4,12 +4,18 @@
   }
 </style>
   <div class="newPage">
-    <div>
-    <img class="img1"></img>
+    <div class="product-card">
+      <div class="product-image">
+        <img class="img1"></img>
+      </div>
     </div>
+  <div><h1>V.S.</h1></div>
+  <button type="button" href="/" class="btn btn-secondary">Go back</button>
+    <div class="product-card">
+      <div class="product-image">
+        <img class="img2"></img>
+      </div>
 
-    <div>
-    <img class="img2"></img>
     </div>
 
   </div>
@@ -75,8 +81,8 @@
          let selected = document.querySelectorAll(".activeborder");
          if (selected.length >= 2){
             console.log(selected[0].src, selected[1].src);
-              realpage.style.display = "none"
-              newpage.style.display = "flex"
+            setTimeout(function(){ realpage.style.display = "none"
+              newpage.style.display = "flex" }, 1000);
               img1.src = selected[0].src
               img2.src = selected[1].src
          }

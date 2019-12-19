@@ -200,7 +200,13 @@ font-weight: 500;
   display: none;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
-  justify-content: center;
+  justify-content: space-between;
+  margin-right: 205px;
+  margin-left: 205px;
+}
+
+.btn-secondary {
+  height: 50px;
 }
 
 
