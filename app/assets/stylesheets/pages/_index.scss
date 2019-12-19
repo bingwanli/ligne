@@ -12,8 +12,8 @@
   // text-shadow: 1px 1px 10px black;
   padding-bottom: 30px;
   font-family: "Montserrat";
-  background: rgb(11,11,10);
-background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(250,250,250,1) 50%);
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(250,250,250,1) 50%);
 }
 
 .main-banner-info {
@@ -90,6 +90,21 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(250,250,250,1) 50%);
   margin-top: 30px;
   width: 90%;
   z-index: 2;
+  padding: 10px;
+}
+
+@media screen and (max-width: 801px) {
+  .main-banner-title  {
+    padding:20px !important;
+  }
+}
+
+.main-banner-title h1 {
+  padding: 10px;
+}
+
+.main-banner-title h2 {
+  padding: 10px;
 }
 
 .main-banner-title p {
@@ -271,7 +286,8 @@ canvas {
 
 .dropdown-item {
   color: black;
-  padding-top:0
+  padding-top:0;
+  width: 300px;
 }
 
 .dropdown-item:hover {
@@ -288,10 +304,14 @@ canvas {
 .carousel-item {
   transition: transform 0.3s ease-in-out;
   // text-decoration: underline overline;
-
+  text-align: center;
+  justify-content: center;
 }
 
-
+.carousel-inner {
+  text-align: center;
+  justify-content: center;
+}
 
 .speech-bubble-ds {
     background: #efefef;
