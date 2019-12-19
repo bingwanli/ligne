@@ -118,34 +118,3 @@
       </div>
     <% end %>
     </div>
-
-<!-- CAROUSEL JS -->
-<!-- <script type="text/javascript">
-// external js: flickity.pkgd.js
-var carousel = document.querySelector('.main-carousel');
-var flkty = new Flickity( carousel, {
-  imagesLoaded: true,
-  percentPosition: false,
-  freeScroll: true,
-  contain: true,
-  // disable previous & next buttons and dots
-  prevNextButtons: false,
-  pageDots: false,
-  autoPlay: true
-});
-
-var imgs = carousel.querySelectorAll('.card');
-// get transform property
-var docStyle = document.documentElement.style;
-var transformProp = typeof docStyle.transform == 'string' ?
-  'transform' : 'WebkitTransform';
-
-flkty.on( 'scroll', function() {
-  flkty.slides.forEach( function( slide, i ) {
-    var img = imgs[i];
-    var x = ( slide.target + flkty.x ) * -1/100;
-    img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-  });
-});
-</script> -->
-
