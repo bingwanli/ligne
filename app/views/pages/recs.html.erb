@@ -58,10 +58,10 @@
               <div class="box">
                 <div class="heart aos-init aos-animate">
                   <div class="wrapper">
-                    <%= link_to product_path(product), method: :patch, class: "add-button" do%>
-                      <i class="mdc-icon-button material-icons is-added bouncy">➕</i>
-                      <i class="mdc-icon-button material-icons not-added bouncy">➕</i>
-                      <span class="add-overlay"></span>
+                    <%= link_to product_path(product), method: :patch, class: "like-button" do %>
+                      <i class="mdc-icon-button material-icons is-liked bouncy is-active">✚</i>
+                      <i class="mdc-icon-button material-icons not-liked bouncy">✚</i>
+                      <span class="like-overlay"></span>
                     <% end %>
                   </div>
                 </div>
@@ -77,14 +77,14 @@
   </div>
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
 
     $('.like-button').click(function(){
         $(this).toggleClass('is-active');
     })
 })
-</script> -->
+</script>
 
 <script type="text/javascript">
 // external js: flickity.pkgd.js
