@@ -1,11 +1,9 @@
-
 <!-- icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -14,50 +12,42 @@
 <!-- TITLE -->
 <body>
 
-
-
-  <div class="container-recs" style="padding-top:0 !important ">
-
     <!-- expand btn -->
     <div class="fixed-action-btn">
       <a class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
+        <i class="large material-icons">sort</i>
       </a>
       <ul>
-        <li><a href="/pages/recs" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        <li><a href="/users/edit" class="btn-floating green"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">email</i></a></li>
       </ul>
     </div>
 
-    <div class="page-title" style="text-align:center;padding-top:0">
-        <h2>FROM BRANDS TO PRODUCTS</h2>
-        <h5>See the brands you have selected and some products you can buy below</h5>
+    <div class="page-title" style="text-align:center;padding-top:0;">
+        <h2 style="font-size:2rem">MY STYLES</h2>
+        <h5 style="font-size:1.25rem">See the brands you have selected and some products you can buy below</h5>
     </div>
 
-<!--   <div class="country-btn">
-    <%= link_to "BACK", :back, class: "filter-btn" %>
-  </div> -->
-
 <!-- PRODUCT CARDS -->
-  <div class="main-carousel">
+  <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
+
     <% @brands.each do |brand| %>
-    <h3 class="brand-name"><%= brand.name %></h3>
-    <h5 class="brand-country"><%= brand.country %></h5>
-    <h6 class="brand-description"><%= brand.description %></h6>
-
-      <div class="brand-card">
-
-        <div class="brand-flex">
-          <h6>EDITORIAL</h6>
-          <div class="brand-images ">
-            <% brand.brand_images.each do |br_image| %>
-                <%= cl_image_tag br_image.url, style: "card" %>
-            <% end %>
-          </div>
+    <div class="brand-flex">
+      <div class="brand-card" style="background-color:white ">
+        <div class="brand-images ">
+          <% brand.brand_images.each do |br_image| %>
+            <%= cl_image_tag br_image.url %>
+          <% end %>
         </div>
-        <h6>PRODUCTS</h6>
+      </div>
+    </div>
+    <div class="brands-infos">
+      <h3 class="brand-name"><%= brand.name %></h3>
+      <h5 class="brand-country"><%= brand.country %></h5>
+      <h6 class="brand-description"><%= brand.description %></h6>
+    </div>
+      <div class="brand-flex-2">
+        <h5 style="padding-top:25px;padding-bottom:10px;">PRODUCTS</h5>
         <div class="product-images" >
           <% brand.products.each do |product| %>
             <% if brand.products.empty? %>
@@ -68,8 +58,8 @@
               <div class="heart aos-init aos-animate">
                 <div class="wrapper">
                   <%= link_to product_path(product), method: :patch, class: "like-button" do%>
-                    <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                    <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                    <i class="mdc-icon-button material-icons is-liked bouncy">➕</i>
+                    <i class="mdc-icon-button material-icons not-liked bouncy">➕</i>
                     <span class="like-overlay"></span>
                   <% end %>
                 </div>
@@ -78,37 +68,9 @@
             </div>
           <% end %>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-<!-- RECOMMENDED PRODUCTS -->
-  <% if @recommendations.empty? %>
-  <% else %>
-    <div class="container">
-      <div class="page-title" style="text-align:center">
-        <div>
-          <h5>Recommended Products</h5>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <% @recommendations.each do |product| %>
-          <div class="box">
-            <div class="heart aos-init aos-animate" data-aos="fade-right">
-              <div class="wrapper">
-                <%= link_to product_path(product), method: :patch, class: "like-button" do %>
-                  <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
-                  <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
-                  <span class="like-overlay"></span>
-                <% end %>
-              </div>
-            </div>
-            <%= link_to "Buy", product.url, target: "blank", class: "buy-link"%>
-            <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
-          </div>
-        <% end %>
+        <h6 style="padding-top:20px;padding-bottom:20px;">__________</h6>
       <% end %>
+      </div>
     </div>
   </div>
 

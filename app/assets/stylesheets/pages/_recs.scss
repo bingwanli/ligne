@@ -1,6 +1,11 @@
 // Place all the styles related to the product_rec controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$fade-grey: #ededed;
+$grey: #ccc;
+$muted-grey: #999;
+$heart: #ff4f8f;
+$white: #fff;
 
 .gridCentered {
   margin-left: auto;
@@ -456,54 +461,86 @@ body {
 .brand-name {
   text-align: center;
   font-weight: 700;
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 8px;
   text-shadow: 1px 1px 1px rgb(230,230,230);
+  margin:0;
 }
 
 .brand-country {
   text-align: center;
   font-weight: 700;
+  margin: 0
 
 }
 
 .brand-description {
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   text-align: justify;
   text-justify: distribute;
   text-align-last: center;
   word-spacing:1px;
+  margin-bottom:10px
 }
 
-.brand-description h6 {
-  min-height:58px;
-}
 
 
 .brand-card {
   display: block;
-  height: 100vh;
-  max-height: auto;
-  margin: 10px 10px;
-  padding: 5px 5px;
+  // margin: 10px 10px;
+  padding: 5px 0px;
   background-color: rgb(250,250,250);
-  box-shadow: 2px 2px 2px 2px rgb(245,245,245);
+  // box-shadow: 2px 2px 2px 2px rgb(245,245,245);
   border-radius: 5px;
+  object-fit: fit;
+  max-height:500px;
+  justify-content: center;
 }
 
-.brand-card h6 {
+.brand-flex h6 {
   margin: 0;
   text-align: center;
+}
 
+.brand-flex h5 {
+  margin: 0;
+  text-align: center;
 }
 
 .brand-flex {
-  display: flex;
+  background-size: cover;
   justify-content: center;
   align-items: center;
   background-color: rgb(255,255,255);
   padding: 0px 0px;
-  margin: 0px 0px;
+  margin-top: 10px;
   height: 55%;
+}
+
+.brand-flex img {
+  background-size: cover;
+}
+
+.brand-flex-2 {
+
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 0px 0px;
+  height: 55%;
+}
+
+.brand-flex-2 h6 {
+  margin: 0;
+  text-align: center;
+}
+
+.brand-flex-2 h5 {
+  margin: 0;
+  text-align: center;
 }
 
 // .brand-text {
@@ -517,31 +554,45 @@ body {
 
 .brand-images {
   display: flex;
-  justify-content: flex-start;
-  height: 80%;
+  justify-content: center;
+  height: 50%;
   overflow: auto;
-  justify-content: margin-left;
+  width:100%;
+  background-size: cover;
 }
 
 .brand-images img {
-  height: 100%;
-  max-height: 100%;
-  object-fit: fit;
+  height: 500px;
+  max-height: 40%;
+  width:auto;
+  background-size: cover;
 }
 
+#img-plus {
+
+}
 
 .product-images {
   display: flex;
-  justify-content: margin-left;
+  height: 500px;
   align-items: center;
-  height: 40%;
   overflow: auto;
   width: 100%;
-  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 10px;
+
 }
 
 .product-images img {
-  max-height: 100%;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.brands-infos {
+  background-color: #F5F5F5;
+  padding:20px;
+  margin-top: 5px;
 }
 
 
@@ -560,6 +611,19 @@ body {
   }
 }
 
+@media screen and ( min-width: 800px ) {
+  .brand-images {
+    justify-content: center;
+  }
+}
+
+@media screen and ( max-width: 800px ) {
+  .brand-images {
+    justify-content: flex-start;
+
+  }
+}
+
 @media screen and ( max-width: 800px ) {
   .brand-card {
     padding: 0;
@@ -569,6 +633,102 @@ body {
 }
 
 
+  .love {
+    font-size: 0.9rem;
+    color: $heart;
+  }
+  .wrapper {
+  position: relative;
+  display: inline-block;
+
+
+    .like-button {
+      display: inline;
+      position: absolute;
+      top: 2em;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: $grey;
+      margin: 0 auto;
+      text-decoration: none;
+      overflow: hidden;
+
+      .like-overlay {
+        display: inline;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 0em;
+        border-radius: 50%;
+        background: $heart;
+        transform: scale(0);
+        transition: all .4s;
+        z-index: 0;
+      }
+
+      i {
+        &.not-liked {
+          display: block;
+          top: 25%;
+          right: 25%;
+          color: $red;
+          position: absolute;
+          z-index: 1;
+
+        }
+
+        &.is-liked {
+          display: none;
+          color: $red;
+          position: absolute;
+          z-index: 1;
+        }
+      }
+
+      &.is-active {
+        .like-overlay {
+          transform: scale(1);
+        }
+        i {
+          &.not-liked {
+            display: none;
+          }
+          &.is-liked {
+            display: block;
+            top: 25%;
+            right: 25%;
+          }
+        }
+      }
+    }
+  }
+
+
+//Watch me get bouncy
+@-webkit-keyframes bouncy {
+    from, to { -webkit-transform: scale(1, 1); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0.9); }
+    75% { -webkit-transform: scale(0.95, 1.05); }
+}
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05);}
+}
+
+//Settings
+.bouncy {
+    -webkit-animation: bouncy 0.6s;
+    animation: bouncy 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 
 // .buy-link {
 //   display: inline;
