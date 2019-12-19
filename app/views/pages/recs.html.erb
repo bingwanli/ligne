@@ -1,4 +1,3 @@
-
 <!-- icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
@@ -20,36 +19,34 @@
     <!-- expand btn -->
     <div class="fixed-action-btn">
       <a class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
+        <i class="large material-icons">sort</i>
       </a>
       <ul>
-        <li><a href="/pages/recs" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        <li><a href="/users/edit" class="btn-floating green"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="/pages/recs" class="btn-floating blue"><i class="material-icons">email</i></a></li>
       </ul>
     </div>
 
     <div class="page-title" style="text-align:center;padding-top:0">
-        <h2>FROM BRANDS TO PRODUCTS</h2>
+        <h2>MY STYLES</h2>
         <h5>See the brands you have selected and some products you can buy below</h5>
     </div>
 
 
 <!-- PRODUCT CARDS -->
-  <div class="main-carousel">
+  <div class="main-carousel" style="background-color:#F5F5F5;box-shadow: 1px 1px 2px lightgray;">
     <% @brands.each do |brand| %>
     <h3 class="brand-name"><%= brand.name %></h3>
     <h5 class="brand-country"><%= brand.country %></h5>
     <h6 class="brand-description"><%= brand.description %></h6>
 
       <div class="brand-card">
-
+        <h5 style="padding-top:20px;padding-bottom:10px;">EDITORIAL</h5>
         <div class="brand-flex">
-          <h6>EDITORIAL</h6>
+
           <div class="brand-images ">
             <% brand.brand_images.each do |br_image| %>
-                <%= cl_image_tag br_image.url, style: "card" %>
+                <%= cl_image_tag br_image.url %>
             <% end %>
           </div>
         </div>
@@ -68,12 +65,29 @@
                     <i class="mdc-icon-button material-icons not-liked bouncy">➕</i>
                     <span class="like-overlay"></span>
                   <% end %>
+          <h5 style="padding-top:25px;padding-bottom:10px; ">PRODUCTS</h5>
+          <div class="product-images" >
+            <% brand.products.each do |product| %>
+              <% if brand.products.empty? %>
+                <h6>Oops you haven't liked any brand images yet!</h6>
+              <% else %>
+              <%= cl_image_tag product.image_url, style: "border-radius:20px;"%>
+              <div class="box">
+                <div class="heart aos-init aos-animate">
+                  <div class="wrapper">
+                    <%= link_to product_path(product), method: :patch, class: "like-button" do%>
+                      <i class="mdc-icon-button material-icons is-liked bouncy">favorite</i>
+                      <i class="mdc-icon-button material-icons not-liked bouncy">favorite_border</i>
+                      <span class="like-overlay"></span>
+                    <% end %>
+                  </div>
                 </div>
+              <% end %>
               </div>
             <% end %>
-            </div>
-          <% end %>
+          </div>
         </div>
+
       </div>
     <% end %>
   </div>
