@@ -606,38 +606,38 @@ brimg5.remote_url_url = "https://cdn.cliqueinc.com/posts/279688/best-online-bout
 
 brimg5.save
 
-#Rixo
+#Farm Rio
 
 brimg1 = BrandImage.create({
-  brand_id: 46
+  brand_id: 41
 })
 
 
-brimg1.remote_url_url = ""
+brimg1.remote_url_url = "http://modasemlimites.com/wp-content/uploads/2016/07/nova-colecao-FARM-verao-2017-sotaque-brasil-blog-moda-sem-limites-por-carol-velloso.jpg"
 
 brimg1.save
 
 brimg2 = BrandImage.create({
-  brand_id: 46
+  brand_id: 41
 })
 
 
-brimg2.remote_url_url = ""
+brimg2.remote_url_url = "https://i.pinimg.com/originals/81/ac/73/81ac73ca0f960b34a5d55b715a1f5984.jpg"
 
 brimg2.save
 
 brimg3 = BrandImage.create({
-  brand_id: 46
+  brand_id: 41
 })
 
 
-brimg3.remote_url_url = ""
+brimg3.remote_url_url = "https://pbs.twimg.com/media/EDp2pKcXUAYqYMr.jpg"
 
 brimg3.save
 
 
 brimg4 = BrandImage.create({
-  brand_id: 46
+  brand_id: 41
 })
 
 
@@ -647,7 +647,7 @@ brimg4.save
 
 
 brimg5 = BrandImage.create({
-  brand_id: 46
+  brand_id: 41
 })
 
 
