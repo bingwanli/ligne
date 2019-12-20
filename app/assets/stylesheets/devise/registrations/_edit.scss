@@ -33,7 +33,7 @@
   }
 
   .img1 {
-    height: 45vh;
+    height: 40vh !important;
     object-fit: cover;
     border: 2px solid $red;
     flex-grow: 1;
@@ -44,12 +44,12 @@
 
   .share-text {
     color: white;
-    font-size: 60px;
+    font-size: 50px !important;
     font-weight: 700;
   }
 
   .img2 {
-    height: 45vh;
+    height: 40vh !important;
     object-fit: cover;
     flex-grow: 1;
     border: 2px solid $red;
@@ -58,14 +58,6 @@
   }
 }
 
-// @media (max-width: 800px) {
-//   .img1 {
-//   height:50vh;
-//   width:auto;
-//   padding-top: 150px;
-//   padding:30px;
-//   }
-// }
 
 .img1 {
   width:auto;
