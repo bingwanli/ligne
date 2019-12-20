@@ -14,7 +14,6 @@
   font-family: "Montserrat";
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%);
-
 }
 
 .main-banner-info {
@@ -43,9 +42,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-right: 60px;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%);
-
-  }
+    background: linear-gradient(180deg, white 50%, black 50%)  }
 }
 
 @media screen and (max-width: 801px) {
@@ -379,12 +376,14 @@ canvas {
   height:80%;
   position: relative;
   bottom: 40;
+  padding-bottom: 25px;
 }
 
 .carousel-control-next {
   height:80%;
   position: relative;
   bottom: 40;
+  padding-bottom: 25px
 }
 
 #carouselContent {

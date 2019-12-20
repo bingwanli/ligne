@@ -19,7 +19,7 @@
 
     <div class="centered-cards">
       <% @randomized_images.each do |image| %>
-        <div class="wf-box wf-box-2" data-aos="fade-right">
+        <div class="wf-box wf-box-2" style="margin-top: 0;padding-top: 0;padding-bottom: 0;margin-bottom: 0;" data-aos="fade-right">
           <div class="heart" data-aos="fade-right">
             <div class="wrapper-c">
               <% if user_signed_in? && current_user.liked_brand_images.include?(image) %>
