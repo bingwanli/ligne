@@ -7,48 +7,88 @@
 .newpage {
   overflow: auto;
   display: flex;
-
-
 }
 
+
 @media (max-width: 800px) {
-  .newPage {
-    display:flex;
+  .product-card img {
+    padding: 0;
+    margin-right:20px;
+  }
+
+
+  .product-images-2 {
+    padding:0
+  }
+
+  .pageFlex {
     flex-direction: column;
-    width:auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0px 0px !important;
   }
-}
 
-@media (max-width: 800px) {
+  .main-container {
+    margin-left:0;
+  }
+
   .img1 {
-  height:50vh;
-  width:auto;
-  padding-top: 150px;
-  padding:30px;
+    height: 45vh;
+    object-fit: cover;
+    border: 2px solid $red;
+    flex-grow: 1;
+    padding: 0px 0px !important;
+    margin-top: 15px;
+
+  }
+
+  .share-text {
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .img2 {
+    height: 45vh;
+    object-fit: cover;
+    flex-grow: 1;
+    border: 2px solid $red;
+    padding: 0px 0px !important;
+    margin-bottom: 15px;
   }
 }
 
-@media (max-width: 800px) {
-  .img2 {
-  height:50vh;
-  width:auto;
-  padding-top: 150px;
-  padding:30px;
-  }
-}
+// @media (max-width: 800px) {
+//   .img1 {
+//   height:50vh;
+//   width:auto;
+//   padding-top: 150px;
+//   padding:30px;
+//   }
+// }
 
 .img1 {
-  height:85vh;
   width:auto;
-  padding-top: 150px;
-  padding:30px;
+  height: 70%;
+  border-radius: 10px;
+  border: 2px solid $red;
+  padding: 0px 0px !important;
+  margin: 20px 20px;
+}
+
+.share-text {
+    color: white;
+    font-size: 80px;
+    font-weight: 700;
 }
 
 .img2 {
-  height:85vh;
   width:auto;
-  padding-top: 150px;
-  padding:30px;
+  height: 70%;
+  border-radius: 10px;
+  border: 2px solid $red;
+  padding: 0px 0px !important;
+  margin: 20px 20px;
 }
 
 .page {
@@ -57,7 +97,7 @@
 
 .main-container {
   max-width: 100%;
-  height:100%;
+  height: 100%;
   // overflow: auto;
   // overflow-y: hidden;
 }
@@ -127,25 +167,6 @@ width:330px;
 //   }
 // }
 
-@media (max-width: 800px) {
-  .product-images-2 {
-
-    padding:0
-  }
-}
-
-@media (max-width: 800px) {
-  .main-container {
-    margin-left:0;
-  }
-}
-
-@media (max-width: 800px) {
-  .product-card img {
-    padding:0;
-    margin-right:20px;
-  }
-}
 
 
 .product-card-content {
@@ -209,45 +230,44 @@ font-weight: 500;
 }
 
 .activeborder {
-  border-color: blue;
-  border-style: solid;
+  border: 2px solid $red;
 }
 
 .newPage {
   display: none;
+  background-image: url("https://img.freepik.com/free-vector/retro-styled-pattern-background_1048-6593.jpg");
+  background-repeat: repeat;
+  z-index: -3;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
  /* Do not repeat the image */
   // margin-right: 205px;
   // margin-left: 205px;
 }
 
+
+
 .pageFlex {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-evenly;
+   align-items: center;
    z-index: 100;
+   margin: 30px 30px;
+   width: 100vw;
+   height: 100vh;
+   position: relative;
 }
 
 .btn-secondary {
   height: 50px;
 }
 
-.img1 {
-  top: 16;
-  border-radius: 20px;
-  height: 100%;
-  width: 50%;
-  // margin-left: 205px;
-}
 
-.img2 {
-  border-radius: 20px;
-  height: 100%;
-  width: 50%;
-}
-
-.vid {
-  z-index: -3;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-}
+// .vid {
+//   z-index: -3;
+//   width: 100vw;
+//   height: 100vh;
+//   position: absolute;
+// }
 
