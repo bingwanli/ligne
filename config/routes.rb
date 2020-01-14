@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get 'recs'
     end
     collection do
-      get 'explore'
+      get 'aboutus'
     end
   end
 

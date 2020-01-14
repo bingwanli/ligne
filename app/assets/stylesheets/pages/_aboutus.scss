@@ -1,0 +1,62 @@
+.contentwrapper {
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+
+.values {
+  padding: 30px 30px;
+  margin: 10px 10px;
+}
+
+.values p {
+  font-size: 16px;
+  color: black;
+  text-align: justify;
+}
+
+.profilewrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 20px 20px;
+  background-color: white;
+  flex-wrap: wrap;
+  min-width: 100%;
+}
+
+.profile {
+  display: block;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  overflow: scroll;
+  max-width: 100%;
+}
+
+.profiletext {
+  overflow: scroll;
+}
+
+
+.profilepic {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+
+
+.profilepic img {
+  max-height: 100%;
+  align-content: center;
+}
+
+
+.profile h5 {
+  color: rgb(150,150,150);
+  font-style: italic;
+}

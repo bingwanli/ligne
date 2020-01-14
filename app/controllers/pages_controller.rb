@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     recommendations
   end
 
-  def explore
+  def aboutus
   end
 
   private
