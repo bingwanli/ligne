@@ -54,6 +54,11 @@
     display: block;
     text-align: center;
     border: none;
+    background-color: white;
+}
+
+.dropdown-menu.show a:hover {
+    background-color: white;
 }
 
 .dropdown-item {
@@ -62,7 +67,6 @@
   padding-top:20px;
   padding-bottom:20px;
 }
-
 
 .dropdown-menu {
   background: rgb(253,253,253);
@@ -98,7 +102,9 @@
     width: 100vw;
   }
   .nav-link {
-     font-size: 14px;
+     font-size: 12px;
+     float: left;
+     position: relative;
   }
   .nav-link:hover {
     background-color: none;
