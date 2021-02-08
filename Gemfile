@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sidekiq'
